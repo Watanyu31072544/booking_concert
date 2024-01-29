@@ -85,22 +85,14 @@
                             ?>
                             <tr>
                             <td><?php echo $booking['booking_id']; ?></td>
-                            <?php
-                                if (!$_SESSION["m_id"]) {
-                                header("location:formLoginMember.php");
-                                } else {
-                                $sqlloginmember = "SELECT distinct * FROM member WHERE m_id='" . $_SESSION["m_id"] . "'";
-                                $result = mysqli_query($db, $sqlloginmember);
-                                $member = mysqli_fetch_assoc($result);
-                            ?>
-                            <td><?php echo $member['m_fullname']; ?></td>
+                            <td><?php echo $booking['m_fullname']; ?></td>
                             <td><?php echo $booking['name']; ?></td>
                             <td><?php echo $booking['location']; ?></td>
                             <td><?php echo $booking['s_zone']; ?></td>
                             <td><a href="TicketConcert.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-ticket"></i> บัตรคอนเสิร์ต</a></td>
                             <td><a href="deleteBookingOfMember.php?booking=<?php echo $booking['booking_id']; ?>" onclick="return confirm('ยกเลิกการจองตั๋วคอนเสิร์ตของคุณ <?php echo $booking['m_fullname']; ?> ?');" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> ยกเลิกจองตั๋วคอนเสิร์ต</a></td>
                             </tr>
-                            <?php }} ?>
+                            <?php } ?>
                         </tbody>
                     </table>
                     
