@@ -1,0 +1,38 @@
+.center{
+    display: block;
+    width: 30%;
+    margin-left: 500;
+    margin-right: 500;
+}
+.text-justify{
+    text-align: justify;
+}
+.bg-green1{
+    background-color: #23C81E;
+}
+.btn-service-of-student{
+    background-color: #10D0E0;
+    width: "50";
+    height: "50";
+}
+.btn-left{
+    background-color: #9410E0;
+    width: 50px;
+    height: 100px;
+}
+.btn-right{
+    background-color: #DA0AEB;
+    width: 50px;
+    height: 100px;
+}
+#website {
+    display: auto;
+    width: auto;
+    height: auto;
+    margin-left: 500;
+    margin-right: 500;
+    color:black;
+}
+.text-color{
+    color: black;
+}
