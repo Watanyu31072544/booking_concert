@@ -2,7 +2,7 @@
   <?php
     //ไฟล์เชื่อมต่อฐานข้อมูล
     include('dbconnect.php');
-    //รับค่าที่มาจากฟอร์มแก้ไข
+    
     
     $s_zone = $_POST['s_zone'];
     $s_price = $_POST['s_price'];
