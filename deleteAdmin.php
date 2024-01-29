@@ -14,7 +14,7 @@
     echo "<script> alert('ลบข้อมูลของผู้ดูแลเรียบร้อยแล้วครับ'); </script>";
     echo "<script> window.location='ManageAdmin.php'; </script>";
     } else {
-    echo "ไม่สามารถลบได้ หรือ มีข้อผิดพลาดเกิดขึ้น";
+    echo "ไม่สามารถลบข้อมูลของผู้ดูแลได้ หรือ มีข้อผิดพลาดเกิดขึ้น";
     }
     mysqli_close($db);
 ?>
