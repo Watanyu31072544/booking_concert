@@ -78,11 +78,11 @@
                             include('connect.php');
                             $sql = "SELECT * FROM booking WHERE m_fullname='วทัญญู เขียวชอุ่ม'";
                             $query = mysqli_query($db,$sql);
+                            $order = 1;
                         ?>
-                        <?php
-                            while($booking = mysqli_fetch_assoc($query)){?>
+                        <?php while($booking = mysqli_fetch_assoc($query)){?>
                             <tr>
-                            <td><?php echo $booking['booking_id']; ?></td>                           
+                            <td><?php echo $order++; ?></td>
                             <td><?php echo $booking['name']; ?></td>
                             <td><?php echo $booking['location']; ?></td>
                             <td><?php echo $booking['s_zone']; ?></td>
