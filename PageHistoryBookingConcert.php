@@ -76,14 +76,13 @@
                         <tbody class="text-color">
                         <?php
                             include('connect.php');
-                            $sql = "SELECT * FROM booking";
+                            $sql = "SELECT * FROM booking WHERE m_fullname='วทัญญู เขียวชอุ่ม'";
                             $query = mysqli_query($db,$sql);
                         ?>
                         <?php
-                            for($i=1; $i<=$countResult; $i++){
-                                $booking = $query -> fetch_assoc();?>
+                            while($booking = mysqli_fetch_assoc($query)){?>
                             <tr>
-                            <td><?php echo $booking['booking_id']; ?></td>
+                            <td><?php echo $booking['booking_id']; ?></td>                           
                             <td><?php echo $booking['name']; ?></td>
                             <td><?php echo $booking['location']; ?></td>
                             <td><?php echo $booking['s_zone']; ?></td>
