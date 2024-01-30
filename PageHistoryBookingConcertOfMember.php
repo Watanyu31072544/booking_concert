@@ -78,13 +78,14 @@
                                 include('connect.php');
                                 $sql = "SELECT * FROM booking";
                                 $query = mysqli_query($db,$sql);
+                                $order = 1;
                             ?>
                             <?php
                             for($i=1; $i<=$countResult; $i++){
                                 $booking = $query -> fetch_assoc();
                             ?>
                             <tr>
-                            <td><?php echo $booking['booking_id']; ?></td>
+                            <td><?php echo $order++; ?></td>
                             <td><?php echo $booking['m_fullname']; ?></td>
                             <td><?php echo $booking['name']; ?></td>
                             <td><?php echo $booking['location']; ?></td>
