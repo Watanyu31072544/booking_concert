@@ -41,7 +41,7 @@
                     <!-- Page Heading -->
                     <?php
                         include('connect.php');
-                        $sql = "select * from booking";
+                        $sql = "select * from booking WHERE m_fullname='วทัญญู เขียวชอุ่ม'";
                         if(!$result = $db -> query($sql)){
                             die($db -> error);
                         }
