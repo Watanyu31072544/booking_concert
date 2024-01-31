@@ -57,7 +57,7 @@
                     <form action="PageSearchHistoryBookingConcert.php" class="form-group my-3" method="POST">
                     <div class="input-group" align="right">
                         <div class="form-outline col-12" data-mdb-input-init>
-                            <input type="search" id="search" class="form-control" name="booking" required style="color: black;" placeholder="กรุณากรอกชื่อโซนของโซนที่นั่ง,ชื่อคอนเสิร์ตหรือสถานที่จัดคอนเสิร์ต"/>
+                            <input type="search" id="search" class="form-control" name="booking" required style="color: black;" placeholder="กรุณากรอกชื่อผู้จองโซนของโซนที่นั่ง,ชื่อคอนเสิร์ตหรือสถานที่จัดคอนเสิร์ต"/>
                             <label class="form-label" for="form1"></label>
                         </div>
                     </div>
