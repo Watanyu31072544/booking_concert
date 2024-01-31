@@ -42,7 +42,7 @@
                     <?php
                         include('connect.php');
                         $booking=$_POST["booking"];
-                        $sql = "select * from booking where m_fullname LIKE '%$booking%'";
+                        $sql = "select * from booking where m_fullname LIKE '%$booking%' or s_zone LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
                         if(!$result = $db -> query($sql)){
                             die($db -> error);
                         }
