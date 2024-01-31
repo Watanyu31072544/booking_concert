@@ -40,6 +40,15 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <?php
+                        include('connect.php');
+                        $booking=$_POST["booking"];
+                        $sql = "select * from booking where m_fullname LIKE '%$booking%' or s_zone LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
+                        if(!$result = $db -> query($sql)){
+                            die($db -> error);
+                        }
+                        $countResult = $result -> num_rows;
+                    ?>
+                    <?php
                         include('dbconnect.php');
                         $booking=$_POST["booking"];
                         $sql = "SELECT * FROM booking WHERE s_zone LIKE '%$booking%' or m_fullname LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
@@ -48,7 +57,11 @@
                         $order = 1;
                     ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า</h1>
+                        <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
+                        <button type="button" class="btn btn-sm btn-success" disabled>
+                            <?php echo $countResult; ?> รายการ
+                        </button>
+                        </h1>
                         <a href="PageHistoryBookingConcertOfMember.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;ประวัติจองตั๋วคอนเสิร์ตของลูกค้า</a>
                     </div>
                     <form action="PageSearchHistoryBookingConcertOfMember.php" class="form-group my-3" method="POST">
