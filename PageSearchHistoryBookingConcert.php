@@ -42,7 +42,7 @@
                     <?php
                         include('connect.php');
                         $booking=$_POST["booking"];
-                        $sql = "select * from booking where m_fullname LIKE '%$booking%' or s_zone LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
+                        $sql = "select * from booking where m_fullname LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
                         if(!$result = $db -> query($sql)){
                             die($db -> error);
                         }
@@ -51,7 +51,7 @@
                     <?php
                         include('dbconnect.php');
                         $booking=$_POST["booking"];
-                        $sql = "SELECT * FROM booking WHERE s_zone LIKE '%$booking%' or m_fullname LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
+                        $sql = "SELECT * FROM booking WHERE m_fullname LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
                         $query = mysqli_query($db,$sql);
                         $count = mysqli_num_rows($query);
                         $order = 1;
