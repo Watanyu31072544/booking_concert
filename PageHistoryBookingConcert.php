@@ -92,7 +92,6 @@
                             <?php } ?>
                         </tbody>
                     </table>
-                    
                 </div>
                 <!-- /.container-fluid -->
             </div>
