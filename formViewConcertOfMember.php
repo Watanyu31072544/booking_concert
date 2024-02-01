@@ -72,7 +72,10 @@
                             <label for="inputGender" class="form-label">เวลาเริ่มแสดงของคอนเสิร์ต</label>
                             <input type="text" class="form-control" name="time" style="color: black;" disabled value="<?php echo $concert['time']; ?>">
                         </div>                       
-                        </form>                    
+                        </form>
+                        <div class="my-3">
+                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจองตั๋วคอนเสิร์ต</a>        
+                        </div>            
                     </div>
                 <!-- /.container-fluid -->
                     <?php
