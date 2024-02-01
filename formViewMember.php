@@ -81,7 +81,10 @@
                             <label for="inputAddress" class="form-label">ที่อยู่</label>
                             <input type="text" class="form-control" name="address" style="color: black;" disabled value="<?php echo $member['address']; ?>">
                         </div>
-                        </form>                    
+                        </form>
+                        <div class="my-3">
+                            <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของลูกค้า</a>        
+                        </div>                       
                     </div>
                     <!-- /.container-fluid -->
                     <?php
