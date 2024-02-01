@@ -32,7 +32,7 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style="background-color: #B5DE0C;">
                 <?php
                 include('topbarManage.php');
                 ?>
@@ -61,10 +61,10 @@
                 ?>
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของคอนเสิร์ต <button type="button" class="btn btn-sm btn-success" disabled style="width: 100px; height: 39px;">
+                        <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของคอนเสิร์ต <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;">
                             <?php echo $countResult; ?> คอนเสิร์ต
                         </button>
-                        <button type="button" class="btn btn-sm btn-warning" disabled style="width: 100px; height: 39px;">
+                        <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;">
                             หน้าที่ <?php echo $page; ?>
                         </button>
                         </h1>
@@ -87,12 +87,12 @@
                         $query = mysqli_query($db,$sql);
                     ?>
                     <table class="table table-striped mt-4">
-                        <thead class="table text-color">
+                        <thead class="table table-success text-color">
                             <tr>
                             <th scope="col">ลำดับ</th>
-                            <th scope="col">ชื่อคอนเสิร์ต</th>
-                            <th scope="col">สถานที่จัดคอนเสิร์ต</th>
-                            <th scope="col">รายละเอียดของคอนเสิร์ต</th>
+                            <th scope="col" width="20%">ชื่อคอนเสิร์ต</th>
+                            <th scope="col" width="20%">สถานที่จัดคอนเสิร์ต</th>
+                            <th scope="col" width="50%">รายละเอียดของคอนเสิร์ต</th>
                             <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>                            
                             <th scope="col">เวลาเริ่มแสดงของคอนเสิร์ต</th>
                             <th scope="col">แก้ไขข้อมูลของคอนเสิร์ต</th>
