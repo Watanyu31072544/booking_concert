@@ -64,10 +64,10 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">จองตั๋วคอนเสิร์ต                        
-                        <button type="button" class="btn btn-sm btn-success" disabled>
+                        <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
                             <?php echo $countResult; ?> คอนเสิร์ต
                         </button>
-                        <button type="button" class="btn btn-sm btn-warning" disabled>
+                        <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color: black;">
                             หน้าที่ <?php echo $page; ?>
                         </button></h1>                        
                     </div>
