@@ -39,10 +39,15 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">ข้อมูลของคอนเสิร์ต</h1>
-                        <a href="PageDataConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับข้อมูลของคอนเสิร์ต</a>
-                    </div>
+                    <?php
+                        include('connect.php');
+                        $concert=$_POST["concert"];
+                        $sql = "select * from concert where location LIKE '%$concert%'";
+                        if(!$result = $db -> query($sql)){
+                            die($db -> error);
+                        }
+                        $countResult = $result -> num_rows;
+                    ?>
                     <?php
                         include('dbconnect.php');
                         $concert=$_POST["concert"];
@@ -51,6 +56,14 @@
                         $count = mysqli_num_rows($query);
                         $order = 1;
                     ?>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">ข้อมูลของคอนเสิร์ต
+                        <button type="button" class="btn btn-sm btn-success"  style="width: 100px; height: 39px; color: black;">
+                            <?php echo $countResult; ?> รายการ
+                        </button>
+                        </h1>
+                        <a href="PageDataConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับข้อมูลของคอนเสิร์ต</a>
+                    </div>
                     <form action="PageSearchDataConcert.php" class="form-group my-3" method="POST">
                     <div class="input-group" align="right">
                             <div class="form-outline col-12" data-mdb-input-init>
