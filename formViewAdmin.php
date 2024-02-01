@@ -58,6 +58,9 @@
                             <input type="text" class="form-control" style="color: black;" name="ad_role" disabled value="<?php echo $admin['ad_role']; ?>">
                         </div>
                         </form>
+                        <div class="my-3">
+                            <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของผู้ดูแล</a>        
+                        </div>   
                     </div>
                 <!-- /.container-fluid -->
                     <?php
