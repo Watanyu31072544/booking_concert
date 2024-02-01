@@ -33,6 +33,6 @@ $pdf->Cell(0,15,iconv('utf-8','cp874','ราคาโซนที่นั่�
 $pdf->Cell(0,15,iconv('utf-8','cp874','สแกนจ่าย                '),0,1,'L');
 $pdf->Image('receipt_20240126161657.png',63,235,50,0,'','');
 
-$pdf->Output();
+$pdf->Output('F',''.$booking['m_fullname'].' - '.$booking['name'].'.pdf');
 }
 ?>
