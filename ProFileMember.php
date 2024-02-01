@@ -32,7 +32,7 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style="background-color: pink;">
             <?php
             include('topbarMember.php');
             ?>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="my-3">
                             <input type="submit" value="ยืนยันแก้ไขข้อมูลของสมาชิก" class="btn btn-success">
-                            <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a>
+                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a>
                         </div>
                         </form>
                     </div>
