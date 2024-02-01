@@ -58,7 +58,7 @@
                     ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ต
-                        <button type="button" class="btn btn-sm btn-success" disabled>
+                        <button type="button" class="btn btn-sm btn-success"  style="width: 100px; height: 39px; color: black;">
                             <?php echo $countResult; ?> รายการ
                         </button>
                         </h1>
