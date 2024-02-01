@@ -32,7 +32,7 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style="background-color: #B5DE0C;">
                 <?php
                 include('topbarManage.php');
                 ?>
@@ -66,10 +66,10 @@
                     $countPageResult = $result -> num_rows;
                     ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">จัดการพื้นที่ของโซนที่นั่ง <button type="button" class="btn btn-sm btn-success" disabled style="width: 100px; height: 39px;">
+                        <h1 class="h3 mb-0 text-gray-800">จัดการพื้นที่ของโซนที่นั่ง <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;">
                             <?php echo $countResult; ?> ที่นั่ง
                         </button>
-                        <button type="button" class="btn btn-sm btn-warning" disabled style="width: 100px; height: 39px;">
+                        <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;">
                             หน้าที่ <?php echo $page; ?>
                         </button></h1>
                         <div align="center">
@@ -86,7 +86,7 @@
                     </div>
                     </form>
                     <table class="table table-striped mt-4">
-                        <thead class="table text-color">
+                        <thead class="table table-success text-color">
                             <tr>
                             <th scope="col" width="5%">ลำดับ</th>
                             <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
