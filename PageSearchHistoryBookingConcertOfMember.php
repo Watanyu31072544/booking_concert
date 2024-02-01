@@ -32,7 +32,7 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style="background-color: #B5DE0C;">
                 <?php
                 include('topbarManage.php');
                 ?>
@@ -58,7 +58,7 @@
                     ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
-                        <button type="button" class="btn btn-sm btn-success" disabled>
+                        <button type="button" class="btn btn-sm btn-success" style="color: black;">
                             <?php echo $countResult; ?> รายการ
                         </button>
                         </h1>
