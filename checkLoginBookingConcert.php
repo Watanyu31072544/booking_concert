@@ -16,6 +16,7 @@
       $_SESSION["m_id"] = $member["m_id"];
       $_SESSION["m_username"] = $member["m_username"];
       $_SESSION["m_password"] = $member["m_password"];
+      $_SESSION["m_email"] = $member["m_email"];
       if($_SESSION["m_id"] && $_SESSION["m_username"] && $_SESSION["m_password"]){
         echo "<script> alert ('ดีใจด้วยนะครับ เข้าสู่ระบบของสมาชิกได้สำเร็จ'); </script> ";
         echo "<script> window.location='PageBookingConcert.php'; </script> "; 
