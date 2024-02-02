@@ -65,7 +65,6 @@
                             <tr>
                             <th scope="col" width="5%">ลำดับ</th>
                             <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
-                            <th scope="col" width="15%">จำนวนที่นั่ง</th>
                             <th scope="col" width="20%">แก้ไขข้อมูลของลูกค้า</th>
                             <th scope="col" width="20%">ดูข้อมูลของลูกค้า</th>                            
                             <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
@@ -76,7 +75,6 @@
                             <tr>
                             <td><?php echo $seat_zone['s_id']; ?></td>
                             <td><?php echo $seat_zone['s_zone']; ?></td>
-                            <td><?php echo $seat_zone['s_qty']; ?></td>
                             <td><a href="formEditSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>"class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขพื้นที่ของโซนที่นั่ง</a></td>
                             <td><a href="formViewSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของโซนที่นั่ง</a></td>
                             <td><a href="deleteSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $seat_zone['s_zone']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของโซนที่นั่ง</a></td>
