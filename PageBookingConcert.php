@@ -52,7 +52,7 @@
                         $page = $_GET['page'];
                     }
                     $perPage = 5;
-                    $totalPage = ceil(10/3); // floor , round , ceil
+                    $totalPage = ceil(10/2); // floor , round , ceil
                     $startLimit = ($page-1) * $perPage; // 1 = (1-1)*4 , 2 = (2-1)*4 , หน้า3 = (3-1)*4 = 8
                     $sql .= "  limit $startLimit,$perPage"; // $sql = $sql . "  limit 0,$perPage";
                     if(!$result = $db -> query($sql)){
