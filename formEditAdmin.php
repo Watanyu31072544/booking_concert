@@ -68,7 +68,7 @@
                         </div>                              
                         <div class="my-3">
                                 <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success">
-                                <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a>
+                                <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูลของผู้ดูแล</a>
                         </div>
                         </form>                    
                     </div>
