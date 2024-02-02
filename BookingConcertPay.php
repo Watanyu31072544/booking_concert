@@ -19,10 +19,10 @@ $pdf->Cell(0,10,iconv('utf-8','cp874','ใบชำระเงินของ�
 $pdf->Cell(0,15,iconv('utf-8','cp874','ชื่อ-นามสกุล                   '. $booking['m_fullname']),0,1,'L');
 $pdf->Cell(0,15,iconv('utf-8','cp874','อีเมล์                            '. $booking['m_email']),0,1,'L');
 $pdf->Cell(0,15,iconv('utf-8','cp874','เบอร์โทรศัพท์                  '. $booking['m_phone']),0,1,'L');
-$pdf->Cell(0,15,iconv('utf-8','cp874','เพศ                              '. $booking['m_gender']),0,1,'L');
-$pdf->Cell(0,15,iconv('utf-8','cp874','วันเดือนปีเกิด                  '. $booking['birth_date']),0,1,'L');
-$pdf->Cell(0,15,iconv('utf-8','cp874','อายุ                              '. $booking['m_age']),0,1,'L');
-$pdf->Cell(0,15,iconv('utf-8','cp874','อาชีพ                            '. $booking['m_occupation']),0,1,'L');
+//$pdf->Cell(0,15,iconv('utf-8','cp874','เพศ                              '. $booking['m_gender']),0,1,'L');
+//$pdf->Cell(0,15,iconv('utf-8','cp874','วันเดือนปีเกิด                  '. $booking['birth_date']),0,1,'L');
+//$pdf->Cell(0,15,iconv('utf-8','cp874','อายุ                              '. $booking['m_age']),0,1,'L');
+//$pdf->Cell(0,15,iconv('utf-8','cp874','อาชีพ                            '. $booking['m_occupation']),0,1,'L');
 $pdf->Cell(0,15,iconv('utf-8','cp874','ที่อยู่                             '. $booking['address']),0,1,'L');
 $pdf->Cell(0,15,iconv('utf-8','cp874','ชื่อคอนเสิร์ต                    '. $booking['name']),0,1,'L');
 $pdf->Cell(0,15,iconv('utf-8','cp874','ชื่อสถานที่จัดคอนเสิร์ต        '. $booking['location']),0,1,'L');
@@ -31,7 +31,7 @@ $pdf->Cell(0,15,iconv('utf-8','cp874','เวลาที่เริ่มแ�
 $pdf->Cell(0,15,iconv('utf-8','cp874','โซนที่นั่ง                         '. $booking['s_zone']),0,1,'L');
 $pdf->Cell(0,15,iconv('utf-8','cp874','ราคาโซนที่นั่ง                   '. $booking['s_price'].'    บาท'),0,1,'L');
 $pdf->Cell(0,15,iconv('utf-8','cp874','สแกนจ่าย                '),0,1,'L');
-$pdf->Image('receipt_20240126161657.png',63,235,50,0,'','');
+$pdf->Image('receipt_20240126161657.png',63,175,50,0,'','');
 
 $pdf->Output('I','BookingConcertPay.pdf');
 }
