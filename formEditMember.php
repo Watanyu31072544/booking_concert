@@ -88,7 +88,7 @@
                         </div>
                         <div class="my-3">
                                 <input type="submit" value="ยืนยันแก้ไขข้อมูลของสมาชิก" class="btn btn-success">
-                                <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a>
+                                <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูลของสมาชิก</a>
                         </div>
                         </form>
                     </div>
