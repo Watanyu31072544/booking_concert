@@ -10,6 +10,7 @@
 </head>
 <body>    
         <div class="container-md" id="website">
+            <!-- หน้าล็อกอินของลูกค้า -->
             <h1 class="mt-3" align="center">เข้าสู่ระบบจองตั๋วคอนเสิร์ต สำหรับ Member</h1>
             <form class="row g-3" action="checkLoginBookingConcert.php">
             <div class="col-12">
@@ -21,10 +22,10 @@
             </div>
             <br>
             <div class="my-3">
-                <input type="submit" value="เข้าสู่ระบบ" class="btn btn-success">
-                <a href="formRegisterMember.php" class="btn btn-success">ลงทะเบียน</a>
-                <a href="formForgetPasswordMember.php" class="btn btn-warning">ลืมรหัสผ่าน</a>
-                <a href="formClickUser.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเข้าสู่ปุ่ม User</a>
+                <input type="submit" value="เข้าสู่ระบบ" class="btn btn-success"> <!-- เมื่อลูกค้ากรอกมาแล้ว สามารถทำการเข้าสู่เช็ค Username และ Password ของลูกค้า --> 
+                <a href="formRegisterMember.php" class="btn btn-success">ลงทะเบียน</a> <!-- เมื่อลูกค้ายังไม่มีสมาชิก ให้ลูกค้าทำการลงทะเบียนข้อมูล -->
+                <a href="formForgetPasswordMember.php" class="btn btn-warning">ลืมรหัสผ่าน</a> <!-- เมื่อลูกค้าลืมรหัสผ่าน ให้ลูกค้าทำการมาเปลี่ยน Password -->
+                <a href="formClickUser.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเข้าสู่ปุ่ม User</a> <!-- เมื่อเผลอกดปุ่มผิดหน้าให้กลับมาหน้าสู่ระบบจองตั๋วคอนเสิร์ต ในฐานะว่าอะไร --> 
             </div>
             </form>
         </div>    
