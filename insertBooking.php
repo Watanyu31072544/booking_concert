@@ -18,7 +18,7 @@
     $s_zone = $_POST['s_zone'];
     $s_price = $_POST['s_price'];
 
-    $check = "SELECT * FROM booking where m_fullname = '$m_fullname' and m_email = '$m_email' and m_phone = '$m_phone' and m_gender = '$m_gender' and birth_date = '$birth_date' and m_age = '$m_age' and m_occupation = '$m_occupation' and address = '$address' and name = '$name' and location = '$location' and date = '$date' and time = '$time' or s_zone = '$s_zone' and s_price = '$s_price'";
+    $check = "SELECT * FROM booking where name = '$name' and s_zone = '$s_zone' and s_price = '$s_price'";
 
     $result1 = mysqli_query($db, $check) or die(mysqli_error($db));
     $num=mysqli_num_rows($result1);
