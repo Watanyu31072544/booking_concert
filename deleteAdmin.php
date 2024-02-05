@@ -2,19 +2,19 @@
 
 <?php
     include('dbconnect.php');
-
+    //เช็ครหัส ID ของผู้ดูแล ว่าได้รับรหัส ID ของผู้ดูแลหรือยัง
     $ad_id = $_GET['ad_id'];
-
+    //ถ้ารับค่ารหัส ID ของผู้ดูแล
     if(isset($_GET['admin'])){
-    $sql = "DELETE FROM admin WHERE ad_id=".$_GET['admin'];
+    $sql = "DELETE FROM admin WHERE ad_id=".$_GET['admin'];//เมื่อเจอพบแล้ว สามารถลบสมาชิกออกจากระบบฐานข้อมูล
     }
     $result = mysqli_query($db, $sql);
-
+    //ถ้าเจอสามารถลบออกจากสมาชิกผู้ดูแลได้
     if ($result) {
     echo "<script> alert('ลบข้อมูลของผู้ดูแลเรียบร้อยแล้วครับ'); </script>";
-    echo "<script> window.location='ManageAdmin.php'; </script>";
+    echo "<script> window.location='ManageAdmin.php'; </script>";//เมื่อลบสมาชิกผู้ดูแลแล้ว ข้อความแจ้งเตือนขึ้นมา จากนั้นกลับมาหน้าจัดการข้อมูลของผู้ดูแล
     } else {
-    echo "ไม่สามารถลบข้อมูลของผู้ดูแลได้ หรือ มีข้อผิดพลาดเกิดขึ้น";
+    echo "ไม่สามารถลบข้อมูลของผู้ดูแลได้ หรือ มีข้อผิดพลาดเกิดขึ้น";//ถ้าไม่ได้อยู่ฐานข้อมูลจะไม่สามารถลบข้อมูลได้ เนื่องจากฐานข้อมูลผิดพลาดหรือไม่ได้สร้างฐานข้อมูล
     }
     mysqli_close($db);
 ?>
