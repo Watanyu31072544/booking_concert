@@ -59,96 +59,61 @@
                         <div align="center">
                             <center style="width: 1000px; height: 100px; background-color :LightGray; color :black">Stage</center>
                         </div>
-                        <hr>
+                        <br>
+                        <table class="table table-striped">
+                        <thead class="table-success text-color" align="center";>
+                            <tr>
+                            <th scope="col">ลำดับ</th>
+                            <th scope="col">โซนที่นั่ง</th>
+                            <th scope="col">เลือกโซนที่นั่ง</th>                          
+                            </tr>
+                        </thead>
+                        <tbody class="text-color" align="center";>
                         <?php
-                        if(isset($_GET['concert'])){
-                            require_once 'connect.php';
-                            $sql = "SELECT * FROM concert where id=".$_GET['concert'];
+                            include('connect.php');
+                            $sql = "SELECT * FROM seat_zone ORDER BY s_id ASC";
                             $query = mysqli_query($db,$sql);
-                            while($concert = mysqli_fetch_array($query)){
                         ?>
-                        <div align="center">
-                            <?php
-                                include('connect.php');                                
-                                $sql = "select * from booking";
-                                if(!$result = $db -> query($sql)){
-                                    die($db -> error);
-                                }
-                                $countResult = $result -> num_rows;
-                                $sql0 = "SELECT * FROM seat_zone WHERE s_id = 1";
-                                $sql1 = "SELECT * FROM seat_zone WHERE s_id = 2";
-                                $sql2 = "SELECT * FROM seat_zone WHERE s_id = 3";
-                                $sql3 = "SELECT * FROM seat_zone WHERE s_id = 4";
-                                $sql4 = "SELECT * FROM seat_zone WHERE s_id = 5";
-                                $sql5 = "SELECT * FROM seat_zone WHERE s_id = 6";
-                                $sql6 = "SELECT * FROM seat_zone WHERE s_id = 7";
-                                $sql7 = "SELECT * FROM seat_zone WHERE s_id = 8";
-                                $sql8 = "SELECT * FROM seat_zone WHERE s_id = 9";
-                                $sql9 = "SELECT * FROM seat_zone WHERE s_id = 10";
-                                $sql10 = "SELECT * FROM seat_zone WHERE s_id = 11";
-                                $sql11 = "SELECT * FROM seat_zone WHERE s_id = 12";
-                                $query1 = mysqli_query($db,$sql0);
-                                $query2 = mysqli_query($db,$sql1);
-                                $query3 = mysqli_query($db,$sql2);
-                                $query4 = mysqli_query($db,$sql3);
-                                $query5 = mysqli_query($db,$sql4);
-                                $query6 = mysqli_query($db,$sql5);
-                                $query7 = mysqli_query($db,$sql6);
-                                $query8 = mysqli_query($db,$sql7);
-                                $query9 = mysqli_query($db,$sql8);
-                                $query10 = mysqli_query($db,$sql9);
-                                $query11 = mysqli_query($db,$sql10);
-                                $query12 = mysqli_query($db,$sql11);
-                            ?>
-                            <?php foreach($query1 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone A</a>
-                            <?php } ?>
-                            <?php foreach($query2 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone B</a>
-                            <?php } ?>
-                            <?php foreach($query3 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone C</a>
-                            <?php } ?>
-                        </div>
-                        <br>
-                        <div align="center">
-                            <?php foreach($query4 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone D</a>
-                            <?php } ?>
-                            <?php foreach($query5 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone E</a>
-                            <?php } ?>
-                            <?php foreach($query6 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone F</a>
-                            <?php } ?>
-                        </div>
-                        <br>
-                        <div align="center">
-                            <?php foreach($query7 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone G</a>
-                            <?php } ?>
-                            <?php foreach($query8 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone H</a>
-                            <?php } ?>
-                            <?php foreach($query9 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone I</a>
-                            <?php } ?>
-                        </div>
-                        <div align="center">
-                            <?php foreach($query10 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone G</a>
-                            <?php } ?>
-                            <?php foreach($query11 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone H</a>
-                            <?php } ?>
-                            <?php foreach($query12 as $seat_zone){ ?>
-                            <a href="PageBookingConcertCheckSeatZone.php?concert=<?php echo $concert['id']; ?>&seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-success btn-sm" style="width: 300px; height: 100px;"><i class="fa-solid fa-chair"></i> Zone I</a>
-                            <?php } ?>
-                        </div>
                         <?php
+                        include('connect.php');
+                            $sql = "select * from seat_zone";
+                            if(!$result = $db -> query($sql)){
+                                die($db -> error);
                             }
-                        }
+                            $countResult = $result -> num_rows; //นับจำนวนแถวจากคำสั่ง $sql
+                            //////////////////////////////////////
+                            if( !isset( $_GET['page'] ) ){
+                                $page = 1;
+                            } else{
+                                $page = $_GET['page'];
+                            }
+                            $perPage = 40;
+                            $totalPage = ceil(10/2); // floor , round , ceil
+                            $startLimit = ($page-1) * $perPage; // 1 = (1-1)*4 , 2 = (2-1)*4 , หน้า3 = (3-1)*4 = 8
+                            $sql .= "  limit $startLimit,$perPage"; // $sql = $sql . "  limit 0,$perPage";
+                            if(!$result = $db -> query($sql)){
+                                die($db -> error);
+                            }
+                            $countPageResult = $result -> num_rows; // นับจำนวนที่มีในแต่ละหน้า
+                            //////////////////////////////////////
                         ?>
+                        <?php
+                            for($i=1; $i<=$countPageResult; $i++){
+                                $seat_zone = $result -> fetch_assoc();?>
+                            <tr>
+                            <td><?php echo $seat_zone['s_id']; ?></td>
+                            <td><?php echo $seat_zone['s_zone']; ?></td>
+                            <td><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
+                                if(isset($_GET['concert'])){
+                                    require_once 'connect.php';
+                                    $sql = "SELECT * FROM concert where id=".$_GET['concert'];
+                                    $query = mysqli_query($db,$sql);
+                                    while($concert = mysqli_fetch_array($query)){
+                            ?>&concert=<?php echo $concert['id']; }}?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เลือกโซนที่นั่ง</a></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>                         
                     </div>                   
                 </div>
                 <!-- /.container-fluid -->
