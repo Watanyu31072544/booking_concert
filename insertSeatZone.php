@@ -25,7 +25,7 @@
     }
     else{
       echo "Error:" . $sql . "<br>" . mysqli_error($db);
-      echo "<script> alert ('เพิ่มข้อมูลไม่สำเร็จ'); </script> ";
+      echo "<script> alert ('เพิ่มข้อมูลโซนที่นั่งไม่สำเร็จ'); </script> ";
     }
     mysqli_close($db);
     }
