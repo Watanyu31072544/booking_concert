@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 
 <?php
+    //ไฟล์เชื่อมต่อฐานข้อมูล
     include('dbconnect.php');
     //เช็ครหัส ID ของผู้ดูแล ว่าได้รับรหัส ID ของผู้ดูแลหรือยัง
     $ad_id = $_GET['ad_id'];
