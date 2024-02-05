@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 
 <?php
+    //ไฟล์เชื่อมต่อฐานข้อมูล
     include('dbconnect.php');
     //เช็ครหัส ID ของผู้จอง ว่าได้รับรหัส ID ของผู้จองหรือยัง
     $booking_id = $_GET['booking_id'];
