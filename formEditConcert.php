@@ -38,6 +38,7 @@
                 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- เมื่อกดปุ่มมาหน้าที่แก้ไขข้อมูลของคอนเสิร์ต รหัส ID ของคอนเสิร์ตจะต้องตรงกัน -->
                     <?php
                         if(isset($_GET['concert'])){
                             require_once 'connect.php';
@@ -47,9 +48,10 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่แก้ไขข้อมูลของคอนเสิร์ต ให้ Admin ทำการแก้ไขข้อมูลของคอนเสิร์ต -->
                         <h1 class="mt-3" align="center">แก้ไขข้อมูลของคอนเสิร์ต</h1>
-                        <form class="row g-4" method="post" action="updateConcert.php?concert=<?php echo $concert['id']; ?>">
-                        <input type="hidden" class="form-control" name="id" disabled value="<?php echo $concert['id']; ?>">
+                        <form class="row g-4" method="post" action="updateConcert.php?concert=<?php echo $concert['id']; ?>"> <!-- ส่งค่ารหัส ID ของคอนเสิร์ต เมื่อทำการแก้ไขข้อมูลของคอนเสิร์ตได้ -->
+                        <input type="hidden" class="form-control" name="id" disabled value="<?php echo $concert['id']; ?>"> <!-- ค่ารหัส ID ของคอนเสิร์ต -->
                         <div class="col-12">
                             <label for="inputFullName" class="form-label">ชื่อคอนเสิร์ต</label>
                             <input type="text" class="form-control" name="name" required style="color: black;" value="<?php echo $concert['name']; ?>">
@@ -71,8 +73,8 @@
                             <input type="text" class="form-control" name="time" style="color: black;" required value="<?php echo $concert['time']; ?>">
                         </div> 
                         <div class="my-3">
-                                <input type="submit" value="ยืนยันแก้ไขข้อมูลของคอนเสิร์ต" class="btn btn-success">
-                                <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a>
+                                <input type="submit" value="ยืนยันแก้ไขข้อมูลของคอนเสิร์ต" class="btn btn-success"> <!-- เมื่อทำการแก้ไขข้อมูลของคอนเสิร์ต สามารถกดยืนยันแก้ไขข้อมูลของคอนเสิร์ต -->
+                                <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a> <!-- ไม่อยากแก้ไขข้อมูลของคอนเสิร์ต ให้ทำการกลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
                         </div>
                         </form>                    
                     </div>
