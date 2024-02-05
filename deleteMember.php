@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 
 <?php
+    //ไฟล์เชื่อมต่อฐานข้อมูล
     include('dbconnect.php');
     //เช็ครหัส ID ของลูกค้า ว่าได้รับรหัส ID ของลูกค้าหรือยัง
     $m_id = $_GET['m_id'];
