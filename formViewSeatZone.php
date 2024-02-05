@@ -38,6 +38,7 @@
                 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของโซนที่นั่ง รหัส ID ของโซนที่นั่งจะต้องตรงกัน -->
                     <?php
                         if(isset($_GET['seat_zone'])){
                             require_once 'connect.php';
@@ -47,6 +48,7 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของโซนที่นั่ง ให้ Admin ทำการดูข้อมูลของโซนที่นั่ง ไม่สามารถแก้ไขได้ ดูอย่างเดียวเท่านั้น-->
                         <h1 class="mt-3" align="center">ดูข้อมูลของโซนที่นั่ง</h1>
                         <form class="row g-4" method="post" action="#">
                         <div class="col-12">
@@ -59,7 +61,7 @@
                         </div>
                         </form>
                         <div class="my-3">
-                            <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของโซนที่นั่ง</a>        
+                            <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของโซนที่นั่ง</a>  <!-- เมื่อดูข้อมูลของโซนที่นั่ง ให้ทำการกลับมาหน้าจัดการข้อมูลของโซนที่นั่ง -->          
                         </div> 
                     </div>
                     <!-- /.container-fluid -->
