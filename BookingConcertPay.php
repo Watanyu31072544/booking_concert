@@ -5,7 +5,7 @@ $pdf = new FPDF('P','mm','A4');
 
 if(isset($_GET['booking'])){
 include('connect.php');
-$sql = "SELECT distinct * FROM booking where booking_id=".$_GET['booking'];
+$sql = "SELECT distinct * FROM booking where booking_id=".$_GET['booking']; //ข้อมูลที่ได้จากการจองที่นั่งของคอนเสิร์ตมาเก็บใบชำระเงิน โดยที่ไม่มีข้อมูลว่างเปล่า ให้ผู้จองเป็นคนทำการชำระเงิน
 
 $query = mysqli_query($db,$sql);
 
@@ -13,7 +13,7 @@ $booking = $query -> fetch_assoc();
 
 $pdf->AddPage();
 $pdf->AddFont('sarabun','','THSarabun.php');
-
+//ใบชำระเงิน จะแสดงชื่อเป็นชื่อของตัวเองเท่านั้น
 $pdf->SetFont('sarabun','',20);
 $pdf->Cell(0,10,iconv('utf-8','cp874','ใบชำระเงินของผู้จองคอนเสิร์ต'),0,1,'C');
 $pdf->Cell(0,15,iconv('utf-8','cp874','ชื่อ-นามสกุล                   '. $booking['m_fullname']),0,1,'L');
