@@ -66,6 +66,7 @@
                         <thead class="table-success text-color">
                             <tr>
                             <th scope="col">ลำดับ</th>
+                            <th scope="col">ชื่อผู้จอง</th>
                             <th scope="col">ชื่อคอนเสิร์ต</th>
                             <th scope="col">สถานที่จัดคอนเสิร์ต</th>
                             <th scope="col">โซนที่นั่ง</th>
@@ -83,6 +84,7 @@
                         <?php while($booking = mysqli_fetch_assoc($query)){?>
                             <tr>
                             <td><?php echo $order++; ?></td>
+                            <td><?php echo $booking['m_fullname']; ?></td>
                             <td><?php echo $booking['name']; ?></td>
                             <td><?php echo $booking['location']; ?></td>
                             <td><?php echo $booking['s_zone']; ?></td>
