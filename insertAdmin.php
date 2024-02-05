@@ -8,7 +8,7 @@
     $ad_role = $_POST['ad_role'];
     $ad_password = $_POST['ad_password'];
 
-    $check = "SELECT * FROM admin where ad_fullname = '$ad_fullname' or ad_username = '$ad_username' or ad_role = '$ad_role' or ad_password = '$ad_password'";
+    $check = "SELECT * FROM admin where ad_fullname = '$ad_fullname' and ad_username = '$ad_username' and ad_role = '$ad_role' and ad_password = '$ad_password'";
 
     $result1 = mysqli_query($db, $check) or die(mysqli_error($db));
     $num=mysqli_num_rows($result1);
