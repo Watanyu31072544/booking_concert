@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-12">
                             <label for="inputEmail" class="form-label">รายละเอียดของคอนเสิร์ต</label>
-                            <input type="text" class="form-control" name="data" style="color: black;" required>
+                            <textarea type="text" class="form-control" name="data" style="color: black;" required></textarea>
                         </div>
                         <div class="col-12">
                             <label for="inputUserName" class="form-label">สถานที่จัดคอนเสิร์ต</label>
