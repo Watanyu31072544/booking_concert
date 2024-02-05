@@ -38,6 +38,7 @@
                 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของลูกค้า รหัส ID ของลูกค้าจะต้องตรงกัน --> 
                     <?php
                         if(isset($_GET['member'])){
                             require_once 'connect.php';
@@ -47,6 +48,7 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของลูกค้า ให้ Admin ทำการดูข้อมูลของลูกค้า ไม่สามารถแก้ไขได้ ดูอย่างเดียวเท่านั้น -->
                         <h1 class="mt-3" align="center">ดูข้อมูลของลูกค้า</h1>
                         <form class="row g-4" method="post" action="#">
                         <div class="col-6">
@@ -83,7 +85,7 @@
                         </div>
                         </form>
                         <div class="my-3">
-                            <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของลูกค้า</a>        
+                            <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของลูกค้า</a>  <!-- เมื่อดูข้อมูลของลูกค้า ให้ทำการกลับมาหน้าจัดการข้อมูลของลูกค้า-->          
                         </div>                       
                     </div>
                     <!-- /.container-fluid -->
