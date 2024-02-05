@@ -38,6 +38,7 @@
                 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- เมื่อกดปุ่มมาหน้าที่แก้ไขข้อมูลของโซนที่นั่ง รหัส ID ของโซนที่นั่งจะต้องตรงกัน -->
                     <?php      
                         if(isset($_GET['seat_zone'])){
                             require_once 'connect.php';
@@ -47,8 +48,9 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่แก้ไขข้อมูลของโซนที่นั่ง ให้ Admin ทำการแก้ไขข้อมูลของโซนที่นั่ง -->
                         <h1 class="mt-3" align="center">แก้ไขพื้นที่ของโซนที่นั่ง</h1>
-                        <form class="row g-4" method="post" action="updateSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>">
+                        <form class="row g-4" method="post" action="updateSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>"> <!-- ส่งค่ารหัส ID ของโซนที่นั่ง เมื่อทำการแก้ไขข้อมูลของโซนที่นั่งได้ -->
                         <input type="hidden" class="form-control" name="s_id" disabled value="<?php echo $seat_zone['s_id']; ?>"> 
                         <div class="col-12">
                             <label for="inputFullName" class="form-label">ชื่อโซนที่นั่ง</label>
@@ -59,8 +61,8 @@
                             <input type="text" class="form-control" name="s_price" style="color: black;" value="<?php echo $seat_zone['s_price']; ?>">
                         </div>
                         <div class="my-3">
-                                <input type="submit" value="ยืนยันแก้ไขพื้นที่ของโซนที่นั่ง" class="btn btn-success">
-                                <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขโซนที่นั่ง</a>
+                                <input type="submit" value="ยืนยันแก้ไขพื้นที่ของโซนที่นั่ง" class="btn btn-success"> <!-- เมื่อทำการแก้ไขข้อมูลของโซนที่นั่ง สามารถกดยืนยันแก้ไขข้อมูลของโซนที่นั่ง -->
+                                <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขโซนที่นั่ง</a> <!-- ไม่อยากแก้ไขข้อมูลของโซนที่นั่ง ให้ทำการกลับมาหน้าจัดการข้อมูลของโซนที่นั่ง -->
                         </div>
                         </form>
                     </div>
