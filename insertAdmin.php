@@ -15,7 +15,7 @@
  
     if($num > 0)
     {
-    echo "<script> alert('ข้อมูลของผู้ดูแลซ้ำไป กรุณาเพิ่มสมาชิกใหม่อีกครั้ง !'); </script> ";
+    echo "<script> alert('ข้อมูลของผู้ดูแลซ้ำไป กรุณาเพิ่มสมาชิกของผู้ดูแลใหม่อีกครั้ง !'); </script> ";
     echo "<script> window.location='formAddAdmin.php'; </script>";
     }else{
 
