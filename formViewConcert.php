@@ -37,7 +37,8 @@
                 include('topbarManage.php');
                 ?>
                 <!-- Begin Page Content -->
-                <div class="container-fluid">  
+                <div class="container-fluid"> 
+                    <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของคอนเสิร์ต รหัส ID ของคอนเสิร์ตจะต้องตรงกัน --> 
                     <?php
                         if(isset($_GET['concert'])){
                             require_once 'connect.php';
@@ -47,6 +48,7 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของคอนเสิร์ต ให้ Admin ทำการดูข้อมูลของคอนเสิร์ต ไม่สามารถแก้ไขได้ ดูอย่างเดียวเท่านั้น-->
                         <h1 class="mt-3 text-black" align="center">ดูข้อมูลของคอนเสิร์ต</h1>
                         <form class="row g-4" method="post">                       
                         <div class="col-12">
@@ -71,7 +73,7 @@
                         </div>
                         </form>
                         <div class="my-3">
-                            <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับข้อมูลของคอนเสิร์ต</a>        
+                            <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับข้อมูลของคอนเสิร์ต</a> <!-- เมื่อดูข้อมูลของคอนเสิร์ต ให้ทำการกลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->         
                         </div>                     
                     </div>
                 <!-- /.container-fluid -->
