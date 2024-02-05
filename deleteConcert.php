@@ -2,19 +2,19 @@
 
 <?php
     include('dbconnect.php');
-
+    //เช็ครหัส ID ของคอนเสิร์ต ว่าได้รับรหัส ID ของคอนเสิร์ตหรือยัง
     $id = $_GET['id'];
-
+    //ถ้ารับค่ารหัส ID ของผู้จอง
     if(isset($_GET['concert'])){
-    $sql = "DELETE FROM concert WHERE id=".$_GET['concert'];
+    $sql = "DELETE FROM concert WHERE id=".$_GET['concert'];//เมื่อเจอพบแล้ว ให้ Admin สามารถลบข้อมูลของคอนเสิร์ตออกจากระบบฐานข้อมูล
     }
     $result = mysqli_query($db, $sql);
-
+    //ถ้าเจอ Admin สามารถลบข้อมูลของคอนเสิร์ตได้
     if ($result) {
     echo "<script> alert('ลบข้อมูลของคอนเสิร์ตเรียบร้อยแล้วครับ'); </script>";
-    echo "<script> window.location='ManageConcert.php'; </script>";
+    echo "<script> window.location='ManageConcert.php'; </script>";//เมื่อลบข้อมูลของคอนเสิร์ตแล้ว ข้อความแจ้งเตือนขึ้นมา จากนั้นกลับมาหน้าจัดการข้อมูลของคอนเสิร์ตได้
     } else {
-    echo "ไม่สามารถลบได้ หรือ มีข้อผิดพลาดเกิดขึ้น";
+    echo "ไม่สามารถลบได้ หรือ มีข้อผิดพลาดเกิดขึ้น";//ถ้าไม่ได้อยู่ฐานข้อมูลจะไม่สามารถลบข้อมูลได้ เนื่องจากฐานข้อมูลผิดพลาดหรือไม่ได้สร้างฐานข้อมูล
     }
     mysqli_close($db);
 ?>
