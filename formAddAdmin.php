@@ -40,6 +40,7 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่เพิ่มสมาชิกของผู้ดูแล ให้ Admin ทำการเพิ่มสมาชิกผู้ดูแล-->
                         <h1 class="mt-3" align="center">เพิ่มสมาชิกของผู้ดูแล</h1>
                         <form class="row g-4" method="post" action="insertAdmin.php">
                         <div class="col-12">
@@ -59,9 +60,9 @@
                             <input type="password" class="form-control" name="ad_password" style="color: black;" required>
                         </div>
                         <div class="my-3">
-                            <input type="submit" value="ยืนยันเพิ่มข้อมูลของผู้ดูแล" class="btn btn-success">
-                            <input type="reset" value="ล้างข้อมูล" class="btn btn-warning">
-                            <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;กลับหน้าแรก</a>
+                            <input type="submit" value="ยืนยันเพิ่มข้อมูลของผู้ดูแล" class="btn btn-success"> <!-- เมื่อกรอกข้อมูลเพิ่มสมาชิกของผู้ดูแลแล้ว สามารถกดยืนยันเพิ่มข้อมูลของผู้ดูแล -->
+                            <input type="reset" value="ล้างข้อมูล" class="btn btn-warning"> <!-- เมื่อกรอกข้อมูลผิดแล้ว Admin สามารถทำการล้างข้อมูล เพราะกรอกข้อมูลผิดพลาด -->
+                            <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;กลับหน้าจัดการข้อมูลของผู้ดูแล</a> <!-- เมื่อไม่อยากกรอกข้อมูลเพิ่มสมาชิกของผู้ดูแลแล้ว สามารถกดกลับหน้าจัดการข้อมูลของผู้ดูแล -->
                         </div>
                         </form>                    
                     </div>
