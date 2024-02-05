@@ -38,6 +38,7 @@
                 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- เมื่อกดปุ่มมาหน้าที่แก้ไขข้อมูลของลูกค้า รหัส ID ของลูกค้าจะต้องตรงกัน -->
                     <?php      
                         if(isset($_GET['member'])){
                             require_once 'connect.php';
@@ -47,9 +48,10 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่แก้ไขข้อมูลของลูกค้า ให้ Admin ทำการแก้ไขข้อมูลของลูกค้า -->
                         <h1 class="mt-3" align="center">แก้ไขข้อมูลของลูกค้า</h1>
-                        <form class="row g-4" method="post" action="updateRegister.php?member=<?php echo $member['m_id']; ?>">
-                        <input type="hidden" class="form-control" name="m_id" disabled value="<?php echo $member['m_id']; ?>"> 
+                        <form class="row g-4" method="post" action="updateRegister.php?member=<?php echo $member['m_id']; ?>"> <!-- ส่งค่ารหัส ID ของลูกค้า เมื่อทำการแก้ไขข้อมูลของลูกค้าได้ -->
+                        <input type="hidden" class="form-control" name="m_id" disabled value="<?php echo $member['m_id']; ?>"> <!-- ค่ารหัส ID ของลูกค้า -->
                         <div class="col-6">
                             <label for="inputFullName" class="form-label">ชื่อเต็ม</label>
                             <input type="text" class="form-control" name="m_fullname" style="color: black;" value="<?php echo $member['m_fullname']; ?>">
@@ -87,8 +89,8 @@
                             <input type="text" class="form-control" name="address" style="color: black;" value="<?php echo $member['address']; ?>">
                         </div>
                         <div class="my-3">
-                                <input type="submit" value="ยืนยันแก้ไขข้อมูลของสมาชิก" class="btn btn-success">
-                                <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูลของสมาชิก</a>
+                                <input type="submit" value="ยืนยันแก้ไขข้อมูลของสมาชิก" class="btn btn-success"> <!-- เมื่อทำการแก้ไขข้อมูลของสมาชิก สามารถกดยืนยันแก้ไขข้อมูลของสมาชิก -->
+                                <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูลของสมาชิก</a> <!-- ไม่อยากแก้ไขข้อมูลของสมาชิก ให้ทำการกลับมาหน้าจัดการข้อมูลของสมาชิก -->
                         </div>
                         </form>
                     </div>
