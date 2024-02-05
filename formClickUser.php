@@ -9,15 +9,16 @@
     <title>ขอต้อนรับสู่ระบบจองตั๋วคอนเสิร์ต เลือกในฐานะว่าอะไร</title>
 </head>
 <body>
-        <div class="container-md" id="website">           
+        <div class="container-md" id="website">
+            <!-- เมื่อเข้ามาหน้าระบบจองตั๋วคอนเสิร์ต ต้องเลือกว่าในฐานะว่าอะไร -->           
             <h1 class="mt-3" align="center">ขอต้อนรับสู่ระบบจองตั๋วคอนเสิร์ต เลือกในฐานะว่าอะไร</h1>
             <br>
             <div class="row g-4">
                 <div class="d-grid gap-2 col-sm-6">
-                    <buttom type="submit" class="btn btn-success" onClick="window.location='formLoginAdmin.php'">ผู้ดูแล</buttom>
+                    <buttom type="submit" class="btn btn-success" onClick="window.location='formLoginAdmin.php'">ผู้ดูแล</buttom> <!-- หน้าล็อกอินของผู้ดูแล -->
                 </div>
                 <div class="d-grid gap-2 col-sm-6">
-                    <buttom type="submit" class="btn btn-success" onClick="window.location='formLoginMember.php'">ลูกค้า</buttom>
+                    <buttom type="submit" class="btn btn-success" onClick="window.location='formLoginMember.php'">ลูกค้า</buttom> <!-- หน้าล็อกอินของลูกค้า -->
                 </div>
             </div>
         </div>
