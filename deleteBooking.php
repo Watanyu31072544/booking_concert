@@ -2,19 +2,19 @@
 
 <?php
     include('dbconnect.php');
-
+    //เช็ครหัส ID ของผู้จอง ว่าได้รับรหัส ID ของผู้จองหรือยัง
     $booking_id = $_GET['booking_id'];
-
+    //ถ้ารับค่ารหัส ID ของผู้จอง
     if(isset($_GET['booking'])){
-    $sql = "DELETE FROM booking WHERE booking_id=".$_GET['booking'];
+    $sql = "DELETE FROM booking WHERE booking_id=".$_GET['booking'];//เมื่อเจอพบแล้ว สามารถยกเลิกจองที่นั่งของผู้จองออกจากระบบฐานข้อมูล ยกเลิกจองที่นั่งของคอนเสิร์ตด้วยลูกค้าเองได้
     }
     $result = mysqli_query($db, $sql);
-
+    //ถ้าเจอสามารถยกเลิกจองที่นั่งของคอนเสิร์ตด้วยตัวเองได้
     if ($result) {
-    echo "<script> alert('ยกเลิกการจองของโซนที่นั่งเรียบร้อยแล้วครับ'); </script>";
-    echo "<script> window.location='PageHistoryBookingConcert.php'; </script>";
+    echo "<script> alert('ยกเลิกการจองของโซนที่นั่งเรียบร้อยแล้ว'); </script>";
+    echo "<script> window.location='PageHistoryBookingConcert.php'; </script>";//เมื่อยกเลิกจองที่นั่งของคอนเสิร์ตด้วยตัวเองแล้ว ข้อความแจ้งเตือนขึ้นมา จากนั้นกลับมาหน้าประวัติจองตั๋วคอนเสิร์ตของตัวเองได้
     } else {
-    echo "ไม่สามารถลบได้ หรือ มีข้อผิดพลาดเกิดขึ้น";
+    echo "ไม่สามารถลบได้ หรือ มีข้อผิดพลาดเกิดขึ้น";//ถ้าไม่ได้อยู่ฐานข้อมูลจะไม่สามารถลบข้อมูลได้ เนื่องจากฐานข้อมูลผิดพลาดหรือไม่ได้สร้างฐานข้อมูล
     }
     mysqli_close($db);
 ?>
