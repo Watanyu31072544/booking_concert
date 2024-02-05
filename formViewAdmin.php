@@ -38,6 +38,7 @@
                 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของผู้ดูแล รหัส ID ของผู้ดูแลจะต้องตรงกัน -->
                     <?php
                         if(isset($_GET['admin'])){
                             require_once 'connect.php';
@@ -47,6 +48,7 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของผู้ดูแล ให้ Admin ทำการดูข้อมูลของผู้ดูแล ไม่สามารถแก้ไขได้ ดูอย่างเดียวเท่านั้น-->
                         <h1 class="mt-3" align="center">ดูข้อมูลของผู้ดูแล</h1>
                         <form class="row g-4" method="post">
                         <div class="col-6">
@@ -59,7 +61,7 @@
                         </div>
                         </form>
                         <div class="my-3">
-                            <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของผู้ดูแล</a>        
+                            <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของผู้ดูแล</a> <!-- เมื่อดูข้อมูลของผู้ดูแล ให้ทำการกลับมาหน้าจัดการข้อมูลของผู้ดูแล -->        
                         </div>   
                     </div>
                 <!-- /.container-fluid -->
