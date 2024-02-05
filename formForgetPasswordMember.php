@@ -11,6 +11,7 @@
 </head>
 <body>
         <div class="container-md" id="website">
+            <!-- หน้าลืมรหัสผ่านของลูกค้า -->
             <h1 class="mt-3" align="center">ลืมรหัสผ่าน *สำหรับ คนที่จำรหัสผ่านไม่ได้*</h1>
             <form class="row g-4" method="post" action="editPasswordOfMemberBookingConcert.php">
             <div class="col-12">
@@ -26,8 +27,8 @@
                 <input type="password" class="form-control" name="comfrim_password" placeholder="กรุณาใส่รหัสผ่านอีกครั้งใหม่ด้วยครับ" style="color: black;" required>
             </div>
             <div class="my-3">
-                <input type="submit" value="ยืนยันเปลี่ยนรหัสผ่าน" class="btn btn-success">
-                <a href="formLoginMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกเปลี่ยนรหัสผ่าน</a>
+                <input type="submit" value="ยืนยันเปลี่ยนรหัสผ่าน" class="btn btn-success"> <!-- เมื่อลูกค้าทำการแก้ไขรหัสผ่านแล้ว เข้าสู่เช็คเปลี่ยน Password -->
+                <a href="formLoginMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกเปลี่ยนรหัสผ่าน</a> <!-- ในกรณีจำรหัสผ่านของลูกค้าได้ ไม่ต้องเปลี่ยน Password -->
             </div>
             </form>
         </div>
