@@ -41,8 +41,9 @@
                     <!-- Page Heading -->
                     <?php
                         include('connect.php');
-                        $booking=$_POST["booking"];
-                        $sql = "select * from booking where m_fullname LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
+                        $booking = $_POST["booking"];
+                        $sql = "select * from booking where m_email = '".$_SESSION['m_email']."'
+                        and location like '%$booking%' or name like '%$booking%'";
                         if(!$result = $db -> query($sql)){
                             die($db -> error);
                         }
@@ -51,14 +52,15 @@
                     <?php
                         include('dbconnect.php');
                         $booking=$_POST["booking"];
-                        $sql = "SELECT * FROM booking WHERE m_fullname LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
+                        $sql = "SELECT * FROM booking WHERE m_email = '".$_SESSION['m_email']."'
+                        and location like '%$booking%' or name like '%$booking%'";
                         $query = mysqli_query($db,$sql);
                         $count = mysqli_num_rows($query);
                         $order = 1;
                     ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ต
-                        <button type="button" class="btn btn-sm btn-success"  style="width: 100px; height: 39px; color: black;">
+                        <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
                             <?php echo $countResult; ?> รายการ
                         </button>
                         </h1>
@@ -85,7 +87,12 @@
                             </tr>
                         </thead>
                         <tbody class="text-color">
-                        
+                        <?php
+                            include('connect.php');
+                            $sql = "SELECT * FROM booking where m_email = '".$_SESSION['m_email']."'  and location like '%$booking%' or name like '%$booking%'";
+                            $query = mysqli_query($db,$sql);
+                            $order = 1;
+                        ?>
                         <?php
                             while($booking = mysqli_fetch_assoc($query)){?>
                             <tr>
