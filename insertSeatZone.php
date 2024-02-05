@@ -5,9 +5,8 @@
     //ประกาศตัวแปรรับค่าจากฟอร์ม
     $s_zone = $_POST['s_zone'];
     $s_price = $_POST['s_price'];
-    $s_qty = $_POST['s_qty'];
 
-    $sql = "INSERT INTO seat_zone(s_zone, s_price, s_qty) value('$s_zone','$s_price','$s_qty')";
+    $sql = "INSERT INTO seat_zone(s_zone, s_price) value('$s_zone','$s_price')";
     $result = mysqli_query($db,$sql);
     if($result){
       echo "<script> alert ('เพิ่มพื้นที่ของโซนที่นั่งได้สำเร็จ'); </script> ";
