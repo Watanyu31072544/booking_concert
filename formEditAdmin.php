@@ -38,6 +38,7 @@
                 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- เมื่อกดปุ่มมาหน้าที่แก้ไขข้อมูลของผู้ดูแล รหัส ID ของผู้ดูแลจะต้องตรงกัน -->
                     <?php
                         if(isset($_GET['admin'])){
                             require_once 'connect.php';
@@ -47,9 +48,10 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่แก้ไขข้อมูลของผู้ดูแล ให้ Admin ทำการแก้ไขข้อมูลของผู้ดูแล -->
                         <h1 class="mt-3" align="center">แก้ไขข้อมูลของผู้ดูแล</h1>
-                        <form class="row g-4" method="post" action="updateAdmin.php?admin=<?php echo $admin['ad_id']; ?>">
-                        <input type="hidden" class="form-control" name="ad_id" disabled value="<?php echo $admin['ad_id']; ?>">
+                        <form class="row g-4" method="post" action="updateAdmin.php?admin=<?php echo $admin['ad_id']; ?>"> <!-- ส่งค่ารหัส ID ของผู้ดูแล เมื่อทำการแก้ไขข้อมูลของผู้ดูแลได้ -->
+                        <input type="hidden" class="form-control" name="ad_id" disabled value="<?php echo $admin['ad_id']; ?>"> <!-- ค่ารหัส ID ของผู้ดูแล -->
                         <div class="col-6">
                             <label for="inputFullName" class="form-label">ชื่อเต็มของผู้ดูแล</label>
                             <input type="text" class="form-control" name="ad_fullname" required style="color: black;" value="<?php echo $admin['ad_fullname']; ?>">
@@ -67,8 +69,8 @@
                             <input type="text" class="form-control" name="ad_password" style="color: black;" value="<?php echo $admin['ad_password']; ?>">
                         </div>                              
                         <div class="my-3">
-                                <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success">
-                                <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูลของผู้ดูแล</a>
+                                <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success"> <!-- เมื่อทำการแก้ไขข้อมูลของผู้ดูแล สามารถกดยืนยันแก้ไขข้อมูลของผู้ดูแล -->
+                                <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูลของผู้ดูแล</a> <!-- ไม่อยากแก้ไขข้อมูลของผู้ดูแล ให้ทำการกลับมาหน้าจัดการข้อมูลของผู้ดูแล -->
                         </div>
                         </form>                    
                     </div>
