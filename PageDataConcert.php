@@ -44,7 +44,7 @@
                         if(!$result = $db -> query($sql)){
                             die($db -> error);
                         }
-                        $countResult = $result -> num_rows; //นับจำนวนแถวจากคำสั่ง $sql
+                        $countResult = $result -> num_rows; //แสดงจำนวนคอนเสิร์ต
                         if( !isset( $_GET['page'] ) ){
                             $page = 1;
                         } else{
