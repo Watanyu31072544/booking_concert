@@ -64,16 +64,17 @@
                         <h1 class="h3 mb-0 text-gray-800">ข้อมูลของคอนเสิร์ต
                         <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
                                 <?php echo $countResult; ?> คอนเสิร์ต
-                        </button>
+                        </button> <!-- แสดงจำนวนคอนเสิร์ต -->
                         <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color: black;">
                                 หน้าที่ <?php echo $page; ?>
-                        </button></h1>
+                        </button> <!-- แสดงจำนวนหน้าที่ของคอนเสิร์ต --> </h1>
                     </div>
                     <?php
                         include('connect.php');
                         $sql = "SELECT * FROM concert";
                         $query = mysqli_query($db,$sql);
                     ?>
+                    <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->
                     <form action="PageSearchDataConcert.php" class="form-group my-3" method="POST">
                         <div class="input-group" align="right">
                             <div class="form-outline col-12" data-mdb-input-init>
@@ -83,6 +84,7 @@
                         </div>
                     </form>
                     <table class="table table-striped mt-4">
+                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของข้อมูลคอนเสิร์ต -->
                         <thead class="table-success text-color" align="center">
                             <tr>
                             <th scope="col">ลำดับ</th>
@@ -94,11 +96,11 @@
                         <tbody class="text-color" align="center">
                         <?php for($i=1; $i<=$countPageResult; $i++){
                                 $concert = $result -> fetch_assoc(); ?>
-                            <tr>
+                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
                             <td><?php echo $concert['id']; ?></td>
                             <td><?php echo $concert['name']; ?></td>
                             <td><?php echo $concert['location']; ?></td>
-                            <td><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td>
+                            <td><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต สามารถดูได้ -->
                             </tr>
                             <?php } ?>
                         </tbody>
