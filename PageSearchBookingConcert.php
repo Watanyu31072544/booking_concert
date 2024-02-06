@@ -41,9 +41,10 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">จองตั๋วคอนเสิร์ต<h1>
-                        <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จองตั๋วคอนเสิร์ต</a>
+                        <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จองตั๋วคอนเสิร์ต</a><!-- เมื่อค้นหาเสร็จแล้ว สามารถกดย้อนกลับหน้าจองตั๋วคอนเสิร์ต -->
                     </div>
                     <?php
+                        //ค้นหาข้อมูลสถานที่จัดคอนเสิร์ต
                         include('dbconnect.php');
                         $concert=$_POST["concert"];
                         $sql = "SELECT * FROM concert WHERE location LIKE '%$concert%' ORDER BY location ASC";
@@ -51,6 +52,7 @@
                         $count = mysqli_num_rows($query);
                         $order = 1;
                     ?>
+                    <!-- ถ้าอยากจะกรอกข้อมูลอีกครั้ง สามารถกรอกสถานที่จัดคอนเสิร์ตอีกครั้งได้ -->
                     <form action="PageSearchBookingConcert.php" class="form-group my-3" method="POST">
                     <div class="input-group" align="right">
                         <div class="form-outline col-12" data-mdb-input-init>
@@ -59,6 +61,7 @@
                         </div>                            
                     </div>                    
                     </form>
+                    <!-- ถ้าเจอข้อมูลของสถานที่จัดคอนเสิร์ต -->
                     <?php if($count > 0){?>
                     <table class="table table-striped">
                         <thead class="table-success text-color" align="center";>
@@ -87,7 +90,7 @@
                     </table>
                     <?php }else{?>
                         <div class="alert alert-danger">
-                            <b>ไม่ได้อยู่ในฐานข้อมูลการจองตั๋วของคอนเสิร์ต ต้องติดตามผ่านสื่อออนไลน์ด้วยครับ ขออภัยด้วยครับ</b>
+                            <b>ไม่ได้อยู่ในฐานข้อมูลการจองตั๋วของคอนเสิร์ต ต้องติดตามผ่านสื่อออนไลน์ด้วยครับ ขออภัยด้วยครับ</b><!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีสถานที่จัดคอนเสิร์ต จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีจัดคอนเสิร์ตที่ยังไม่มีเพิ่มสถานที่จัดคอนเสิร์ต -->
                         </div>
                         <?php }?>                    
                 </div>
