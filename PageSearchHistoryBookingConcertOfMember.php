@@ -46,7 +46,7 @@
                         if(!$result = $db -> query($sql)){
                             die($db -> error);
                         }
-                        $countResult = $result -> num_rows;
+                        $countResult = $result -> num_rows; //แสดงจำนวนรายการจองตั๋วคอนเสิร์ตของลูกค้าทั้งหมดที่จองที่นั่งมา
                     ?>
                     <?php
                         include('dbconnect.php');
@@ -64,6 +64,7 @@
                         </h1>
                         <a href="PageHistoryBookingConcertOfMember.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;ประวัติจองตั๋วคอนเสิร์ตของลูกค้า</a>
                     </div>
+                    <!-- กรอกค้นหาข้อมูลทั้งหมดที่จองไปก่อนหน้านี้ -->
                     <form action="PageSearchHistoryBookingConcertOfMember.php" class="form-group my-3" method="POST">
                     <div class="input-group" align="right">
                         <div class="form-outline col-12" data-mdb-input-init>
@@ -73,6 +74,7 @@
                     </div>
                     <?php if($count > 0) {?>
                     <table class="table table-striped mt-4">
+                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของทั้งหมดที่ผู้จองคอนเสิร์ต -->
                         <thead class="table-success text-color">
                             <tr>
                             <th scope="col">ลำดับ</th>
@@ -88,21 +90,21 @@
                             <?php
                             while($booking = mysqli_fetch_assoc($query)){
                             ?>
-                            <tr>
+                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของผู้จองทั้งหมด -->
                             <td><?php echo $order++; ?></td>
                             <td><?php echo $booking['m_fullname']; ?></td>
                             <td><?php echo $booking['name']; ?></td>
                             <td><?php echo $booking['location']; ?></td>
                             <td><?php echo $booking['s_zone']; ?></td>
-                            <td><a href="TicketConcert.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-ticket"></i> บัตรคอนเสิร์ต</a></td>
-                            <td><a href="deleteBookingOfMember.php?booking=<?php echo $booking['booking_id']; ?>" onclick="return confirm('ยกเลิกการจองตั๋วคอนเสิร์ตของคุณ <?php echo $member['m_fullname']; ?> ?');" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> ยกเลิกจองตั๋วคอนเสิร์ต</a></td>
+                            <td><a href="TicketConcert.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-ticket"></i> บัตรคอนเสิร์ต</a></td> <!-- เมื่อลูกค้าจองที่นั่งแล้ว ให้ Admin สามารถทำการออกบัตรคอนเสิร์ตได้ -->
+                            <td><a href="deleteBookingOfMember.php?booking=<?php echo $booking['booking_id']; ?>" onclick="return confirm('ยกเลิกการจองตั๋วคอนเสิร์ตของคุณ <?php echo $member['m_fullname']; ?> ?');" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> ยกเลิกจองตั๋วคอนเสิร์ต</a></td> <!-- เมื่อไม่อยากออกบัตรคอนเสิร์ต สามารถยกเลิกจองตั๋วคอนเสิร์ตได้ ไม่สามารถออกบัตรได้ เนื่องจากให้ลูกค้าจะต้องไปเลือกที่นั่งใหม่อีกครั้งได้ -->
                             </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                     <?php } else{?>
                         <div class="alert alert-danger">
-                            <b>ไม่มีอยู่ในระบบ เนื่องจากผู้จองไม่ได้จองที่นั่ง เราไม่สามารถเช็คข้อมูลของผู้จองได้</b>
+                            <b>ไม่มีอยู่ในระบบ เนื่องจากผู้จองไม่ได้จองที่นั่ง เราไม่สามารถเช็คข้อมูลของผู้จองได้</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีสถานที่จัดคอนเสิร์ต จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีจัดคอนเสิร์ตที่ยังไม่มีเพิ่มสถานที่จัดคอนเสิร์ต -->
                         </div>
                         <?php }?>
                 </div>
