@@ -66,11 +66,12 @@
                         <h1 class="h3 mb-0 text-gray-800">จองตั๋วคอนเสิร์ต                        
                         <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
                             <?php echo $countResult; ?> คอนเสิร์ต
-                        </button>
+                        </button> <!-- แสดงจำนวนคอนเสิร์ตที่ได้เพิ่มข้อมูลจากผู้ดูแล -->
                         <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color: black;">
                             หน้าที่ <?php echo $page; ?>
-                        </button></h1>                        
+                        </button><!-- แสดงจำนวนหน้าที่ของลูกค้า --></h1>                        
                     </div>
+                    <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->
                     <form action="PageSearchBookingConcert.php" class="form-group my-3" method="POST">
                     <div class="input-group" align="right">
                             <div class="form-outline col-12" data-mdb-input-init>
@@ -80,6 +81,7 @@
                     </div>
                     </form>
                     <table class="table table-striped">
+                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้จอง -->
                         <thead class="table-success text-color" align="center";>
                             <tr>
                             <th scope="col">ลำดับ</th>
@@ -99,13 +101,13 @@
                         <?php
                             for($i=1; $i<=$countPageResult; $i++){
                                 $concert = $result -> fetch_assoc();?>
-                            <tr>
+                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
                             <td><?php echo $concert['id']; ?></td>
                             <td><?php echo $concert['name']; ?></td>
                             <td><?php echo $concert['location']; ?></td>
                             <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>
-                            <td><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของ<br>คอนเสิร์ต</a></td>
-                            <td><a href="PageBookingConcertChoiceSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> จองที่นั่ง</a></td>
+                            <td><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของ<br>คอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต สามารถดูได้ -->
+                            <td><a href="PageBookingConcertChoiceSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> จองที่นั่ง</a></td> <!-- หน้าจองที่นั่งคอนเสิร์ต สามารถดูได้ -->
                             </tr>
                             <?php } ?>
                         </tbody>
