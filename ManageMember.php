@@ -40,11 +40,6 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <?php
-                        include('connect.php');
-                        $sql = "SELECT * FROM member";
-                        $query = mysqli_query($db,$sql);
-                    ?>
-                    <?php
                     include('connect.php');
                     $sql = "select * from member";
                     if(!$result = $db -> query($sql)){
@@ -68,14 +63,15 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูลของลูกค้า <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;">
                             <?php echo $countResult; ?> คน
-                        </button>
+                        </button> <!-- แสดงจำนวนสมาชิกสมาชิก -->
                         <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;">
                             หน้าที่ <?php echo $page; ?>
-                        </button></h1>
+                        </button> <!-- แสดงจำนวนหน้าที่ของสมาชิก --></h1>
                         <div align="center">
                         
                         </div>
                     </div>
+                    <!-- กรอกค้นหาของลูกค้า -->
                     <form action="PageSearchManageMember.php" class="form-group my-3" method="POST">
                     <div class="input-group" align="right">
                         <div class="form-outline col-12" data-mdb-input-init>
@@ -84,7 +80,14 @@
                         </div>
                     </div>
                     </form>
+                    <?php
+                        //แสดงฐานข้อมูลของลูกค้า
+                        include('connect.php');
+                        $sql = "SELECT * FROM member";
+                        $query = mysqli_query($db,$sql);
+                    ?>
                     <table class="table table-striped mt-4">
+                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของลูกค้า -->
                         <thead class="table table-success text-color">
                             <tr>
                             <th scope="col" width="5%">ลำดับ</th>
@@ -98,13 +101,13 @@
                         <tbody class="text-color">
                             <?php for($i=1; $i<=$countPageResult; $i++){
                                 $member = $result -> fetch_assoc(); ?>
-                            <tr>
+                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของลูกค้า -->
                             <td><?php echo $member['m_id']; ?></td>
                             <td><?php echo $member['m_fullname']; ?></td>
                             <td><?php echo $member['m_phone']; ?></td>
-                            <td><a href="formEditMember.php?member=<?php echo $member['m_id']; ?>"class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของลูกค้า</a></td>
-                            <td><a href="formViewMember.php?member=<?php echo $member['m_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของลูกค้า</a></td>
-                            <td><a href="deleteMember.php?member=<?php echo $member['m_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $member['m_fullname']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของลูกค้า</a></td>	
+                            <td><a href="formEditMember.php?member=<?php echo $member['m_id']; ?>"class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของลูกค้า</a></td> <!-- หน้าแก้ไขข้อมูลของลูกค้า -->
+                            <td><a href="formViewMember.php?member=<?php echo $member['m_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของลูกค้า</a></td> <!-- หน้าดูข้อมูลของลูกค้า -->
+                            <td><a href="deleteMember.php?member=<?php echo $member['m_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $member['m_fullname']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของลูกค้า</a></td> <!-- ลบข้อมูลของลูกค้า -->
                             </tr>
                             <?php } ?>
                         </tbody>
