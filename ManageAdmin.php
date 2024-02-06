@@ -62,7 +62,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูลของผู้ดูแล <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;"><?php echo $countResult; ?> คน</button> <!-- แสดงจำนวนสมาชิกผู้ดูแล -->
-                        <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;"> หน้าที่ <?php echo $page; ?></button> <!-- แสดงจำนวนหน้าที่ --></h1>
+                        <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;"> หน้าที่ <?php echo $page; ?></button> <!-- แสดงจำนวนหน้าที่ของผู้ดูแล --></h1>
                         <buttom type="submit" class="btn btn-success" onClick="window.location='formAddAdmin.php'"><i class="fa-solid fa-plus"></i>&nbsp;เพิ่มสมาชิกของผู้ดูแล</buttom> <!-- หน้าเพิ่มสมาชิกของผู้ดูแล -->
                     </div>
                     <!-- กรอกค้นหาของสมาชิกผู้ดูแล -->
