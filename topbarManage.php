@@ -4,8 +4,8 @@ require("dbconnect.php");
 ?>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
     <div class="container-fluid">
-            <a class="navbar-brand" href="ManageConcert.php">หน้าแรกของ Manage</a>
-            <a class="navbar-brand" href="PageHistoryBookingConcertOfMember.php">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า</a>
+        <a class="navbar-brand" href="ManageConcert.php">หน้าแรกของ Manage</a>
+        <a class="navbar-brand" href="PageHistoryBookingConcertOfMember.php">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า</a>
         <ul class="navbar-nav ml-auto">
         <?php
             if (!$_SESSION["ad_id"]) {
