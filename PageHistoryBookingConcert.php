@@ -40,6 +40,7 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <?php
+                        //แสดงจำนวนรายการจองตั๋วคอนเสิร์ตของลูกค้า
                         include('connect.php');
                         $sql = "select * from booking where m_email = '".$_SESSION['m_email']."'";
                         if(!$result = $db -> query($sql)){
@@ -54,6 +55,7 @@
                         </button>
                         </h1>
                     </div>
+                    <!-- กรอกค้นหาข้อมูลที่จองไปก่อนหน้านี้ -->
                     <form action="PageSearchHistoryBookingConcert.php" class="form-group my-3" method="POST">
                     <div class="input-group" align="right">
                         <div class="form-outline col-12" data-mdb-input-init>
@@ -63,6 +65,7 @@
                     </div>
                     </form>
                     <table class="table table-striped mt-4">
+                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้จองคอนเสิร์ต -->
                         <thead class="table-success text-color">
                             <tr>
                             <th scope="col">ลำดับ</th>
@@ -76,20 +79,21 @@
                         </thead>
                         <tbody class="text-color">
                         <?php
+                            //แสดงรายการจองตั๋วคอนเสิร์ตของลูกค้า
                             include('connect.php');
                             $sql = "SELECT * FROM booking where m_email = '".$_SESSION['m_email']."'";
                             $query = mysqli_query($db,$sql);
                             $order = 1;
                         ?>
                         <?php while($booking = mysqli_fetch_assoc($query)){?>
-                            <tr>
+                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของผู้จอง -->
                             <td><?php echo $order++; ?></td>
                             <td><?php echo $booking['m_fullname']; ?></td>
                             <td><?php echo $booking['name']; ?></td>
                             <td><?php echo $booking['location']; ?></td>
                             <td><?php echo $booking['s_zone']; ?></td>
-                            <td><a href="BookingConcertPay.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-print"></i> ปริ้นใบชำระเงิน</a></td>
-                            <td><a href="deleteBooking.php?booking=<?php echo $booking['booking_id']; ?>" onclick="return confirm('ยกเลิกการจองตั๋วคอนเสิร์ต <?php echo $booking['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> ยกเลิกจองตั๋วคอนเสิร์ต</a></td>
+                            <td><a href="BookingConcertPay.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-print"></i> ปริ้นใบชำระเงิน</a></td> <!-- เมื่อลูกค้าจองที่นั่งไว้แล้ว สามารถชำระเงินผ่าน QR Code -->
+                            <td><a href="deleteBooking.php?booking=<?php echo $booking['booking_id']; ?>" onclick="return confirm('ยกเลิกการจองตั๋วคอนเสิร์ต <?php echo $booking['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> ยกเลิกจองตั๋วคอนเสิร์ต</a></td> <!-- เมื่อลูกค้าอยากเลือกที่นั่งใหม่ สามารถยกเลิกจองตั๋วด้วยลูกค้าเองได้ -->
                             </tr>
                             <?php } ?>
                         </tbody>
