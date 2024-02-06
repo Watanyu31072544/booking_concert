@@ -82,8 +82,8 @@
                             <td><?php echo $concert['name']; ?></td>
                             <td><?php echo $concert['location']; ?></td>
                             <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>
-                            <td align="center";><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของ<br>คอนเสิร์ต</a></td>                            
-                            <td><a href="PageBookingConcertSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> จองที่นั่ง</a></td>
+                            <td align="center";><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของ<br>คอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต สามารถดูได้ -->                            
+                            <td><a href="PageBookingConcertSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> จองที่นั่ง</a></td> <!-- หน้าจองที่นั่งคอนเสิร์ต สามารถเลือกที่นั่งได้ตามความต้องการ -->
                             </tr>
                             <?php } ?>
                         </tbody>
