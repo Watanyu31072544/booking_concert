@@ -17,18 +17,18 @@
     $time = $_POST['time'];
     $s_zone = $_POST['s_zone'];
     $s_price = $_POST['s_price'];
-
+    //เช็คข้อมูลซ้ำที่อยู่ในฐานข้อมูลของผู้จอง
     $check = "SELECT * FROM booking where name = '$name' and s_zone = '$s_zone' and s_price = '$s_price'";
 
     $result1 = mysqli_query($db, $check) or die(mysqli_error($db));
     $num=mysqli_num_rows($result1);
- 
+    //ผู้จองได้ที่นั่งไปแล้ว จะต้องกลับไปเลือกที่นั่งใหม่อีกครั้ง
     if($num > 0)
     {
     echo "<script> alert('คุณเพิ่งจองที่นั่งไว้แล้ว ไม่สามารถเลือกที่นั่งซ้ำได้แล้ว กรุณาเลือกชื่อคอนเสิร์ตใหม่อีกครั้ง หรือยกเลิกจองที่นั่งคอนเสิร์ตของคุณก่อน !'); </script> ";
     echo "<script> window.location='PageBookingConcert.php'; </script>";
     }else{
-
+    //ผู้จองที่ยังไม่ได้เลือกที่นั่ง สามารถจองที่นั่งได้
     $sql = "INSERT INTO booking(m_fullname, m_email, m_phone, m_gender, birth_date, m_age, m_occupation, address, name, location, date, time, s_zone, s_price) value('$m_fullname','$m_email','$m_phone','$m_gender','$birth_date','$m_age','$m_occupation','$address','$name','$location','$date','$time','$s_zone','$s_price')";
     $result = mysqli_query($db,$sql);
     if($result){
@@ -37,7 +37,7 @@
     }
     else{
       echo "Error:" . $sql . "<br>" . mysqli_error($db);
-      echo "<script> alert ('จองที่นั่งของคอนเสิร์ตไม่สำเร็จ'); </script> ";
+      echo "<script> alert ('จองที่นั่งของคอนเสิร์ตไม่สำเร็จ เนื่องจากไม่ได้ฐานตารางข้อมูล'); </script> ";//ไม่อยู่ในฐานข้อมูล เนื่องจากไม่ได้สร้างฐานข้อมูล หรือมีข้อผิดพลาด
     }
     mysqli_close($db);
     }
