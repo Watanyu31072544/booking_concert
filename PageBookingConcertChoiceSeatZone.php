@@ -39,6 +39,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <?php
+                        //แสดงรหัส ID ของคอนเสิร์ต
                         if(isset($_GET['concert'])){
                             require_once 'connect.php';
                             $sql = "SELECT * FROM concert where id=".$_GET['concert'];
@@ -47,6 +48,7 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4" style="color: black;">
+                            <!-- แสดงชื่อคอนเสิร์ตตรงกับรหัส ID ของคอนเสิร์ต -->
                             <h3>ชื่อคอนเสิร์ต : <?php echo $concert['name']; ?></h3>
                             <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูจองตั๋วคอนเสิร์ต</a>
                     </div>
@@ -61,6 +63,7 @@
                         </div>
                         <br>
                         <table class="table table-striped">
+                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่งต้องเลือกโซนใดโซนหนึ่ง -->
                         <thead class="table-success text-color" align="center";>
                             <tr>
                             <th scope="col">ลำดับ</th>
@@ -100,16 +103,17 @@
                         <?php
                             for($i=1; $i<=$countPageResult; $i++){
                                 $seat_zone = $result -> fetch_assoc();?>
-                            <tr>
+                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
                             <td><?php echo $seat_zone['s_id']; ?></td>
                             <td><?php echo $seat_zone['s_zone']; ?></td>
                             <td><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
+                                //แสดงรหัส ID ของคอนเสิร์ต
                                 if(isset($_GET['concert'])){
                                     require_once 'connect.php';
                                     $sql = "SELECT * FROM concert where id=".$_GET['concert'];
                                     $query = mysqli_query($db,$sql);
                                     while($concert = mysqli_fetch_array($query)){
-                            ?>&concert=<?php echo $concert['id']; }}?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เลือกโซนที่นั่ง</a></td>
+                            ?>&concert=<?php echo $concert['id']; }}?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เลือกโซนที่นั่ง</a></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
                             </tr>
                             <?php } ?>
                         </tbody>
