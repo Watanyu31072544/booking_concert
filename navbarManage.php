@@ -45,6 +45,13 @@ require("dbconnect.php");
     </li>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
+        <!-- หน้าประวัติจองตั๋วคอนเสิร์ตของลูกค้า สามารถเข้ามาหน้าจัดการเพิ่ม,แก้ไข,ดูข้อมูล และลบข้อมูลของคอนเสิร์ต -->
+        <a class="nav-link" href="ProFileAdmin.php">
+            <i class="fa-solid fa-user"></i>
+            <span>โปรไฟล์ของผู้ดูแล</span>
+        </a>
+    </li>
+    <li class="nav-item active">
         <!-- เมื่อใช้งานเสร็จแล้ว ผู้ดูแลสามารถออกจากระบบได้ -->
         <a class="nav-link" href="formLoginAdmin.php">
             <i class="fa-solid fa-right-to-bracket"></i>
