@@ -41,7 +41,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของคอนเสิร์ต</h1>
-                        <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของคอนเสิร์ต</a>
+                        <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของคอนเสิร์ต</a> <!-- เมื่อทำการค้นหาของคอนเสิร์ตแล้ว ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
                     </div>
                     <?php
                         include('dbconnect.php');
@@ -51,6 +51,7 @@
                         $count = mysqli_num_rows($query);
                         $order = 1;
                     ?>
+                    <!-- กรอกค้นหาของคอนเสิร์ต -->
                     <form action="PageSearchManageConcert.php" class="form-group my-3" method="POST">
                     <div class="input-group" align="right">
                         <div class="form-outline col-12" data-mdb-input-init>
@@ -61,6 +62,7 @@
                     </form>
                     <?php if($count > 0){?>
                     <table class="table table-striped mt-4">
+                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
                         <thead class="table text-color">
                             <tr>
                             <th scope="col">ลำดับ</th>
@@ -76,23 +78,23 @@
                         </thead>
                         <tbody class="text-color">
                             <?php while($concert = mysqli_fetch_assoc($query)){?>
-                            <tr>
+                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
                             <td><?php echo $order++; ?></td>
                             <td><?php echo $concert['name']; ?></td>
                             <td><?php echo $concert['location']; ?></td>
                             <td><?php echo $concert['data']; ?></td>
                             <td><?php echo $concert['date']; ?></td>
                             <td><?php echo $concert['time']; ?></td>
-                            <td><a href="formEditConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของคอนเสิร์ต</a></td>
-                            <td><a href="formViewConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td>
-                            <td><a href="deleteConcert.php?concert=<?php echo $concert['id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $concert['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของคอนเสิร์ต</a></td>	
+                            <td><a href="formEditConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าแก้ไขข้อมูลของคอนเสิร์ต -->
+                            <td><a href="formViewConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต -->
+                            <td><a href="deleteConcert.php?concert=<?php echo $concert['id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $concert['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของคอนเสิร์ต</a></td>	<!-- ลบข้อมูลของคอนเสิร์ต -->
                             </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                     <?php }else{?>
                         <div class="alert alert-danger">
-                            <b>ไม่มีอยู่ในฐานข้อมูล เนื่องจากไม่ได้เพิ่มชื่อคอนเสิร์ต กรุณาเพิ่มชื่อคอนเสิร์ต</b>
+                            <b>ไม่มีอยู่ในฐานข้อมูล เนื่องจากไม่ได้เพิ่มชื่อคอนเสิร์ต กรุณาเพิ่มชื่อคอนเสิร์ต</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีเพิ่มข้อมูลของคอนเสิร์ตเข้ามา จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีเพิ่มข้อมูลของคอนเสิร์ตเข้ามา -->
                         </div>
                         <?php }?>
                 </div>
