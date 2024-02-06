@@ -95,7 +95,7 @@
                         <tbody class="text-color">
                             <?php for($i=1; $i<=$countPageResult; $i++){
                                 $admin = $result -> fetch_assoc(); ?>
-                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูล -->
+                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของผู้ดูแล -->
                             <td><?php echo $admin['ad_id']; ?></td>
                             <td><?php echo $admin['ad_username']; ?></td>
                             <td><?php echo $admin['ad_role']; ?></td>
