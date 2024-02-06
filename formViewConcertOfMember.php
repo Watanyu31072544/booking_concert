@@ -38,6 +38,7 @@
                 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของคอนเสิร์ต รหัส ID ของคอนเสิร์ตจะต้องตรงกัน --> 
                     <?php
                         if(isset($_GET['concert'])){
                             require_once 'connect.php';
@@ -47,6 +48,7 @@
                     ?>
                     <!-- Page Heading -->
                     <div class="container-md" id="website">
+                        <!-- เมื่อกดปุ่มมาหน้าที่ดูข้อมูลของคอนเสิร์ต ให้ลูกค้าทำการดูข้อมูลของคอนเสิร์ต ไม่สามารถแก้ไขได้ ดูอย่างเดียวเท่านั้น-->
                         <h1 class="mt-3 text-black" align="center">ดูข้อมูลของคอนเสิร์ต</h1>
                         <form class="row g-4" method="post">                       
                         <div class="col-12">
@@ -74,7 +76,7 @@
                         </div>                       
                         </form>
                         <div class="my-3">
-                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจองตั๋วคอนเสิร์ต</a>        
+                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจองตั๋วคอนเสิร์ต</a> <!-- เมื่อลูกค้าดูข้อมูลของคอนเสิร์ตแล้ว สามารถกลับมาหน้าจองตั๋วคอนเสิร์ต -->       
                         </div>            
                     </div>
                 <!-- /.container-fluid -->
