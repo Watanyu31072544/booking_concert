@@ -40,13 +40,12 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <?php
-                        //แสดงจำนวนรายการจองตั๋วคอนเสิร์ตของลูกค้าทั้งหมดที่จองที่นั่งมา
                         include('connect.php');
                         $sql = "select * from booking";
                         if(!$result = $db -> query($sql)){
                             die($db -> error);
                         }
-                        $countResult = $result -> num_rows;
+                        $countResult = $result -> num_rows;//แสดงจำนวนรายการจองตั๋วคอนเสิร์ตของลูกค้าทั้งหมดที่จองที่นั่งมา
                     ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
