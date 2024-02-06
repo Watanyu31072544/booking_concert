@@ -14,18 +14,18 @@
     $address = $_POST['address'];
     $m_password = $_POST['m_password'];
     $comfrim_password = $_POST['comfrim_password'];
-
+    //เช็คข้อมูลซ้ำที่อยู่ในฐานข้อมูลของลูกค้า
     $check = "SELECT * FROM member where m_fullname = '$m_fullname' and m_username = '$m_username' and m_email = '$m_email' and m_phone = '$m_phone'";
 
     $result1 = mysqli_query($db, $check) or die(mysqli_error($db));
     $num=mysqli_num_rows($result1);
- 
+    //มีข้อมูลซ้ำกัน จะต้องกลับไปลงทะเบียนของลูกค้าใหม่อีกครั้ง
     if($num > 0)
     {
     echo "<script> alert('คุณเพิ่งเพิ่มข้อมูลสมาชิกไปแล้ว กรุณาเพิ่มชื่อข้อมูลของสมาชิกใหม่อีกครั้ง !'); </script> ";
     echo "<script> window.location='formRegisterMember.php'; </script>";
     }else{
-    
+    //ข้อมูลไม่มีซ้ำ สามารถเพิ่มสมาชิกของลูกค้าได้
     $sql = "INSERT INTO member(m_fullname, m_username, m_email, m_phone, m_gender, birth_date, m_age, m_occupation, address, m_password, comfrim_password) value('$m_fullname','$m_username','$m_email','$m_phone','$m_gender','$birth_date','$m_age','$m_occupation','$address','$m_password','$comfrim_password')";
     $result = mysqli_query($db,$sql);
     if($result){
@@ -33,7 +33,8 @@
       echo "<script> window.location='formLoginMember.php'; </script> ";
     }
     else{
-      echo "<script> alert ('ลงทะเบียนไม่สำเร็จ จะต้องลงทะเบียนใหม่'); </script> ";
+      echo "Error:" . $sql . "<br>" . mysqli_error($db);
+      echo "<script> alert ('ลงทะเบียนไม่สำเร็จ เนื่องจากไม่ได้ฐานตารางข้อมูล'); </script> ";//ไม่อยู่ในฐานข้อมูล เนื่องจากไม่ได้สร้างฐานข้อมูล หรือมีข้อผิดพลาด
     }
     mysqli_close($db);
   }
