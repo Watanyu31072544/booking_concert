@@ -40,6 +40,7 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <?php
+                        //แสดงโปรไฟล์ของผู้จอง
                         require('dbconnect.php');
                         $sqlprofilemember = "SELECT * FROM member WHERE m_id='" . $_SESSION["m_id"] . "'";
                         $result = mysqli_query($db, $sqlprofilemember);
@@ -47,6 +48,7 @@
                     ?>
                     <div class="container-md" id="website">
                         <h1 class="mt-3" align="center">โปรไฟล์ของลูกค้า</h1>
+                        <!-- หน้าโปรไฟล์ของผู้จอง -->
                         <form class="row g-4" method="post" action="updateProFileMember.php?member=<?php echo $member['m_id']; ?>">
                         <input type="hidden" class="form-control" name="m_id" disabled value="<?php echo $member['m_id']; ?>">
                         <div class="col-6">
@@ -86,8 +88,8 @@
                             <input type="text" class="form-control" name="address" style="color: black;" value="<?php echo $member['address']; ?>">
                         </div>
                         <div class="my-3">
-                            <input type="submit" value="ยืนยันแก้ไขข้อมูลของสมาชิก" class="btn btn-success">
-                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a>
+                            <input type="submit" value="ยืนยันแก้ไขข้อมูลของสมาชิก" class="btn btn-success"> <!-- เมื่อลูกค้าทำการแก้ไขโปรไฟล์ของตัวเองแล้ว สามารถบันทึกแก้ไขข้อมูลได้ -->
+                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a> <!-- ในกรณีไม่อยากแก้ไขโปรไฟล์ของผู้จอง ให้กลับมาหน้าระบบจองตั๋วคอนเสิร์ต -->
                         </div>
                         </form>
                     </div>
