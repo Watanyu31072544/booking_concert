@@ -45,7 +45,7 @@ require("dbconnect.php");
     </li>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
-        <!-- เมื่อใช้งานเสร็จแล้ว สามารถออกจากระบบได้ -->
+        <!-- เมื่อใช้งานเสร็จแล้ว ผู้ดูแลสามารถออกจากระบบได้ -->
         <a class="nav-link" href="formLoginAdmin.php">
             <i class="fa-solid fa-right-to-bracket"></i>
             <span>ออกจากระบบ</span>
