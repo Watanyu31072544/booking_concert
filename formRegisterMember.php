@@ -11,6 +11,7 @@
 </head>
 <body>
         <div class="container-md" id="website">
+            <!-- หน้าลงทะเบียนของระบบจองตั๋วคอนเสิร์ต เฉพาะคนที่ยังไม่มีสมาชิก -->
             <h1 class="mt-3" align="center">ลงทะเบียน *สำหรับ คนที่ยังไม่มีสมาชิก*</h1>
             <form class="row g-4" method="post" action="insertRegister.php">
             <div class="col-6">
@@ -58,9 +59,9 @@
                 <input type="password" class="form-control" name="comfrim_password" style="color: black;" placeholder="กรุณาใส่รหัสผ่านอีกครั้งด้วยครับ" required>
             </div>
             <div class="my-3">
-                    <input type="submit" value="ยืนยันลงทะเบียน" class="btn btn-success">
-                    <input type="reset" value="ล้างข้อมูล" class="btn btn-warning">
-                    <a href="formLoginMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิก</a>
+                    <input type="submit" value="ยืนยันลงทะเบียน" class="btn btn-success"> <!-- เมื่อทำการกรอกข้อมูลลงทะเบียนแล้ว เพิ่มสมาชิกได้เลย -->
+                    <input type="reset" value="ล้างข้อมูล" class="btn btn-warning"> <!-- เมื่อลูกค้ากรอกผิด สามารถล้างข้อมูลที่ทำการกรอกข้อมูลใหม่ -->
+                    <a href="formLoginMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิก</a> <!-- เมื่อลูกค้าไม่ลงทะเบียนหรือมีสมาชิกไว้แล้ว สามารถกลับมาหน้าล็อกอินเข้าสู่ระบบจองตั๋วคอนเสิร์ต -->
             </div>
             </form>
         </div>
