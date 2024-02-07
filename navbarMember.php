@@ -34,7 +34,7 @@ require("dbconnect.php");
         <!-- หน้าโปรไฟล์ของลูกค้า ลูกค้าสามารถเข้ามาดูโปรไฟล์ของลูกค้าเองได้ -->
         <a class="nav-link" href="ProFileMember.php">
             <i class="fa-solid fa-user"></i>
-            <span>โปรไฟล์</span>
+            <span>โปรไฟล์ของลูกค้า</span>
         </a>
     </li>
     <li class="nav-item active">
