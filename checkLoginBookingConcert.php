@@ -1,6 +1,6 @@
   <meta charset="utf-8">
   <?php
-  if(!isset($_SESSION)){
+  if(!isset($_SESSION)){//เช็คข้อมูลมีค่ากำหนดไว้หรือไม่
     session_start();
   }
   //ไฟล์เชื่อมต่อฐานข้อมูล
