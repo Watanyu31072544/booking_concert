@@ -60,65 +60,69 @@
                     $countPageResult = $result -> num_rows;
                 ?>
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูลของผู้ดูแล <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;"><?php echo $countResult; ?> คน</button> <!-- แสดงจำนวนสมาชิกผู้ดูแล -->
-                        <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;"> หน้าที่ <?php echo $page; ?></button> <!-- แสดงจำนวนหน้าที่ของผู้ดูแล --></h1>
-                        <buttom type="submit" class="btn btn-success" onClick="window.location='formAddAdmin.php'"><i class="fa-solid fa-plus"></i>&nbsp;เพิ่มสมาชิกของผู้ดูแล</buttom> <!-- หน้าเพิ่มสมาชิกของผู้ดูแล -->
-                    </div>
-                    <!-- กรอกค้นหาของสมาชิกผู้ดูแล -->
-                    <form action="PageSearchManageAdmin.php" class="form-group my-3" method="POST">
-                    <div class="input-group" align="right">
-                        <div class="form-outline col-12" data-mdb-input-init>
-                            <input type="search" id="search" class="form-control" name="admin" required style="color: black;" placeholder="กรุณากรอกชื่อผู้ใช้"/>
-                            <label class="form-label" for="form1"></label>
-                        </div>
-                    </div>
-                    </form>
-                    <?php
-                        //แสดงฐานข้อมูลของผู้ดูแล
-                        include('connect.php');
-                        $sql = "SELECT * FROM admin";
-                        $query = mysqli_query($db,$sql);
-                    ?>
-                    <table class="table table-striped mt-4">
-                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้ดูแล -->
-                        <thead class="table table-success text-color">
-                            <tr>
-                            <th scope="col" width="5%">ลำดับ</th>
-                            <th scope="col" width="15%">ชื่อผู้ดูแล</th>
-                            <th scope="col" width="15%">หน้าที่</th>
-                            <th scope="col" width="20%">แก้ไขข้อมูลของผู้ดูแล</th>
-                            <th scope="col" width="20%">ดูข้อมูลของผู้ดูแล</th>                            
-                            <th scope="col" width="20%">ลบข้อมูลของผู้ดูแล</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-color">
-                            <?php for($i=1; $i<=$countPageResult; $i++){
-                                $admin = $result -> fetch_assoc(); ?>
-                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของผู้ดูแล -->
-                            <td><?php echo $admin['ad_id']; ?></td>
-                            <td><?php echo $admin['ad_username']; ?></td>
-                            <td><?php echo $admin['ad_role']; ?></td>
-                            <td><a href="formEditAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของผู้ดูแล</a></td> <!-- หน้าแก้ไขข้อมูลของผู้ดูแล -->
-                            <td><a href="formViewAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของผู้ดูแล</a></td> <!-- หน้าดูข้อมูลของผู้ดูแล -->
-                            <td><a href="deleteAdmin.php?admin=<?php echo $admin['ad_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $admin['ad_username']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของผู้ดูแล</a></td>	<!-- ลบข้อมูลของผู้ดูแล -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                                <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
-                                <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
-                                </li>
-                                <?php for($p=1; $p<=$totalPage; $p++){ ?>
-                                <li class="page-item"><a class="page-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a></li>
-                                <?php }?>
-                                <li class="page-item  <?php if( $page==$totalPage ){ echo "disabled"; } ?>">
-                                <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
-                                </li>
-                        </ul>
-                    </nav>                   
+                    <div class="card-body">
+                            <div class="table-responsive">
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูลของผู้ดูแล <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;"><?php echo $countResult; ?> คน</button> <!-- แสดงจำนวนสมาชิกผู้ดูแล -->
+                                <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;"> หน้าที่ <?php echo $page; ?></button> <!-- แสดงจำนวนหน้าที่ของผู้ดูแล --></h1>
+                                <buttom type="submit" class="btn btn-success" onClick="window.location='formAddAdmin.php'"><i class="fa-solid fa-plus"></i>&nbsp;เพิ่มสมาชิกของผู้ดูแล</buttom> <!-- หน้าเพิ่มสมาชิกของผู้ดูแล -->
+                            </div>
+                            <!-- กรอกค้นหาของสมาชิกผู้ดูแล -->
+                            <form action="PageSearchManageAdmin.php" class="form-group my-3" method="POST">
+                            <div class="input-group" align="right">
+                                <div class="form-outline col-12" data-mdb-input-init>
+                                    <input type="search" id="search" class="form-control" name="admin" required style="color: black;" placeholder="กรุณากรอกชื่อผู้ใช้"/>
+                                    <label class="form-label" for="form1"></label>
+                                </div>
+                            </div>
+                            </form>
+                            <?php
+                                //แสดงฐานข้อมูลของผู้ดูแล
+                                include('connect.php');
+                                $sql = "SELECT * FROM admin";
+                                $query = mysqli_query($db,$sql);
+                            ?>
+                            <table class="table table-striped mt-4">
+                                <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้ดูแล -->
+                                <thead class="table table-success text-color">
+                                    <tr>
+                                    <th scope="col" width="5%">ลำดับ</th>
+                                    <th scope="col" width="15%">ชื่อผู้ดูแล</th>
+                                    <th scope="col" width="15%">หน้าที่</th>
+                                    <th scope="col" width="20%">แก้ไขข้อมูลของผู้ดูแล</th>
+                                    <th scope="col" width="20%">ดูข้อมูลของผู้ดูแล</th>                            
+                                    <th scope="col" width="20%">ลบข้อมูลของผู้ดูแล</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-color">
+                                    <?php for($i=1; $i<=$countPageResult; $i++){
+                                        $admin = $result -> fetch_assoc(); ?>
+                                    <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของผู้ดูแล -->
+                                    <td><?php echo $admin['ad_id']; ?></td>
+                                    <td><?php echo $admin['ad_username']; ?></td>
+                                    <td><?php echo $admin['ad_role']; ?></td>
+                                    <td><a href="formEditAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของผู้ดูแล</a></td> <!-- หน้าแก้ไขข้อมูลของผู้ดูแล -->
+                                    <td><a href="formViewAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของผู้ดูแล</a></td> <!-- หน้าดูข้อมูลของผู้ดูแล -->
+                                    <td><a href="deleteAdmin.php?admin=<?php echo $admin['ad_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $admin['ad_username']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของผู้ดูแล</a></td>	<!-- ลบข้อมูลของผู้ดูแล -->
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                        <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
+                                        <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
+                                        </li>
+                                        <?php for($p=1; $p<=$totalPage; $p++){ ?>
+                                        <li class="page-item"><a class="page-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a></li>
+                                        <?php }?>
+                                        <li class="page-item  <?php if( $page==$totalPage ){ echo "disabled"; } ?>">
+                                        <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
+                                        </li>
+                                </ul>
+                            </nav>
+                        </div>  
+                    </div>                 
                 </div>
                 <!-- /.container-fluid -->
             </div>

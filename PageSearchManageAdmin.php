@@ -52,45 +52,49 @@
                         $order = 1;
                     ?>
                     <!-- กรอกค้นหาของสมาชิกผู้ดูแล -->
-                    <form action="PageSearchManageAdmin.php" class="form-group my-3" method="POST">
-                    <div class="input-group" align="right">
-                        <div class="form-outline col-12" data-mdb-input-init>
-                            <input type="search" id="search" class="form-control" name="admin" required style="color: black;" placeholder="กรุณากรอกชื่อผู้ใช้"/>
-                            <label class="form-label" for="form1"></label>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                        <form action="PageSearchManageAdmin.php" class="form-group my-3" method="POST">
+                        <div class="input-group" align="right">
+                            <div class="form-outline col-12" data-mdb-input-init>
+                                <input type="search" id="search" class="form-control" name="admin" required style="color: black;" placeholder="กรุณากรอกชื่อผู้ใช้"/>
+                                <label class="form-label" for="form1"></label>
+                            </div>
+                        </div>                    
+                        </form>
+                        <?php if($count > 0) {?>
+                        <table class="table table-striped mt-4">
+                            <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้ดูแล -->
+                            <thead class="table table-success text-color">
+                                <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของผู้ดูแล -->
+                                <th scope="col" width="5%">ลำดับ</th>
+                                <th scope="col" width="15%">ชื่อผู้ดูแล</th>
+                                <th scope="col" width="15%">หน้าที่</th>
+                                <th scope="col" width="20%">แก้ไขข้อมูลของผู้ดูแล</th>
+                                <th scope="col" width="20%">ดูข้อมูลของผู้ดูแล</th>                            
+                                <th scope="col" width="20%">ลบข้อมูลของผู้ดูแล</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-color">
+                                <?php while($admin = mysqli_fetch_assoc($query)){?>
+                                <tr>
+                                <td><?php echo $order++; ?></td>
+                                <td><?php echo $admin['ad_username']; ?></td>
+                                <td><?php echo $admin['ad_role']; ?></td>
+                                <td><a href="formEditAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของผู้ดูแล</a></td> <!-- หน้าแก้ไขข้อมูลของผู้ดูแล -->
+                                <td><a href="formViewAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของผู้ดูแล</a></td> <!-- หน้าดูข้อมูลของผู้ดูแล -->
+                                <td><a href="deleteAdmin.php?admin=<?php echo $admin['ad_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $admin['ad_username']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของผู้ดูแล</a></td>	<!-- ลบข้อมูลของผู้ดูแล -->
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <?php }else{?>
+                            <div class="alert alert-danger">
+                                <b>ไม่มีอยู่ในฐานข้อมูล เนื่องจากไม่ได้เพิ่มผู้ดูแล เราไม่สามารถเช็คข้อมูลของผู้ดูแลได้</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีเพิ่มสมาชิกเข้ามา จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีสมาชิกเข้ามาร่วมทำงาน -->
+                            </div>
+                            <?php }?>
                         </div>
-                    </div>                    
-                    </form>
-                    <?php if($count > 0) {?>
-                    <table class="table table-striped mt-4">
-                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้ดูแล -->
-                        <thead class="table table-success text-color">
-                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของผู้ดูแล -->
-                            <th scope="col" width="5%">ลำดับ</th>
-                            <th scope="col" width="15%">ชื่อผู้ดูแล</th>
-                            <th scope="col" width="15%">หน้าที่</th>
-                            <th scope="col" width="20%">แก้ไขข้อมูลของผู้ดูแล</th>
-                            <th scope="col" width="20%">ดูข้อมูลของผู้ดูแล</th>                            
-                            <th scope="col" width="20%">ลบข้อมูลของผู้ดูแล</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-color">
-                            <?php while($admin = mysqli_fetch_assoc($query)){?>
-                            <tr>
-                            <td><?php echo $order++; ?></td>
-                            <td><?php echo $admin['ad_username']; ?></td>
-                            <td><?php echo $admin['ad_role']; ?></td>
-                            <td><a href="formEditAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของผู้ดูแล</a></td> <!-- หน้าแก้ไขข้อมูลของผู้ดูแล -->
-                            <td><a href="formViewAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของผู้ดูแล</a></td> <!-- หน้าดูข้อมูลของผู้ดูแล -->
-                            <td><a href="deleteAdmin.php?admin=<?php echo $admin['ad_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $admin['ad_username']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของผู้ดูแล</a></td>	<!-- ลบข้อมูลของผู้ดูแล -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <?php }else{?>
-                        <div class="alert alert-danger">
-                            <b>ไม่มีอยู่ในฐานข้อมูล เนื่องจากไม่ได้เพิ่มผู้ดูแล เราไม่สามารถเช็คข้อมูลของผู้ดูแลได้</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีเพิ่มสมาชิกเข้ามา จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีสมาชิกเข้ามาร่วมทำงาน -->
-                        </div>
-                        <?php }?>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
             </div>

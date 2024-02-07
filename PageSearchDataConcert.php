@@ -57,53 +57,56 @@
                         $count = mysqli_num_rows($query);
                         $order = 1;
                     ?>
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">ข้อมูลของคอนเสิร์ต
-                        <button type="button" class="btn btn-sm btn-success"  style="width: 100px; height: 39px; color: black;">
-                            <?php echo $countResult; ?> รายการ
-                        </button><!-- แสดงจำนวนรายการแยกสถานที่จัดคอนเสิร์ต -->
-                        </h1>
-                        <a href="PageDataConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับข้อมูลของคอนเสิร์ต</a>
-                    </div>
-                    <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->
-                    <form action="PageSearchDataConcert.php" class="form-group my-3" method="POST">
-                    <div class="input-group" align="right">
-                            <div class="form-outline col-12" data-mdb-input-init>
-                                <input type="search" id="search" class="form-control" name="concert" required placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตด้วยครับ"/>
-                                <label class="form-label" for="form1"></label>
-                            </div>
-                            
-                    </div>                    
-                    </form>
-                    <?php if($count > 0){?>
-                    <table class="table table-striped mt-4">
-                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของข้อมูลคอนเสิร์ต -->
-                        <thead class="table-success text-color" align="center">
-                            <tr>
-                            <th scope="col">ลำดับ</th>
-                            <th scope="col">ชื่อคอนเสิร์ต</th>
-                            <th scope="col">สถานที่จัดคอนเสิร์ต</th>
-                            <th scope="col">รายละเอียดของคอนเสิร์ต</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-color" align="center">
-                        <?php while($concert = mysqli_fetch_assoc($query)){
-                                 ?>
-                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
-                            <td><?php echo $order++; ?></td>
-                            <td><?php echo $concert['name']; ?></td>
-                            <td><?php echo $concert['location']; ?></td>
-                            <td><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต สามารถดูได้ -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <?php }else{?>
-                        <div class="alert alert-danger">
-                            <b>ไม่ได้อยู่ในฐานข้อมูล และไม่พบข้อมูลคอนเสิร์ต ขออภัยด้วยครับ</b><!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีสถานที่จัดคอนเสิร์ต จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีจัดคอนเสิร์ตที่ยังไม่มีเพิ่มสถานที่จัดคอนเสิร์ต -->
+                    <div class="card-body">
+                        <div class="table-responsive">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">ข้อมูลของคอนเสิร์ต
+                            <button type="button" class="btn btn-sm btn-success"  style="width: 100px; height: 39px; color: black;">
+                                <?php echo $countResult; ?> รายการ
+                            </button><!-- แสดงจำนวนรายการแยกสถานที่จัดคอนเสิร์ต -->
+                            </h1>
+                            <a href="PageDataConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับข้อมูลของคอนเสิร์ต</a>
                         </div>
-                        <?php }?>
-                </div>                
+                        <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->
+                        <form action="PageSearchDataConcert.php" class="form-group my-3" method="POST">
+                        <div class="input-group" align="right">
+                                <div class="form-outline col-12" data-mdb-input-init>
+                                    <input type="search" id="search" class="form-control" name="concert" required placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตด้วยครับ"/>
+                                    <label class="form-label" for="form1"></label>
+                                </div>
+                                
+                        </div>                    
+                        </form>
+                        <?php if($count > 0){?>
+                        <table class="table table-striped mt-4">
+                            <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของข้อมูลคอนเสิร์ต -->
+                            <thead class="table-success text-color" align="center">
+                                <tr>
+                                <th scope="col">ลำดับ</th>
+                                <th scope="col">ชื่อคอนเสิร์ต</th>
+                                <th scope="col">สถานที่จัดคอนเสิร์ต</th>
+                                <th scope="col">รายละเอียดของคอนเสิร์ต</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-color" align="center">
+                            <?php while($concert = mysqli_fetch_assoc($query)){
+                                    ?>
+                                <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
+                                <td><?php echo $order++; ?></td>
+                                <td><?php echo $concert['name']; ?></td>
+                                <td><?php echo $concert['location']; ?></td>
+                                <td><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต สามารถดูได้ -->
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <?php }else{?>
+                            <div class="alert alert-danger">
+                                <b>ไม่ได้อยู่ในฐานข้อมูล และไม่พบข้อมูลคอนเสิร์ต ขออภัยด้วยครับ</b><!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีสถานที่จัดคอนเสิร์ต จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีจัดคอนเสิร์ตที่ยังไม่มีเพิ่มสถานที่จัดคอนเสิร์ต -->
+                            </div>
+                            <?php }?>
+                        </div>
+                    </div>                
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->

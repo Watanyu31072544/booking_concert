@@ -51,43 +51,47 @@
                         <h1 class="h3 mb-0 text-gray-800">จัดการพื้นที่ของโซนที่นั่ง</h1>
                         <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการพื้นที่ของโซนที่นั่ง</a> <!-- เมื่อทำการค้นหาพื้นที่ของโซนที่นั่งแล้ว ให้กลับมาหน้าจัดการพื้นที่ของโซนที่นั่ง -->
                     </div>
-                    <form action="PageSearchManageSeatZone.php" class="form-group my-3" method="POST">
-                    <div class="input-group" align="right">
-                        <div class="form-outline col-12" data-mdb-input-init>
-                            <input type="search" id="search" class="form-control" name="seat_zone" required style="color: black;" placeholder="กรุณากรอกชื่อโซนของโซนที่นั่ง"/>
-                            <label class="form-label" for="form1"></label>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                        <form action="PageSearchManageSeatZone.php" class="form-group my-3" method="POST">
+                        <div class="input-group" align="right">
+                            <div class="form-outline col-12" data-mdb-input-init>
+                                <input type="search" id="search" class="form-control" name="seat_zone" required style="color: black;" placeholder="กรุณากรอกชื่อโซนของโซนที่นั่ง"/>
+                                <label class="form-label" for="form1"></label>
+                            </div>
                         </div>
-                    </div>
-                    </form>
-                    <?php if($count > 0){?>
-                    <table class="table table-striped mt-4">
-                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่ง -->
-                        <thead class="table table-success text-color">
-                            <tr>
-                            <th scope="col" width="5%">ลำดับ</th>
-                            <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
-                            <th scope="col" width="20%">แก้ไขข้อมูลของลูกค้า</th>
-                            <th scope="col" width="20%">ดูข้อมูลของลูกค้า</th>                            
-                            <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-color">
-                            <?php while($seat_zone = mysqli_fetch_assoc($query)){?>
-                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
-                            <td><?php echo $seat_zone['s_id']; ?></td>
-                            <td><?php echo $seat_zone['s_zone']; ?></td>
-                            <td><a href="formEditSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>"class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขพื้นที่ของโซนที่นั่ง</a></td> <!-- หน้าแก้ไขข้อมูลของโซนที่นั่ง -->
-                            <td><a href="formViewSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของโซนที่นั่ง</a></td> <!-- หน้าดูข้อมูลของโซนที่นั่ง -->
-                            <td><a href="deleteSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $seat_zone['s_zone']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของโซนที่นั่ง</a></td>	<!-- ลบข้อมูลของโซนที่นั่ง -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <?php }else{?>
-                        <div class="alert alert-danger">
-                            <b>ไม่มีอยู่ในฐานข้อมูล เนื่องจากยังไม่มีโซนที่นั่ง เราไม่สามารถเช็คข้อมูลของโซนที่นั่งได้</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีเพิ่มพื้นที่โซนที่นั่งเข้ามา จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีเพิ่มพื้นที่โซนที่นั่งเข้ามา -->
+                        </form>
+                        <?php if($count > 0){?>
+                        <table class="table table-striped mt-4">
+                            <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่ง -->
+                            <thead class="table table-success text-color">
+                                <tr>
+                                <th scope="col" width="5%">ลำดับ</th>
+                                <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
+                                <th scope="col" width="20%">แก้ไขข้อมูลของลูกค้า</th>
+                                <th scope="col" width="20%">ดูข้อมูลของลูกค้า</th>                            
+                                <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-color">
+                                <?php while($seat_zone = mysqli_fetch_assoc($query)){?>
+                                <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
+                                <td><?php echo $seat_zone['s_id']; ?></td>
+                                <td><?php echo $seat_zone['s_zone']; ?></td>
+                                <td><a href="formEditSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>"class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขพื้นที่ของโซนที่นั่ง</a></td> <!-- หน้าแก้ไขข้อมูลของโซนที่นั่ง -->
+                                <td><a href="formViewSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของโซนที่นั่ง</a></td> <!-- หน้าดูข้อมูลของโซนที่นั่ง -->
+                                <td><a href="deleteSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $seat_zone['s_zone']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของโซนที่นั่ง</a></td>	<!-- ลบข้อมูลของโซนที่นั่ง -->
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <?php }else{?>
+                            <div class="alert alert-danger">
+                                <b>ไม่มีอยู่ในฐานข้อมูล เนื่องจากยังไม่มีโซนที่นั่ง เราไม่สามารถเช็คข้อมูลของโซนที่นั่งได้</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีเพิ่มพื้นที่โซนที่นั่งเข้ามา จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีเพิ่มพื้นที่โซนที่นั่งเข้ามา -->
+                            </div>
+                            <?php }?>   
                         </div>
-                        <?php }?>      
+                    </div>   
                 </div>
                 <!-- /.container-fluid -->
             </div>

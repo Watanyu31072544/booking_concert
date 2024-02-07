@@ -62,69 +62,73 @@
                     //////////////////////////////////////
                 ?>
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">จองตั๋วคอนเสิร์ต                        
-                        <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
-                            <?php echo $countResult; ?> คอนเสิร์ต
-                        </button> <!-- แสดงจำนวนคอนเสิร์ตที่ได้เพิ่มข้อมูลจากผู้ดูแล -->
-                        <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color: black;">
-                            หน้าที่ <?php echo $page; ?>
-                        </button><!-- แสดงจำนวนหน้าที่ของลูกค้า --></h1>                        
-                    </div>
-                    <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->
-                    <form action="PageSearchBookingConcert.php" class="form-group my-3" method="POST">
-                    <div class="input-group" align="right">
-                            <div class="form-outline col-12" data-mdb-input-init>
-                                <input type="search" id="search" class="form-control" name="concert" required placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตด้วยครับ"/>
-                                <label class="form-label" for="form1"></label>
-                            </div>                            
-                    </div>
-                    </form>
-                    <table class="table table-striped">
-                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้จอง -->
-                        <thead class="table-success text-color" align="center";>
-                            <tr>
-                            <th scope="col">ลำดับ</th>
-                            <th scope="col">ชื่อคอนเสิร์ต</th>
-                            <th scope="col">สถานที่จัดคอนเสิร์ต</th>
-                            <th scope="col">วันและเวลาเริ่มคอนเสิร์ต</th>
-                            <th scope="col">รายละเอียดของคอนเสิร์ต</th>
-                            <th scope="col">จองที่นั่ง</th>                            
-                            </tr>
-                        </thead>
-                        <tbody class="text-color" align="center";>
-                        <?php
-                            include('connect.php');
-                            $sql = "SELECT * FROM concert ORDER BY id ASC";
-                            $query = mysqli_query($db,$sql);
-                        ?>
-                        <?php
-                            for($i=1; $i<=$countPageResult; $i++){
-                                $concert = $result -> fetch_assoc();?>
-                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
-                            <td><?php echo $concert['id']; ?></td>
-                            <td><?php echo $concert['name']; ?></td>
-                            <td><?php echo $concert['location']; ?></td>
-                            <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>
-                            <td><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของ<br>คอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต สามารถดูได้ -->
-                            <td><a href="PageBookingConcertChoiceSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> จองที่นั่ง</a></td> <!-- หน้าจองที่นั่งคอนเสิร์ต สามารถดูได้ -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                                <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
-                                <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
-                                </li>
-                                <?php for($p=1; $p<=$totalPage; $p++){ ?>
-                                <li class="page-item"><a class="page-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a></li>
-                                <?php }?>
-                                <li class="page-item  <?php if( $page==$totalPage ){ echo "disabled"; } ?>">
-                                <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
-                                </li>
-                        </ul>
-                    </nav>                    
+                    <div class="card-body">
+                        <div class="table-responsive">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">จองตั๋วคอนเสิร์ต                        
+                            <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
+                                <?php echo $countResult; ?> คอนเสิร์ต
+                            </button> <!-- แสดงจำนวนคอนเสิร์ตที่ได้เพิ่มข้อมูลจากผู้ดูแล -->
+                            <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color: black;">
+                                หน้าที่ <?php echo $page; ?>
+                            </button><!-- แสดงจำนวนหน้าที่ของลูกค้า --></h1>                        
+                        </div>
+                        <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->                    
+                        <form action="PageSearchBookingConcert.php" class="form-group my-3" method="POST">
+                        <div class="input-group" align="right">
+                                <div class="form-outline col-12" data-mdb-input-init>
+                                    <input type="search" id="search" class="form-control" name="concert" required placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตด้วยครับ"/>
+                                    <label class="form-label" for="form1"></label>
+                                </div>                            
+                        </div>
+                        </form>                    
+                        <table class="table table-striped">
+                            <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้จอง -->
+                            <thead class="table-success text-color" align="center";>
+                                <tr>
+                                <th scope="col">ลำดับ</th>
+                                <th scope="col">ชื่อคอนเสิร์ต</th>
+                                <th scope="col">สถานที่จัดคอนเสิร์ต</th>
+                                <th scope="col">วันและเวลาเริ่มคอนเสิร์ต</th>
+                                <th scope="col">รายละเอียดของคอนเสิร์ต</th>
+                                <th scope="col">จองที่นั่ง</th>                            
+                                </tr>
+                            </thead>
+                            <tbody class="text-color" align="center";>
+                            <?php
+                                include('connect.php');
+                                $sql = "SELECT * FROM concert ORDER BY id ASC";
+                                $query = mysqli_query($db,$sql);
+                            ?>
+                            <?php
+                                for($i=1; $i<=$countPageResult; $i++){
+                                    $concert = $result -> fetch_assoc();?>
+                                <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
+                                <td><?php echo $concert['id']; ?></td>
+                                <td><?php echo $concert['name']; ?></td>
+                                <td><?php echo $concert['location']; ?></td>
+                                <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>
+                                <td><a href="formViewConcertOfMember.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของ<br>คอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต สามารถดูได้ -->
+                                <td><a href="PageBookingConcertChoiceSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> จองที่นั่ง</a></td> <!-- หน้าจองที่นั่งคอนเสิร์ต สามารถดูได้ -->
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                    <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
+                                    <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
+                                    </li>
+                                    <?php for($p=1; $p<=$totalPage; $p++){ ?>
+                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a></li>
+                                    <?php }?>
+                                    <li class="page-item  <?php if( $page==$totalPage ){ echo "disabled"; } ?>">
+                                    <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
+                                    </li>
+                            </ul>
+                        </nav>
+                        </div>  
+                    </div>                      
                 </div>
                 <!-- /.container-fluid -->
             </div>

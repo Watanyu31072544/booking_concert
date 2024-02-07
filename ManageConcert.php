@@ -60,79 +60,83 @@
                     $countPageResult = $result -> num_rows;
                 ?>
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของคอนเสิร์ต <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;">
-                            <?php echo $countResult; ?> คอนเสิร์ต
-                        </button> <!-- แสดงจำนวนคอนเสิร์ต -->
-                        <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;">
-                            หน้าที่ <?php echo $page; ?>
-                        </button> <!-- แสดงจำนวนหน้าที่ของคอนเสิร์ต -->
-                        </h1>
-                        <div align="center">
-                        <button type="submit" class="btn btn-success" onClick="window.location='formAddConcert.php'"><i class="fa-solid fa-plus"></i>
-                        &nbsp;เพิ่มข้อมูลของคอนเสิร์ต</button> <!-- หน้าเพิ่มข้อมูลของคอนเสิร์ต -->                       
+                    <div class="card-body">
+                            <div class="table-responsive">
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของคอนเสิร์ต <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;">
+                                    <?php echo $countResult; ?> คอนเสิร์ต
+                                </button> <!-- แสดงจำนวนคอนเสิร์ต -->
+                                <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;">
+                                    หน้าที่ <?php echo $page; ?>
+                                </button> <!-- แสดงจำนวนหน้าที่ของคอนเสิร์ต -->
+                                </h1>
+                                <div align="center">
+                                <button type="submit" class="btn btn-success" onClick="window.location='formAddConcert.php'"><i class="fa-solid fa-plus"></i>
+                                &nbsp;เพิ่มข้อมูลของคอนเสิร์ต</button> <!-- หน้าเพิ่มข้อมูลของคอนเสิร์ต -->                       
+                                </div>
+                            </div>
+                            <!-- กรอกค้นหาของคอนเสิร์ต -->
+                            <form action="PageSearchManageConcert.php" class="form-group my-3" method="POST">
+                            <div class="input-group" align="right">
+                                <div class="form-outline col-12" data-mdb-input-init>
+                                    <input type="search" id="search" class="form-control" name="concert" required style="color: black;" placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตหรือชื่อคอนเสิร์ต"/>
+                                    <label class="form-label" for="form1"></label>
+                                </div>
+                            </div>
+                            </form>
+                            <?php
+                                //แสดงฐานข้อมูลของคอนเสิร์ต
+                                include('connect.php');
+                                $sql = "SELECT * FROM concert";
+                                $query = mysqli_query($db,$sql);
+                            ?>
+                            <table class="table table-striped mt-4">
+                                <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
+                                <thead class="table table-success text-color">
+                                    <tr>
+                                    <th scope="col">ลำดับ</th>
+                                    <th scope="col" width="20%">ชื่อคอนเสิร์ต</th>
+                                    <th scope="col" width="20%">สถานที่จัดคอนเสิร์ต</th>
+                                    <th scope="col" width="50%">รายละเอียดของคอนเสิร์ต</th>
+                                    <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>                            
+                                    <th scope="col">เวลาเริ่มแสดงของคอนเสิร์ต</th>
+                                    <th scope="col">แก้ไขข้อมูลของคอนเสิร์ต</th>
+                                    <th scope="col">ดูข้อมูลของคอนเสิร์ต</th>
+                                    <th scope="col">ลบข้อมูลของคอนเสิร์ต</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-color">
+                                    <?php for($i=1; $i<=$countPageResult; $i++){
+                                        $concert = $result -> fetch_assoc(); ?>
+                                    <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
+                                    <td><?php echo $concert['id']; ?></td>
+                                    <td><?php echo $concert['name']; ?></td>
+                                    <td><?php echo $concert['location']; ?></td>
+                                    <td><?php echo $concert['data']; ?></td>
+                                    <td><?php echo $concert['date']; ?></td>
+                                    <td><?php echo $concert['time']; ?></td>
+                                    <td><a href="formEditConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าแก้ไขข้อมูลของคอนเสิร์ต -->
+                                    <td><a href="formViewConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต -->
+                                    <td><a href="deleteConcert.php?concert=<?php echo $concert['id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $concert['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของคอนเสิร์ต</a></td>	<!-- ลบข้อมูลของคอนเสิร์ต -->
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                        <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
+                                        <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
+                                        </li>
+                                        <?php for($p=1; $p<=$totalPage; $p++){ ?>
+                                        <li class="page-item"><a class="page-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a></li>
+                                        <?php }?>
+                                        <li class="page-item  <?php if( $page==$totalPage ){ echo "disabled"; } ?>">
+                                        <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
+                                        </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                    <!-- กรอกค้นหาของคอนเสิร์ต -->
-                    <form action="PageSearchManageConcert.php" class="form-group my-3" method="POST">
-                    <div class="input-group" align="right">
-                        <div class="form-outline col-12" data-mdb-input-init>
-                            <input type="search" id="search" class="form-control" name="concert" required style="color: black;" placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตหรือชื่อคอนเสิร์ต"/>
-                            <label class="form-label" for="form1"></label>
-                        </div>
-                    </div>
-                    </form>
-                    <?php
-                        //แสดงฐานข้อมูลของคอนเสิร์ต
-                        include('connect.php');
-                        $sql = "SELECT * FROM concert";
-                        $query = mysqli_query($db,$sql);
-                    ?>
-                    <table class="table table-striped mt-4">
-                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
-                        <thead class="table table-success text-color">
-                            <tr>
-                            <th scope="col">ลำดับ</th>
-                            <th scope="col" width="20%">ชื่อคอนเสิร์ต</th>
-                            <th scope="col" width="20%">สถานที่จัดคอนเสิร์ต</th>
-                            <th scope="col" width="50%">รายละเอียดของคอนเสิร์ต</th>
-                            <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>                            
-                            <th scope="col">เวลาเริ่มแสดงของคอนเสิร์ต</th>
-                            <th scope="col">แก้ไขข้อมูลของคอนเสิร์ต</th>
-                            <th scope="col">ดูข้อมูลของคอนเสิร์ต</th>
-                            <th scope="col">ลบข้อมูลของคอนเสิร์ต</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-color">
-                            <?php for($i=1; $i<=$countPageResult; $i++){
-                                $concert = $result -> fetch_assoc(); ?>
-                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
-                            <td><?php echo $concert['id']; ?></td>
-                            <td><?php echo $concert['name']; ?></td>
-                            <td><?php echo $concert['location']; ?></td>
-                            <td><?php echo $concert['data']; ?></td>
-                            <td><?php echo $concert['date']; ?></td>
-                            <td><?php echo $concert['time']; ?></td>
-                            <td><a href="formEditConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าแก้ไขข้อมูลของคอนเสิร์ต -->
-                            <td><a href="formViewConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต -->
-                            <td><a href="deleteConcert.php?concert=<?php echo $concert['id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $concert['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของคอนเสิร์ต</a></td>	<!-- ลบข้อมูลของคอนเสิร์ต -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                                <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
-                                <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
-                                </li>
-                                <?php for($p=1; $p<=$totalPage; $p++){ ?>
-                                <li class="page-item"><a class="page-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a></li>
-                                <?php }?>
-                                <li class="page-item  <?php if( $page==$totalPage ){ echo "disabled"; } ?>">
-                                <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
-                                </li>
-                        </ul>
-                    </nav>
                 </div>
                 <!-- /.container-fluid -->
             </div>

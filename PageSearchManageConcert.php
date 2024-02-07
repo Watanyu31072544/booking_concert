@@ -52,51 +52,55 @@
                         $order = 1;
                     ?>
                     <!-- กรอกค้นหาของคอนเสิร์ต -->
-                    <form action="PageSearchManageConcert.php" class="form-group my-3" method="POST">
-                    <div class="input-group" align="right">
-                        <div class="form-outline col-12" data-mdb-input-init>
-                            <input type="search" id="search" class="form-control" name="concert" required style="color: black;" placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตหรือชื่อคอนเสิร์ต"/>
-                            <label class="form-label" for="form1"></label>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                        <form action="PageSearchManageConcert.php" class="form-group my-3" method="POST">
+                        <div class="input-group" align="right">
+                            <div class="form-outline col-12" data-mdb-input-init>
+                                <input type="search" id="search" class="form-control" name="concert" required style="color: black;" placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตหรือชื่อคอนเสิร์ต"/>
+                                <label class="form-label" for="form1"></label>
+                            </div>
+                        </div>                    
+                        </form>
+                        <?php if($count > 0){?>
+                        <table class="table table-striped mt-4">
+                            <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
+                            <thead class="table table-success text-color">
+                                <tr>
+                                <th scope="col">ลำดับ</th>
+                                <th scope="col">ชื่อคอนเสิร์ต</th>
+                                <th scope="col">สถานที่จัดคอนเสิร์ต</th>
+                                <th scope="col">รายละเอียดของคอนเสิร์ต</th>
+                                <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>                            
+                                <th scope="col">เวลาเริ่มแสดงของคอนเสิร์ต</th>
+                                <th scope="col">แก้ไขข้อมูลของคอนเสิร์ต</th>
+                                <th scope="col">ดูข้อมูลของคอนเสิร์ต</th>
+                                <th scope="col">ลบข้อมูลของคอนเสิร์ต</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-color">
+                                <?php while($concert = mysqli_fetch_assoc($query)){?>
+                                <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
+                                <td><?php echo $order++; ?></td>
+                                <td><?php echo $concert['name']; ?></td>
+                                <td><?php echo $concert['location']; ?></td>
+                                <td><?php echo $concert['data']; ?></td>
+                                <td><?php echo $concert['date']; ?></td>
+                                <td><?php echo $concert['time']; ?></td>
+                                <td><a href="formEditConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าแก้ไขข้อมูลของคอนเสิร์ต -->
+                                <td><a href="formViewConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต -->
+                                <td><a href="deleteConcert.php?concert=<?php echo $concert['id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $concert['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของคอนเสิร์ต</a></td>	<!-- ลบข้อมูลของคอนเสิร์ต -->
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <?php }else{?>
+                            <div class="alert alert-danger">
+                                <b>ไม่มีอยู่ในฐานข้อมูล เนื่องจากไม่ได้เพิ่มชื่อคอนเสิร์ต กรุณาเพิ่มชื่อคอนเสิร์ต</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีเพิ่มข้อมูลของคอนเสิร์ตเข้ามา จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีเพิ่มข้อมูลของคอนเสิร์ตเข้ามา -->
+                            </div>
+                            <?php }?>
                         </div>
-                    </div>                    
-                    </form>
-                    <?php if($count > 0){?>
-                    <table class="table table-striped mt-4">
-                        <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
-                        <thead class="table table-success text-color">
-                            <tr>
-                            <th scope="col">ลำดับ</th>
-                            <th scope="col">ชื่อคอนเสิร์ต</th>
-                            <th scope="col">สถานที่จัดคอนเสิร์ต</th>
-                            <th scope="col">รายละเอียดของคอนเสิร์ต</th>
-                            <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>                            
-                            <th scope="col">เวลาเริ่มแสดงของคอนเสิร์ต</th>
-                            <th scope="col">แก้ไขข้อมูลของคอนเสิร์ต</th>
-                            <th scope="col">ดูข้อมูลของคอนเสิร์ต</th>
-                            <th scope="col">ลบข้อมูลของคอนเสิร์ต</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-color">
-                            <?php while($concert = mysqli_fetch_assoc($query)){?>
-                            <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
-                            <td><?php echo $order++; ?></td>
-                            <td><?php echo $concert['name']; ?></td>
-                            <td><?php echo $concert['location']; ?></td>
-                            <td><?php echo $concert['data']; ?></td>
-                            <td><?php echo $concert['date']; ?></td>
-                            <td><?php echo $concert['time']; ?></td>
-                            <td><a href="formEditConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าแก้ไขข้อมูลของคอนเสิร์ต -->
-                            <td><a href="formViewConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต -->
-                            <td><a href="deleteConcert.php?concert=<?php echo $concert['id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $concert['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของคอนเสิร์ต</a></td>	<!-- ลบข้อมูลของคอนเสิร์ต -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <?php }else{?>
-                        <div class="alert alert-danger">
-                            <b>ไม่มีอยู่ในฐานข้อมูล เนื่องจากไม่ได้เพิ่มชื่อคอนเสิร์ต กรุณาเพิ่มชื่อคอนเสิร์ต</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีเพิ่มข้อมูลของคอนเสิร์ตเข้ามา จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีเพิ่มข้อมูลของคอนเสิร์ตเข้ามา -->
-                        </div>
-                        <?php }?>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
             </div>
