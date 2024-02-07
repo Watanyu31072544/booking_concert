@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION)){
+if(!isset($_SESSION)){//เช็คข้อมูลมีค่ากำหนดไว้หรือไม่
     session_start();
 }
 require("dbconnect.php");
