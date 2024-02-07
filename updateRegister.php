@@ -16,7 +16,7 @@
 
     if(isset($_GET['member'])){
     $sql = "UPDATE member SET m_fullname='$m_fullname', m_username='$m_username', m_email='$m_email', m_phone='$m_phone', m_gender='$m_gender', birth_date='$birth_date', m_age='$m_age', m_occupation='$m_occupation' ,address='$address' WHERE m_id=".$_GET['member'];
-    }
+    }//ทำการแก้ไขข้อมูลของสมาชิก
     $result = mysqli_query($db,$sql);
     if($result){
       echo "<script> alert ('แก้ไขข้อมูลของสมาชิกได้สำเร็จ'); </script> ";
@@ -24,7 +24,7 @@
     }
     else{
       echo "Error:" . $sql . "<br>" . mysqli_error($db);
-      echo "<script> alert ('แก้ไขข้อมูลของสมาชิกไม่สำเร็จ'); </script> ";
+      echo "<script> alert ('แก้ไขข้อมูลของสมาชิกไม่สำเร็จ'); </script> ";//ไม่อยู่ในฐานข้อมูล เนื่องจากไม่ได้สร้างฐานข้อมูล หรือมีข้อผิดพลาด
     }
     mysqli_close($db);
   ?>
