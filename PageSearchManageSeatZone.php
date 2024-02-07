@@ -62,7 +62,7 @@
                     <?php if($count > 0){?>
                     <table class="table table-striped mt-4">
                         <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่ง -->
-                        <thead class="table text-color">
+                        <thead class="table table-success text-color">
                             <tr>
                             <th scope="col" width="5%">ลำดับ</th>
                             <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
