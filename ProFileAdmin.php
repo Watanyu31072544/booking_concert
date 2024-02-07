@@ -64,8 +64,8 @@
                             <input type="text" class="form-control" name="ad_role" style="color: black;" value="<?php echo $manage['ad_role']; ?>">
                         </div>
                         <div class="my-3">
-                            <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success"> <!-- เมื่อลูกค้าทำการแก้ไขโปรไฟล์ของตัวเองแล้ว สามารถบันทึกแก้ไขข้อมูลได้ -->
-                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไข</a> <!-- ในกรณีไม่อยากแก้ไขโปรไฟล์ของผู้จอง ให้กลับมาหน้าระบบจองตั๋วคอนเสิร์ต -->
+                            <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success"> <!-- เมื่อลูกค้าทำการแก้ไขโปรไฟล์ของผู้ดูแลแล้ว สามารถบันทึกแก้ไขข้อมูลได้ -->
+                            <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูล</a> <!-- ในกรณีไม่อยากแก้ไขโปรไฟล์ของผู้ดูแล ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
                         </div>
                         </form>
                     </div>
