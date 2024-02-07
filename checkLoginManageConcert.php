@@ -1,6 +1,8 @@
   <meta charset="utf-8">
   <?php
-  session_start();
+  if(!isset($_SESSION)){
+    session_start();
+  }
   //ไฟล์เชื่อมต่อฐานข้อมูล
   include('dbconnect.php');
   //ประกาศตัวแปรรับค่าจากฟอร์ม
