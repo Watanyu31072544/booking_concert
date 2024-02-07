@@ -40,7 +40,7 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <?php
-                        //แสดงโปรไฟล์ของผู้จอง
+                        //แสดงโปรไฟล์ของผู้ดูแล
                         require('dbconnect.php');
                         $sqlprofilemanage = "SELECT * FROM admin WHERE ad_id='" . $_SESSION["ad_id"] . "'";
                         $result = mysqli_query($db, $sqlprofilemanage);
@@ -48,8 +48,8 @@
                     ?>
                     <div class="container-md" id="website">
                         <h1 class="mt-3" align="center">โปรไฟล์ของลูกค้า</h1>
-                        <!-- หน้าโปรไฟล์ของผู้จอง -->
-                        <form class="row g-4" method="post" action="updateProFileMember.php?admin=<?php echo $manage['ad_id']; ?>">
+                        <!-- หน้าโปรไฟล์ของผู้ดูแล -->
+                        <form class="row g-4" method="post" action="updateProFileManage.php?admin=<?php echo $manage['ad_id']; ?>">
                         <input type="hidden" class="form-control" name="ad_id" disabled value="<?php echo $manage['ad_id']; ?>">
                         <div class="col-12">
                             <label for="inputFullName" class="form-label">ชื่อเต็มของผู้ดูแล</label>
