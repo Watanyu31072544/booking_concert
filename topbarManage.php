@@ -17,7 +17,7 @@ require("dbconnect.php");
             $result = mysqli_query($db, $sqlloginmanage);
             $manage = mysqli_fetch_assoc($result);
         ?>
-        <p style="color: black;"> สวัสดี <?php echo $manage["ad_username"];?></p>
+        <a class="navbar-brand" style="color: black;"> สวัสดี <?php echo $manage["ad_username"];?></a>
         </ul>
         <?php  } ?>
     </div>
