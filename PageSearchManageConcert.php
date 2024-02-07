@@ -63,7 +63,7 @@
                     <?php if($count > 0){?>
                     <table class="table table-striped mt-4">
                         <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
-                        <thead class="table text-color">
+                        <thead class="table table-success text-color">
                             <tr>
                             <th scope="col">ลำดับ</th>
                             <th scope="col">ชื่อคอนเสิร์ต</th>
