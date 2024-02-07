@@ -63,7 +63,7 @@
                     <?php if($count > 0) {?>
                     <table class="table table-striped mt-4">
                         <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้ดูแล -->
-                        <thead class="table text-color">
+                        <thead class="table table-success text-color">
                             <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของผู้ดูแล -->
                             <th scope="col" width="5%">ลำดับ</th>
                             <th scope="col" width="15%">ชื่อผู้ดูแล</th>
