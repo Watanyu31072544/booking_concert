@@ -56,15 +56,13 @@
                         $count = mysqli_num_rows($query);
                         $order = 1;
                     ?>
-                    <div class="card-body">
-                        
-                                <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
+                    <div class="card-body">                        
+                            <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
                                 <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                     <?php echo $countResult; ?> รายการ
-                                </button>
-                                </h1>
-                                <a href="PageHistoryBookingConcertOfMember.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;ประวัติจองตั๋วคอนเสิร์ตของลูกค้า</a>
-                            </div>
+                                </button>                                
+                                <a href="PageHistoryBookingConcertOfMember.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;ประวัติจองตั๋วคอนเสิร์ตของลูกค้า</a>
+                            </h1>
                             <!-- กรอกค้นหาข้อมูลทั้งหมดที่จองไปก่อนหน้านี้ -->
                             <form action="PageSearchHistoryBookingConcertOfMember.php" class="form-group my-3" method="POST">
                             <div class="input-group" align="right">
@@ -128,17 +126,13 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 </body>
