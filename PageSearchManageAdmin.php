@@ -40,8 +40,9 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูลของผู้ดูแล</h1>
-                        <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของผู้ดูแล</a> <!-- เมื่อทำการค้นหาของผู้ดูแลแล้ว ให้กลับมาหน้าจัดการข้อมูลของผู้ดูแล -->
+                        <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูลของผู้ดูแล
+                            <a href="ManageAdmin.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของผู้ดูแล</a> <!-- เมื่อทำการค้นหาของผู้ดูแลแล้ว ให้กลับมาหน้าจัดการข้อมูลของผู้ดูแล -->
+                        </h1>
                     </div>
                     <?php
                         include('dbconnect.php');

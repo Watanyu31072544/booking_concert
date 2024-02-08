@@ -48,8 +48,9 @@
                         $order = 1;
                     ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">จัดการพื้นที่ของโซนที่นั่ง</h1>
-                        <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการพื้นที่ของโซนที่นั่ง</a> <!-- เมื่อทำการค้นหาพื้นที่ของโซนที่นั่งแล้ว ให้กลับมาหน้าจัดการพื้นที่ของโซนที่นั่ง -->
+                        <h1 class="h3 mb-0 text-gray-800">จัดการพื้นที่ของโซนที่นั่ง
+                            <a href="ManageSeatZone.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการพื้นที่ของโซนที่นั่ง</a> <!-- เมื่อทำการค้นหาพื้นที่ของโซนที่นั่งแล้ว ให้กลับมาหน้าจัดการพื้นที่ของโซนที่นั่ง -->
+                        </h1>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

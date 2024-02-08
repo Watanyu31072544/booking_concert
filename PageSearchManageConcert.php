@@ -40,8 +40,9 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของคอนเสิร์ต</h1>
-                        <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของคอนเสิร์ต</a> <!-- เมื่อทำการค้นหาของคอนเสิร์ตแล้ว ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
+                        <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของคอนเสิร์ต
+                            <a href="ManageConcert.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของคอนเสิร์ต</a> <!-- เมื่อทำการค้นหาของคอนเสิร์ตแล้ว ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
+                        </h1>
                     </div>
                     <?php
                         include('dbconnect.php');

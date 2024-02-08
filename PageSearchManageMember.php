@@ -40,8 +40,9 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของลูกค้า</h1>
-                        <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของลูกค้า</a> <!-- เมื่อทำการค้นหาของลูกค้าแล้ว ให้กลับมาหน้าจัดการข้อมูลของลูกค้า -->
+                        <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของลูกค้า
+                            <a href="ManageMember.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของลูกค้า</a> <!-- เมื่อทำการค้นหาของลูกค้าแล้ว ให้กลับมาหน้าจัดการข้อมูลของลูกค้า -->
+                        </h1>
                     </div>
                     <?php
                         include('dbconnect.php');
