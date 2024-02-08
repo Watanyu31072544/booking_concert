@@ -21,9 +21,13 @@
                 <input type="password" class="form-control" id="ad_password" style="color: black;" name="ad_password" required>
             </div>
             <br>
-            <div class="my-3">
+            <div class="row g-4">
+                <div class="d-grid gap-2 col-sm-2">
                 <input type="submit" value="เข้าสู่ระบบ" class="btn btn-success"> <!-- เมื่อ Admin กรอกมาแล้ว สามารถทำการเข้าสู่เช็ค Username และ Password ของผู้ดูแล --> 
+                </div>
+                <div class="d-grid gap-2 col-sm-2">
                 <a href="formClickUser.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเข้าสู่ปุ่ม User</a> <!-- เมื่อเผลอกดปุ่มผิดหน้าให้กลับมาหน้าสู่ระบบจองตั๋วคอนเสิร์ต ในฐานะว่าอะไร --> 
+                </div>
             </div>
             </form>
         </div>

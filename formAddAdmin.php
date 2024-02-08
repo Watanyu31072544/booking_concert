@@ -59,10 +59,20 @@
                             <label for="inputGender" class="form-label">รหัสผ่าน</label>
                             <input type="password" class="form-control" name="ad_password" style="color: black;" required>
                         </div>
-                        <div class="my-3">
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                             <input type="submit" value="ยืนยันเพิ่มข้อมูลของผู้ดูแล" class="btn btn-success"> <!-- เมื่อกรอกข้อมูลเพิ่มสมาชิกของผู้ดูแลแล้ว สามารถกดยืนยันเพิ่มข้อมูลของผู้ดูแล -->
+                            </div>
+                        </div>
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                             <input type="reset" value="ล้างข้อมูล" class="btn btn-warning"> <!-- เมื่อกรอกข้อมูลผิดแล้ว Admin สามารถทำการล้างข้อมูล เพราะกรอกข้อมูลผิดพลาด -->
+                            </div>
+                        </div>
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                             <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;กลับหน้าจัดการข้อมูลของผู้ดูแล</a> <!-- เมื่อไม่อยากกรอกข้อมูลเพิ่มสมาชิกของผู้ดูแลแล้ว สามารถกดกลับหน้าจัดการข้อมูลของผู้ดูแล -->
+                            </div>
                         </div>
                         </form>                    
                     </div>
@@ -73,6 +83,22 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

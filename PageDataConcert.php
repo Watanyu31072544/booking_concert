@@ -63,11 +63,11 @@
                     <div class="card-body">
                         <div class="table-responsive">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">ข้อมูลของคอนเสิร์ต
-                            <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
+                            <h1 class="h3 mb-0 text-color-800" id="website">ข้อมูลของคอนเสิร์ต
+                            <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                     <?php echo $countResult; ?> คอนเสิร์ต
                             </button> <!-- แสดงจำนวนคอนเสิร์ต -->
-                            <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color: black;">
+                            <button type="button" class="btn btn-sm btn-warning" style="width: auto; height: auto; color: black;">
                                     หน้าที่ <?php echo $page; ?>
                             </button> <!-- แสดงจำนวนหน้าที่ของคอนเสิร์ต --> </h1>
                         </div>
@@ -130,6 +130,25 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

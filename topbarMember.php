@@ -5,9 +5,11 @@ if(!isset($_SESSION)){//เช็คข้อมูลมีค่ากำห�
 require("dbconnect.php");
 ?>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="PageBookingConcert.php">หน้าแรกของ Member</a>
-        <a class="navbar-brand" href="PageHistoryBookingConcert.php">ประวัติจองตั๋วคอนเสิร์ตของตัวเอง</a>
+        <form class="form-inline">
+            <a id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" herf="#">
+                <i class="fa fa-bars"></i>
+            </a>
+        </form>
         <ul class="navbar-nav ml-auto">
         <?php
             if (!$_SESSION["m_id"]) {
@@ -20,5 +22,5 @@ require("dbconnect.php");
         <a class="navbar-brand" style="color: black;"> สวัสดี <?php echo $member["m_fullname"];?></a>
         </ul>
         <?php  } ?>        
-    </div>
+    
 </nav>

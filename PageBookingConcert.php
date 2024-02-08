@@ -63,13 +63,12 @@
                 ?>
                     <!-- Page Heading -->
                     <div class="card-body">
-                        <div class="table-responsive">
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">จองตั๋วคอนเสิร์ต                        
-                            <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
+                        <div class="row">
+                            <h1 class="h3 mb-0 text-color-800" id="website">จองตั๋วคอนเสิร์ต
+                            <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                 <?php echo $countResult; ?> คอนเสิร์ต
                             </button> <!-- แสดงจำนวนคอนเสิร์ตที่ได้เพิ่มข้อมูลจากผู้ดูแล -->
-                            <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color: black;">
+                            <button type="button" class="btn btn-sm btn-warning" style="width: auto; height: auto; color: black;">
                                 หน้าที่ <?php echo $page; ?>
                             </button><!-- แสดงจำนวนหน้าที่ของลูกค้า --></h1>                        
                         </div>
@@ -81,7 +80,9 @@
                                     <label class="form-label" for="form1"></label>
                                 </div>                            
                         </div>
-                        </form>                    
+                        </form>   
+                        <div class="table-responsive">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">                 
                         <table class="table table-striped">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้จอง -->
                             <thead class="table-success text-color" align="center";>
@@ -114,6 +115,8 @@
                                 <?php } ?>
                             </tbody>
                         </table>
+                        </div>
+                        </div>
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
                                     <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
@@ -137,6 +140,22 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

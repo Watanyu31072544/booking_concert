@@ -60,14 +60,12 @@
                         $order = 1;
                     ?>
                     <div class="card-body">
-                        <div class="table-responsive">
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ต
-                            <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
+                        <div class="row">
+                            <h1 class="h3 mb-0 text-color-800" id="website">ประวัติจองตั๋วคอนเสิร์ต
+                            <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                 <?php echo $countResult; ?> รายการ <!-- แสดงจำนวนรายการที่ค้นหามาได้ -->
-                            </button>
-                            </h1>
-                            <a href="PageHistoryBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;ประวัติจองตั๋วคอนเสิร์ต</a><!-- เมื่อค้นหาชื่อคอนเสิร์ตหรือสถานที่จัดคอนเสิร์ตเสร็จแล้วสามารถกลับมาหน้าประวัติจองตั๋วคอนเสิร์ต -->
+                            </button>                            
+                            <a href="PageHistoryBookingConcert.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;ประวัติจองตั๋วคอนเสิร์ต</a><!-- เมื่อค้นหาชื่อคอนเสิร์ตหรือสถานที่จัดคอนเสิร์ตเสร็จแล้วสามารถกลับมาหน้าประวัติจองตั๋วคอนเสิร์ต --></h1>
                         </div>
                         <!-- กรอกค้นหาข้อมูลที่จองไปก่อนหน้านี้ -->
                         <form action="PageSearchHistoryBookingConcert.php" class="form-group my-3" method="POST">
@@ -79,6 +77,8 @@
                         </div>
                         </form>
                         <?php if($count > 0) {?>
+                        <div class="table-responsive">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <table class="table table-striped mt-4">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของจองตั๋วคอนเสิร์ตของลูกค้าเอง -->
                             <thead class="table-success text-color">
@@ -113,6 +113,8 @@
                                 <?php } ?>
                             </tbody>
                         </table>
+                        </div>
+                        </div>
                         <?php }else{?>
                             <div class="alert alert-danger">
                                 <b>ไม่มีอยู่ในระบบ เนื่องจากไม่ได้จองที่นั่งหรือยกเลิกจองตั๋วแล้ว เราไม่สามารถเช็คข้อมูลของผู้จองได้</b> <!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีสถานที่จัดคอนเสิร์ต จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีจัดคอนเสิร์ตที่ยังไม่มีเพิ่มสถานที่จัดคอนเสิร์ต -->
@@ -128,6 +130,25 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

@@ -60,9 +60,15 @@
                             <label for="inputEmail" class="form-label">ราคาโซนที่นั่ง (บาท)</label>
                             <input type="text" class="form-control" name="s_price" style="color: black;" value="<?php echo $seat_zone['s_price']; ?>">
                         </div>
-                        <div class="my-3">
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                                 <input type="submit" value="ยืนยันแก้ไขพื้นที่ของโซนที่นั่ง" class="btn btn-success"> <!-- เมื่อทำการแก้ไขข้อมูลของโซนที่นั่ง สามารถกดยืนยันแก้ไขข้อมูลของโซนที่นั่ง -->
+                            </div>
+                        </div>
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                                 <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขโซนที่นั่ง</a> <!-- ไม่อยากแก้ไขข้อมูลของโซนที่นั่ง ให้ทำการกลับมาหน้าจัดการข้อมูลของโซนที่นั่ง -->
+                            </div>
                         </div>
                         </form>
                     </div>
@@ -73,5 +79,21 @@
                     ?>
             </div>
             <!-- End of Main Content -->
+            <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 </html>

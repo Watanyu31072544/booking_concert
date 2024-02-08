@@ -40,10 +40,9 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 class="h3 mb-0 text-gray-800">จองตั๋วคอนเสิร์ต<h1>
-                                <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;จองตั๋วคอนเสิร์ต</a><!-- เมื่อค้นหาเสร็จแล้ว สามารถกดย้อนกลับหน้าจองตั๋วคอนเสิร์ต -->
+                            <div class="row">
+                                <h1 class="h3 mb-0 text-gray-800">จองตั๋วคอนเสิร์ต
+                                <a href="PageBookingConcert.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;จองตั๋วคอนเสิร์ต</a><!-- เมื่อค้นหาเสร็จแล้ว สามารถกดย้อนกลับหน้าจองตั๋วคอนเสิร์ต --><h1>
                             </div>
                             <?php
                                 //ค้นหาข้อมูลสถานที่จัดคอนเสิร์ต
@@ -65,6 +64,8 @@
                             </form>
                             <!-- ถ้าเจอข้อมูลของสถานที่จัดคอนเสิร์ต -->
                             <?php if($count > 0){?>
+                            <div class="table-responsive">
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <table class="table table-striped">
                                 <thead class="table-success text-color" align="center";>
                                     <tr>
@@ -90,6 +91,8 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
+                            </div>
+                            </div>
                             <?php }else{?>
                                 <div class="alert alert-danger">
                                     <b>ไม่ได้อยู่ในฐานข้อมูลการจองตั๋วของคอนเสิร์ต ต้องติดตามผ่านสื่อออนไลน์ด้วยครับ ขออภัยด้วยครับ</b><!-- ในกรณีที่ค้นหาอย่างอื่นหรือยังไม่มีสถานที่จัดคอนเสิร์ต จะไม่สามารถหาเจอได้ เนื่องจากยังไม่มีจัดคอนเสิร์ตที่ยังไม่มีเพิ่มสถานที่จัดคอนเสิร์ต -->
@@ -105,6 +108,25 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

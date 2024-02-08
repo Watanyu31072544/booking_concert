@@ -86,11 +86,18 @@
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">ที่อยู่</label>
-                            <input type="text" class="form-control" name="address" style="color: black;" value="<?php echo $member['address']; ?>">
+                            <textarea type="text" class="form-control" name="address" style="color: black;"><?php echo $member['address']; ?></textarea>
                         </div>
-                        <div class="my-3">
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                                 <input type="submit" value="ยืนยันแก้ไขข้อมูลของสมาชิก" class="btn btn-success"> <!-- เมื่อทำการแก้ไขข้อมูลของสมาชิก สามารถกดยืนยันแก้ไขข้อมูลของสมาชิก -->
+                            </div>
+                        </div>
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                                 <a href="ManageMember.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูลของสมาชิก</a> <!-- ไม่อยากแก้ไขข้อมูลของสมาชิก ให้ทำการกลับมาหน้าจัดการข้อมูลของสมาชิก -->
+                            </div>
+                        </div>
                         </div>
                         </form>
                     </div>
@@ -101,5 +108,21 @@
                     ?>
             </div>
             <!-- End of Main Content -->
+            <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 </html>

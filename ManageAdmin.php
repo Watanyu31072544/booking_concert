@@ -61,11 +61,11 @@
                 ?>
                     <!-- Page Heading -->
                     <div class="card-body">
-                            <div class="table-responsive">
-                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 class="h3 mb-0 text-gray-800">จัดการข้อมูลของผู้ดูแล <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color:black;"><?php echo $countResult; ?> คน</button> <!-- แสดงจำนวนสมาชิกผู้ดูแล -->
-                                <button type="button" class="btn btn-sm btn-warning" style="width: 100px; height: 39px; color:black;"> หน้าที่ <?php echo $page; ?></button> <!-- แสดงจำนวนหน้าที่ของผู้ดูแล --></h1>
-                                <buttom type="submit" class="btn btn-success" onClick="window.location='formAddAdmin.php'"><i class="fa-solid fa-plus"></i>&nbsp;เพิ่มสมาชิกของผู้ดูแล</buttom> <!-- หน้าเพิ่มสมาชิกของผู้ดูแล -->
+                            <div class="row">
+                                <h1 class="h3 mb-0 text-color-800" id="website">จัดการข้อมูลของผู้ดูแล <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color:black;"><?php echo $countResult; ?> คน</button> <!-- แสดงจำนวนสมาชิกผู้ดูแล -->
+                                <button type="button" class="btn btn-sm btn-warning" style="width: auto; height: auto; color:black;"> หน้าที่ <?php echo $page; ?></button> <!-- แสดงจำนวนหน้าที่ของผู้ดูแล -->
+                                <button type="button" class="btn btn-sm btn-success" onClick="window.location='formAddAdmin.php'" style="width: auto; height: auto; color:black;"><i class="fa-solid fa-plus">&nbsp;เพิ่มสมาชิกของผู้ดูแล</i></button> <!-- หน้าเพิ่มสมาชิกของผู้ดูแล -->
+                                </h1>
                             </div>
                             <!-- กรอกค้นหาของสมาชิกผู้ดูแล -->
                             <form action="PageSearchManageAdmin.php" class="form-group my-3" method="POST">
@@ -82,6 +82,8 @@
                                 $sql = "SELECT * FROM admin";
                                 $query = mysqli_query($db,$sql);
                             ?>
+                            <div class="table-responsive">
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <table class="table table-striped mt-4">
                                 <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้ดูแล -->
                                 <thead class="table table-success text-color">
@@ -108,6 +110,8 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
+                            </div>
+                            </div>
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                         <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
@@ -131,6 +135,25 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

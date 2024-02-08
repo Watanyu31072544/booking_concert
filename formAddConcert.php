@@ -63,10 +63,20 @@
                             <label for="inputGender" class="form-label">เวลาเริ่มแสดงของคอนเสิร์ต</label>
                             <input type="text" class="form-control" name="time" style="color: black;" required>
                         </div>
-                        <div class="my-3">
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                             <input type="submit" value="ยืนยันเพิ่มข้อมูลของคอนเสิร์ต" class="btn btn-success"> <!-- เมื่อกรอกข้อมูลของคอนเสิร์ตแล้ว สามารถกดยืนยันเพิ่มข้อมูลของคอนเสิร์ตได้ -->
+                            </div>
+                        </div>
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                             <input type="reset" value="ล้างข้อมูล" class="btn btn-warning"> <!-- เมื่อกรอกข้อมูลผิดแล้ว Admin สามารถทำการล้างข้อมูล เพราะกรอกข้อมูลผิดพลาด -->
+                            </div>
+                        </div>
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
                             <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;กลับหน้าจัดการข้อมูลของคอนเสิร์ต</a> <!-- เมื่อไม่อยากกรอกเพิ่มข้อมูลของคอนเสิร์ตแล้ว สามารถกดกลับหน้าจัดการข้อมูลของคอนเสิร์ต -->
+                            </div>
                         </div>                             
                         </form>
                     </div>
@@ -77,6 +87,22 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

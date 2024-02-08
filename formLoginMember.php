@@ -21,11 +21,19 @@
                 <input type="password" class="form-control" id="m_password" name="m_password" style="color: black;" required>
             </div>
             <br>
-            <div class="my-3">
-                <input type="submit" value="เข้าสู่ระบบ" class="btn btn-success"> <!-- เมื่อลูกค้ากรอกมาแล้ว สามารถทำการเข้าสู่เช็ค Username และ Password ของลูกค้า --> 
-                <a href="formRegisterMember.php" class="btn btn-success">ลงทะเบียน</a> <!-- เมื่อลูกค้ายังไม่มีสมาชิก ให้ลูกค้าทำการลงทะเบียนข้อมูล -->
-                <a href="formForgetPasswordMember.php" class="btn btn-warning">ลืมรหัสผ่าน</a> <!-- เมื่อลูกค้าลืมรหัสผ่าน ให้ลูกค้าทำการมาเปลี่ยน Password -->
-                <a href="formClickUser.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเข้าสู่ปุ่ม User</a> <!-- เมื่อเผลอกดปุ่มผิดหน้าให้กลับมาหน้าสู่ระบบจองตั๋วคอนเสิร์ต ในฐานะว่าอะไร --> 
+            <div class="row g-4">
+                <div class="d-grid gap-2 col-sm-2">
+                    <input type="submit" value="เข้าสู่ระบบ" class="btn btn-success"> <!-- เมื่อลูกค้ากรอกมาแล้ว สามารถทำการเข้าสู่เช็ค Username และ Password ของลูกค้า --> 
+                </div>
+                <div class="d-grid gap-2 col-sm-2">
+                    <a href="formRegisterMember.php" class="btn btn-success">ลงทะเบียน</a> <!-- เมื่อลูกค้ายังไม่มีสมาชิก ให้ลูกค้าทำการลงทะเบียนข้อมูล -->
+                </div>
+                <div class="d-grid gap-2 col-sm-2">
+                    <a href="formForgetPasswordMember.php" class="btn btn-warning">ลืมรหัสผ่าน</a> <!-- เมื่อลูกค้าลืมรหัสผ่าน ให้ลูกค้าทำการมาเปลี่ยน Password -->
+                </div>
+                <div class="d-grid gap-2 col-sm-2">
+                    <a href="formClickUser.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเข้าสู่ปุ่ม User</a> <!-- เมื่อเผลอกดปุ่มผิดหน้าให้กลับมาหน้าสู่ระบบจองตั๋วคอนเสิร์ต ในฐานะว่าอะไร --> 
+                </div>
             </div>
             </form>
         </div>    

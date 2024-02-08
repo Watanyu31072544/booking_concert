@@ -49,10 +49,9 @@
                         $countResult = $result -> num_rows;//แสดงจำนวนรายการจองตั๋วคอนเสิร์ตของลูกค้า
                     ?>
                     <div class="card-body">
-                        <div class="table-responsive">
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ต
-                            <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
+                        <div class="row">
+                            <h1 class="h3 mb-0 text-color-800" id="website">ประวัติจองตั๋วคอนเสิร์ต
+                            <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                 <?php echo $countResult; ?> รายการ
                             </button>
                             </h1>
@@ -66,12 +65,14 @@
                             </div>
                         </div>
                         </form>
+                        <div class="table-responsive">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <table class="table table-striped mt-4">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้จองคอนเสิร์ต -->
                             <thead class="table-success text-color">
                                 <tr>
                                 <th scope="col">ลำดับ</th>
-                                <th scope="col">ชื่อผู้จอง</th>
+                                <th scope="col">//ชื่อผู้จอง</th>
                                 <th scope="col">ชื่อคอนเสิร์ต</th>
                                 <th scope="col">สถานที่จัดคอนเสิร์ต</th>
                                 <th scope="col">โซนที่นั่ง</th>
@@ -101,6 +102,7 @@
                             </tbody>
                         </table>
                         </div>
+                        </div>
                     </div>    
                 </div>
                 <!-- /.container-fluid -->
@@ -110,6 +112,25 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

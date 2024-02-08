@@ -48,14 +48,13 @@
                         $countResult = $result -> num_rows;//แสดงจำนวนรายการจองตั๋วคอนเสิร์ตของลูกค้าทั้งหมดที่จองที่นั่งมา
                     ?>
                     <div class="card-body">
-                            <div class="table-responsive">
-                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
-                                <button type="button" class="btn btn-sm btn-success" style="width: 100px; height: 39px; color: black;">
+                            
+                                <h1 class="h3 mb-0 text-color-800" id="website">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
+                                <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                     <?php echo $countResult; ?> รายการ
                                 </button>
                                 </h1>
-                            </div>
+                            
                             <!-- กรอกค้นหาข้อมูลทั้งหมดที่จองไปก่อนหน้านี้ -->
                             <form action="PageSearchHistoryBookingConcertOfMember.php" class="form-group my-3" method="POST">
                             <div class="input-group" align="right">
@@ -64,6 +63,8 @@
                                     <label class="form-label" for="form1"></label>
                                 </div>
                             </div>
+                            <div class="table-responsive">
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <table class="table table-striped mt-4">
                                 <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของทั้งหมดที่ผู้จองคอนเสิร์ต -->
                                 <thead class="table-success text-color">
@@ -101,6 +102,8 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,6 +114,22 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

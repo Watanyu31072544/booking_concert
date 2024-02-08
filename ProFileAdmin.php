@@ -47,7 +47,7 @@
                         $manage = mysqli_fetch_assoc($result);
                     ?>
                     <div class="container-md" id="website">
-                        <h1 class="mt-3" align="center">โปรไฟล์ของลูกค้า</h1>
+                        <h1 class="mt-3" align="center">โปรไฟล์ของผู้ดูแล</h1>
                         <!-- หน้าโปรไฟล์ของผู้ดูแล -->
                         <form class="row g-4" method="post" action="updateProFileManage.php?admin=<?php echo $manage['ad_id']; ?>">
                         <input type="hidden" class="form-control" name="ad_id" disabled value="<?php echo $manage['ad_id']; ?>">
@@ -63,9 +63,15 @@
                             <label for="inputEmail" class="form-label">หน้าที่</label>
                             <input type="text" class="form-control" name="ad_role" style="color: black;" value="<?php echo $manage['ad_role']; ?>">
                         </div>
-                        <div class="my-3">
-                            <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success"> <!-- เมื่อลูกค้าทำการแก้ไขโปรไฟล์ของผู้ดูแลแล้ว สามารถบันทึกแก้ไขข้อมูลได้ -->
-                            <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูล</a> <!-- ในกรณีไม่อยากแก้ไขโปรไฟล์ของผู้ดูแล ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
+                            <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success" style="color: black;"> <!-- เมื่อลูกค้าทำการแก้ไขโปรไฟล์ของผู้ดูแลแล้ว สามารถบันทึกแก้ไขข้อมูลได้ -->
+                            </div>
+                        </div>
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
+                            <a href="ManageConcert.php" class="btn btn-danger" style="color: black;"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูล</a> <!-- ในกรณีไม่อยากแก้ไขโปรไฟล์ของผู้ดูแล ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
+                            </div>
                         </div>
                         </form>
                     </div>
@@ -76,6 +82,25 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

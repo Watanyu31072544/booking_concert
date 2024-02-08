@@ -75,8 +75,10 @@
                             <input type="text" class="form-control" name="time" style="color: black;" disabled value="<?php echo $concert['time']; ?>">
                         </div>                       
                         </form>
-                        <div class="my-3">
-                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจองตั๋วคอนเสิร์ต</a> <!-- เมื่อลูกค้าดูข้อมูลของคอนเสิร์ตแล้ว สามารถกลับมาหน้าจองตั๋วคอนเสิร์ต -->       
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
+                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจองตั๋วคอนเสิร์ต</a> <!-- เมื่อลูกค้าดูข้อมูลของคอนเสิร์ตแล้ว สามารถกลับมาหน้าจองตั๋วคอนเสิร์ต -->  
+                            </div>     
                         </div>            
                     </div>
                 <!-- /.container-fluid -->
@@ -90,6 +92,22 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 </body>
 
 </html>
