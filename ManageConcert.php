@@ -62,21 +62,16 @@
                     <!-- Page Heading -->
                     <div class="card-body">
                             <div class="row">
-                                
                                 <h1 class="h3 mb-0 text-color-800" id="website">จัดการข้อมูลของคอนเสิร์ต
-                                    
                                 <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color:black;">
                                     <?php echo $countResult; ?> คอนเสิร์ต
                                 </button> <!-- แสดงจำนวนคอนเสิร์ต -->
-                                
                                 <button type="button" class="btn btn-sm btn-warning" style="width: auto; height: auto; color:black;">
                                     หน้าที่ <?php echo $page; ?>
-                                </button> <!-- แสดงจำนวนหน้าที่ของคอนเสิร์ต -->                                
-                                
+                                </button> <!-- แสดงจำนวนหน้าที่ของคอนเสิร์ต -->
                                 <button type="button" class="btn btn-sm btn-success" onClick="window.location='formAddConcert.php'" style="width: auto; height: auto; color:black;"><i class="fa-solid fa-plus">&nbsp;เพิ่มข้อมูลของคอนเสิร์ต</i></button> <!-- หน้าเพิ่มข้อมูลของคอนเสิร์ต -->
                                 </h1>
-                                                      
-                            </div>    
+                            </div>
                             <!-- กรอกค้นหาของคอนเสิร์ต -->
                             <form action="PageSearchManageConcert.php" class="form-group my-3" method="POST">
                             <div class="input-group" align="right">
@@ -93,40 +88,40 @@
                                 $query = mysqli_query($db,$sql);
                             ?>
                             <div class="table-responsive">
-                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <table class="table table-striped mt-4">
-                                <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
-                                <thead class="table table-success text-color">
-                                    <tr>
-                                    <th scope="col">ลำดับ</th>
-                                    <th scope="col" width="20%">ชื่อคอนเสิร์ต</th>
-                                    <th scope="col" width="20%">สถานที่จัดคอนเสิร์ต</th>
-                                    <th scope="col" width="50%">รายละเอียดของคอนเสิร์ต</th>
-                                    <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>                            
-                                    <th scope="col">เวลาเริ่มแสดงของคอนเสิร์ต</th>
-                                    <th scope="col">แก้ไขข้อมูลของคอนเสิร์ต</th>
-                                    <th scope="col">ดูข้อมูลของคอนเสิร์ต</th>
-                                    <th scope="col">ลบข้อมูลของคอนเสิร์ต</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-color">
-                                    <?php for($i=1; $i<=$countPageResult; $i++){
-                                        $concert = $result -> fetch_assoc(); ?>
-                                    <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
-                                    <td><?php echo $concert['id']; ?></td>
-                                    <td><?php echo $concert['name']; ?></td>
-                                    <td><?php echo $concert['location']; ?></td>
-                                    <td><?php echo $concert['data']; ?></td>
-                                    <td><?php echo $concert['date']; ?></td>
-                                    <td><?php echo $concert['time']; ?></td>
-                                    <td><a href="formEditConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าแก้ไขข้อมูลของคอนเสิร์ต -->
-                                    <td><a href="formViewConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต -->
-                                    <td><a href="deleteConcert.php?concert=<?php echo $concert['id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $concert['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของคอนเสิร์ต</a></td>	<!-- ลบข้อมูลของคอนเสิร์ต -->
-                                    </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                            </div>
+                                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                <table class="table table-striped mt-4">
+                                    <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
+                                    <thead class="table table-success text-color">
+                                        <tr>
+                                        <th scope="col">ลำดับ</th>
+                                        <th scope="col" width="20%">ชื่อคอนเสิร์ต</th>
+                                        <th scope="col" width="20%">สถานที่จัดคอนเสิร์ต</th>
+                                        <th scope="col" width="50%">รายละเอียดของคอนเสิร์ต</th>
+                                        <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>
+                                        <th scope="col">เวลาเริ่มแสดงของคอนเสิร์ต</th>
+                                        <th scope="col">แก้ไขข้อมูลของคอนเสิร์ต</th>
+                                        <th scope="col">ดูข้อมูลของคอนเสิร์ต</th>
+                                        <th scope="col">ลบข้อมูลของคอนเสิร์ต</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-color">
+                                        <?php for($i=1; $i<=$countPageResult; $i++){
+                                            $concert = $result -> fetch_assoc(); ?>
+                                        <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
+                                        <td><?php echo $concert['id']; ?></td>
+                                        <td><?php echo $concert['name']; ?></td>
+                                        <td><?php echo $concert['location']; ?></td>
+                                        <td><?php echo $concert['data']; ?></td>
+                                        <td><?php echo $concert['date']; ?></td>
+                                        <td><?php echo $concert['time']; ?></td>
+                                        <td><a href="formEditConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าแก้ไขข้อมูลของคอนเสิร์ต -->
+                                        <td><a href="formViewConcert.php?concert=<?php echo $concert['id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของคอนเสิร์ต</a></td> <!-- หน้าดูข้อมูลของคอนเสิร์ต -->
+                                        <td><a href="deleteConcert.php?concert=<?php echo $concert['id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $concert['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของคอนเสิร์ต</a></td>	<!-- ลบข้อมูลของคอนเสิร์ต -->
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                                </div>
                             </div>
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
@@ -141,7 +136,6 @@
                                         </li>
                                 </ul>
                             </nav>
-                            
                         </div>
                     </div>
                 </div>
@@ -158,17 +152,13 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 </body>

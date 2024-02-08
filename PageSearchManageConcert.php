@@ -71,7 +71,7 @@
                                 <th scope="col">ชื่อคอนเสิร์ต</th>
                                 <th scope="col">สถานที่จัดคอนเสิร์ต</th>
                                 <th scope="col">รายละเอียดของคอนเสิร์ต</th>
-                                <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>                            
+                                <th scope="col">วันที่เริ่มแสดงของคอนเสิร์ต</th>
                                 <th scope="col">เวลาเริ่มแสดงของคอนเสิร์ต</th>
                                 <th scope="col">แก้ไขข้อมูลของคอนเสิร์ต</th>
                                 <th scope="col">ดูข้อมูลของคอนเสิร์ต</th>
@@ -115,17 +115,13 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 </body>

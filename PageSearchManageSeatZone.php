@@ -69,7 +69,7 @@
                                 <th scope="col" width="5%">ลำดับ</th>
                                 <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
                                 <th scope="col" width="20%">แก้ไขข้อมูลของลูกค้า</th>
-                                <th scope="col" width="20%">ดูข้อมูลของลูกค้า</th>                            
+                                <th scope="col" width="20%">ดูข้อมูลของลูกค้า</th>
                                 <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
                                 </tr>
                             </thead>
@@ -106,17 +106,13 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 </body>

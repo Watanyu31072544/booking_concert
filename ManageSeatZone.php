@@ -69,7 +69,6 @@
                                     หน้าที่ <?php echo $page; ?>
                                 </button> <!-- แสดงจำนวนหน้าที่ของโซนที่นั่ง -->
                                 <button type="button" class="btn btn-sm btn-success" onClick="window.location='formAddSeatZone.php'" style="width: auto; height: auto; color:black;"><i class="fa-solid fa-plus">&nbsp;เพิ่มข้อมูลของโซนที่นั่ง</i></button> <!-- หน้าเพิ่มข้อมูลของโซนที่นั่ง -->
-                                
                                 </h1>
                             </div>
                             <!-- กรอกค้นหาของโซนที่นั่ง -->
@@ -88,32 +87,32 @@
                                 $query = mysqli_query($db,$sql);
                             ?>
                             <div class="table-responsive">
-                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <table class="table table-striped mt-4">
-                                <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่ง -->
-                                <thead class="table table-success text-color">
-                                    <tr>
-                                    <th scope="col" width="5%">ลำดับ</th>
-                                    <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
-                                    <th scope="col" width="20%">แก้ไขข้อมูลของลูกค้า</th>
-                                    <th scope="col" width="20%">ดูข้อมูลของลูกค้า</th>                            
-                                    <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-color">
-                                    <?php for($i=1; $i<=$countPageResult; $i++){
-                                        $seat_zone = $result -> fetch_assoc(); ?>
-                                    <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
-                                    <td><?php echo $seat_zone['s_id']; ?></td>
-                                    <td><?php echo $seat_zone['s_zone']; ?></td>
-                                    <td><a href="formEditSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>"class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขพื้นที่ของโซนที่นั่ง</a></td> <!-- หน้าแก้ไขข้อมูลของโซนที่นั่ง -->
-                                    <td><a href="formViewSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของโซนที่นั่ง</a></td> <!-- หน้าดูข้อมูลของโซนที่นั่ง -->
-                                    <td><a href="deleteSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $seat_zone['s_zone']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของโซนที่นั่ง</a></td>	<!-- ลบข้อมูลของโซนที่นั่ง -->
-                                    </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                            </div>
+                                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                <table class="table table-striped mt-4">
+                                    <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่ง -->
+                                    <thead class="table table-success text-color">
+                                        <tr>
+                                        <th scope="col" width="5%">ลำดับ</th>
+                                        <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
+                                        <th scope="col" width="20%">แก้ไขข้อมูลของลูกค้า</th>
+                                        <th scope="col" width="20%">ดูข้อมูลของลูกค้า</th>
+                                        <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-color">
+                                        <?php for($i=1; $i<=$countPageResult; $i++){
+                                            $seat_zone = $result -> fetch_assoc(); ?>
+                                        <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
+                                        <td><?php echo $seat_zone['s_id']; ?></td>
+                                        <td><?php echo $seat_zone['s_zone']; ?></td>
+                                        <td><a href="formEditSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>"class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขพื้นที่ของโซนที่นั่ง</a></td> <!-- หน้าแก้ไขข้อมูลของโซนที่นั่ง -->
+                                        <td><a href="formViewSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของโซนที่นั่ง</a></td> <!-- หน้าดูข้อมูลของโซนที่นั่ง -->
+                                        <td><a href="deleteSeatZone.php?seat_zone=<?php echo $seat_zone['s_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $seat_zone['s_zone']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของโซนที่นั่ง</a></td>	<!-- ลบข้อมูลของโซนที่นั่ง -->
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                                </div>
                             </div>
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
@@ -144,17 +143,13 @@
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 </body>
