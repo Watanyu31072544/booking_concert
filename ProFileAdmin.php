@@ -65,12 +65,12 @@
                         </div>
                         <div class="row my-2 mx-0">
                             <div class="col-auto">
-                            <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success" style="color: black;"> <!-- เมื่อลูกค้าทำการแก้ไขโปรไฟล์ของผู้ดูแลแล้ว สามารถบันทึกแก้ไขข้อมูลได้ -->
+                            <input type="submit" value="ยืนยันแก้ไขข้อมูลของผู้ดูแล" class="btn btn-success"> <!-- เมื่อลูกค้าทำการแก้ไขโปรไฟล์ของผู้ดูแลแล้ว สามารถบันทึกแก้ไขข้อมูลได้ -->
                             </div>
                         </div>
                         <div class="row my-2 mx-0">
                             <div class="col-auto">
-                            <a href="ManageConcert.php" class="btn btn-danger" style="color: black;"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูล</a> <!-- ในกรณีไม่อยากแก้ไขโปรไฟล์ของผู้ดูแล ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
+                            <a href="ManageConcert.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกแก้ไขข้อมูล</a> <!-- ในกรณีไม่อยากแก้ไขโปรไฟล์ของผู้ดูแล ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
                             </div>
                         </div>
                         </form>
