@@ -85,7 +85,7 @@
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">ที่อยู่</label>
-                            <input type="text" class="form-control" name="address" style="color: black;" value="<?php echo $member['address']; ?>">
+                            <textarea type="text" class="form-control" name="address" style="color: black;"><?php echo $member['address']; ?></textarea>
                         </div>
                         <div class="row my-2 mx-0">
                             <div class="col-auto">
