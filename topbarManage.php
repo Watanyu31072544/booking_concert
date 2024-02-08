@@ -19,6 +19,9 @@ require("dbconnect.php");
             $result = mysqli_query($db, $sqlloginmanage);
             $manage = mysqli_fetch_assoc($result);
         ?>
+        <?php
+        include("dateToday.php");
+        ?>
         <a class="navbar-brand" style="color: black;"> สวัสดี <?php echo $manage["ad_username"];?></a>
         </ul>
         <?php  } ?>
