@@ -10,6 +10,9 @@ require("dbconnect.php");
                 <i class="fa fa-bars"></i>
             </a>
         </form>
+        <?php
+        include("dateToday.php");
+        ?>
         <ul class="navbar-nav ml-auto">
         <?php
             if (!$_SESSION["ad_id"]) {
@@ -19,11 +22,7 @@ require("dbconnect.php");
             $result = mysqli_query($db, $sqlloginmanage);
             $manage = mysqli_fetch_assoc($result);
         ?>
-        <?php
-        include("dateToday.php");
-        ?>
         <a class="navbar-brand" style="color: black;"> สวัสดี <?php echo $manage["ad_username"];?></a>
         </ul>
-        <?php  } ?>
-    
+        <?php  } ?>    
 </nav>

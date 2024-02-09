@@ -9,7 +9,10 @@ require("dbconnect.php");
             <a id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3" herf="#">
                 <i class="fa fa-bars"></i>
             </a>
-        </form>
+        </form> <!-- สามารถเปิดปิด -->
+        <?php
+        include("dateToday.php");
+        ?>
         <ul class="navbar-nav ml-auto">
         <?php
             if (!$_SESSION["m_id"]) {
@@ -19,11 +22,7 @@ require("dbconnect.php");
             $result = mysqli_query($db, $sqlloginmember);
             $member = mysqli_fetch_assoc($result);
         ?>
-        <?php
-        include("dateToday.php");
-        ?>
-        <a class="navbar-brand" style="color: black;"> สวัสดี <?php echo $member["m_fullname"];?></a>
+        <a class="navbar-brand" style="color: black;">สวัสดี <?php echo $member["m_username"];?></a>
         </ul>
-        <?php  } ?>        
-    
+        <?php  } ?>            
 </nav>
