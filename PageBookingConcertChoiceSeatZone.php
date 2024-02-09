@@ -63,14 +63,14 @@
                             <div align="center">
                                 <center style="width: auto; height: 100px; background-color :LightGray; color :black">Stage</center>
                             </div>
-                            <br>                        
+                            <br>
                             <table class="table table-striped">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่งต้องเลือกโซนใดโซนหนึ่ง -->
                             <thead class="table-success text-color" align="center";>
                                 <tr>
                                 <th scope="col">ลำดับ</th>
                                 <th scope="col">โซนที่นั่ง</th>
-                                <th scope="col">เลือกโซนที่นั่ง</th>                          
+                                <th scope="col">เลือกโซนที่นั่ง</th>
                                 </tr>
                             </thead>
                             <tbody class="text-color" align="center";>
