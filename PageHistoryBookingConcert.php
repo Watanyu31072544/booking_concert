@@ -97,7 +97,7 @@
                                 <td><?php echo $booking['location']; ?></td>
                                 <td><?php echo $booking['s_zone']; ?></td>
                                 <td><a href="BookingConcertPay.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-print"></i> ปริ้นใบชำระเงิน</a></td> <!-- เมื่อลูกค้าจองที่นั่งไว้แล้ว สามารถชำระเงินผ่าน QR Code -->
-                                <td><a href="BookingConcertPayDownload.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-download"></i> Download ใบชำระเงิน</a></td> <!-- เมื่อลูกค้าจองที่นั่งไว้แล้ว สามารถชำระเงินผ่าน QR Code -->
+                                <td><a href="BookingConcertPayDownload.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-download"></i> Download ใบชำระเงิน</a></td> <!-- เมื่อลูกค้าจองที่นั่งไว้แล้ว สามารถชำระเงินผ่าน QR Code -->
                                 <td><a href="deleteBooking.php?booking=<?php echo $booking['booking_id']; ?>" onclick="return confirm('ยกเลิกการจองตั๋วคอนเสิร์ต <?php echo $booking['name']; ?> ?');" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> ยกเลิกจองตั๋วคอนเสิร์ต</a></td> <!-- เมื่อลูกค้าอยากเลือกที่นั่งใหม่ สามารถยกเลิกจองตั๋วด้วยลูกค้าเองได้ -->
                                 </tr>
                                 <?php } ?>
