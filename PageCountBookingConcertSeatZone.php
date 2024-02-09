@@ -72,15 +72,10 @@
                                 <th scope="col">จำนวนที่นั่ง</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-color" align="center";>
-                            <?php
-                                include('connect.php');
-                                $sql = "SELECT distinct s_zone FROM booking ORDER BY s_zone ASC";
-                                $query = mysqli_query($db,$sql);
-                            ?>
+                            <tbody class="text-color" align="center";>                            
                             <?php
                             include('connect.php');
-                                $sql = "select distinct s_zone from seat_zone ORDER BY s_zone ASC";
+                                $sql = "select s_zone,count(s_zone) from booking GROUP BY s_zone";
                                 if(!$result = $db -> query($sql)){
                                     die($db -> error);
                                 }
