@@ -18,6 +18,6 @@ $pdf->Cell(0,5,iconv('utf-8','cp874', $booking['name']),0,1,'C');
 $pdf->Cell(0,5,iconv('utf-8','cp874','สถานที่จัดคอนเสิร์ต       ' .$booking['location']),0,1,'l');
 $pdf->Cell(0,5,iconv('utf-8','cp874','โซนที่นั่ง                                 ' .$booking['s_zone']),0,1,'l');
 
-$pdf->Output('I','TicketConcert.pdf');
+$pdf->Output();
 }
 ?>

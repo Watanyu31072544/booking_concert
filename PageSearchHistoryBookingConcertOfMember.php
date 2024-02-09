@@ -84,6 +84,7 @@
                                     <th scope="col">สถานที่จัดคอนเสิร์ต</th>
                                     <th scope="col">โซนที่นั่ง</th>
                                     <th scope="col">แสดงบัตรคอนเสิร์ต</th>
+                                    <th scope="col">Download บัตรคอนเสิร์ต</th>
                                     <th scope="col">ยกเลิกการจองตั๋วคอนเสิร์ต</th>
                                     </tr>
                                 </thead>
@@ -98,6 +99,7 @@
                                     <td><?php echo $booking['location']; ?></td>
                                     <td><?php echo $booking['s_zone']; ?></td>
                                     <td><a href="TicketConcert.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-ticket"></i> บัตรคอนเสิร์ต</a></td> <!-- เมื่อลูกค้าจองที่นั่งแล้ว ให้ Admin สามารถทำการออกบัตรคอนเสิร์ตได้ -->
+                                    <td><a href="TicketConcertDownload.php?booking=<?php echo $booking['booking_id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-download"></i> Download บัตรคอนเสิร์ต</a></td> <!-- ให้ Admin สามารถทำการออกบัตรคอนเสิร์ตแบบอิเล็กทรอนิกส์ได้-->
                                     <td><a href="deleteBookingOfMember.php?booking=<?php echo $booking['booking_id']; ?>" onclick="return confirm('ยกเลิกการจองตั๋วคอนเสิร์ตของคุณ <?php echo $member['m_fullname']; ?> ?');" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> ยกเลิกจองตั๋วคอนเสิร์ต</a></td> <!-- เมื่อไม่อยากออกบัตรคอนเสิร์ต สามารถยกเลิกจองตั๋วคอนเสิร์ตได้ ไม่สามารถออกบัตรได้ เนื่องจากให้ลูกค้าจะต้องไปเลือกที่นั่งใหม่อีกครั้งได้ -->
                                     </tr>
                                     <?php } ?>
