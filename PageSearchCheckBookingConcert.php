@@ -84,7 +84,7 @@
                                     <td><?php echo $concert['name']; ?></td>
                                     <td><?php echo $concert['location']; ?></td>
                                     <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>                      
-                                    <td><a href="PageBookingConcertSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> จองที่นั่ง</a></td> <!-- หน้าเช็คจำนวนที่นั่งของคอนเสิร์ต ให้ Admin สามารถดูจำนวนที่นั่งได้ -->
+                                    <td><a href="PageCountBookingConcertSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เช็คจำนวนที่นั่ง</a></td> <!-- หน้าเช็คจำนวนที่นั่งของคอนเสิร์ต ให้ Admin สามารถดูจำนวนที่นั่งได้ -->
                                     </tr>
                                     <?php } ?>
                                 </tbody>
