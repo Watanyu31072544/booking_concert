@@ -75,7 +75,7 @@
                             <tbody class="text-color" align="center";>                            
                             <?php
                             include('connect.php');
-                                $sql = "select s_zone,count(s_zone) from seat_zone GROUP BY s_zone";
+                                $sql = "select s_zone,count(s_zone) from booking where s_zone is not null and name = 'RS MEETING CONCERT 2024 MARATHON 2 ยกกำลังเต้น' GROUP BY s_zone";
                                 if(!$result = $db -> query($sql)){
                                     die($db -> error);
                                 }
@@ -101,7 +101,7 @@
                                     $booking = $result -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
                                 <td><?php echo $booking['s_zone']; ?></td>
-                                <td></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
+                                <td><?php echo $booking['count(s_zone)'];?></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
                                 </tr>
                                 <?php } ?>
                             </tbody>
