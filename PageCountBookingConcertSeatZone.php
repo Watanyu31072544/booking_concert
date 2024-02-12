@@ -75,7 +75,7 @@
                             <tbody class="text-color" align="center";>                            
                             <?php
                             include('connect.php');
-                                $sql = "select s_zone,count(s_zone) from booking GROUP BY s_zone";
+                                $sql = "select s_zone,count(s_zone) from seat_zone GROUP BY s_zone";
                                 if(!$result = $db -> query($sql)){
                                     die($db -> error);
                                 }
