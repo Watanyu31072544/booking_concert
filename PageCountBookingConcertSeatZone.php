@@ -53,8 +53,7 @@
                             <!-- แสดงชื่อคอนเสิร์ตตรงกับรหัส ID ของคอนเสิร์ต -->
                             <h3>ชื่อคอนเสิร์ต : <?php echo $concert['name']; ?></h3>
                             <a href="PageCheckBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูเช็คจำนวนที่นั่งของคอนเสิร์ต</a>
-                    </div>
-                    
+                    </div>                    
                     <div class="col p-3 rounded-start" align="center">
                             <h3 style="color:black;">กรุณาเลือกโซนที่นั่งด้วยครับ</h3>
                             <div align="center">
