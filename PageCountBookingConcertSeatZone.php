@@ -40,9 +40,9 @@
                 <div class="container-fluid">
                     <?php
                         //แสดงรหัส ID ของคอนเสิร์ต
-                        if(isset($_GET['concert'])){
+                        if(isset($_GET['booking'])){
                             require_once 'connect.php';
-                            $sql = "SELECT * FROM concert where id=".$_GET['concert'];
+                            $sql = "SELECT * FROM booking where booking_id=".$_GET['booking'];
                             $query = mysqli_query($db,$sql);
                             while($concert = mysqli_fetch_array($query)){
                     ?>
@@ -54,10 +54,7 @@
                             <h3>ชื่อคอนเสิร์ต : <?php echo $concert['name']; ?></h3>
                             <a href="PageCheckBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูเช็คจำนวนที่นั่งของคอนเสิร์ต</a>
                     </div>
-                    <?php
-                            }
-                        }
-                    ?>
+                    
                     <div class="col p-3 rounded-start" align="center">
                             <h3 style="color:black;">กรุณาเลือกโซนที่นั่งด้วยครับ</h3>
                             <div align="center">
@@ -75,7 +72,7 @@
                             <tbody class="text-color" align="center";>                            
                             <?php
                             include('connect.php');
-                                $sql = "select s_zone,count(s_zone) from booking where s_zone is not null and name = 'RS MEETING CONCERT 2024 MARATHON 2 ยกกำลังเต้น' GROUP BY s_zone";
+                                $sql = "select s_zone,count(s_zone) from booking where s_zone is not null and name = '".$concert['name']."'GROUP BY s_zone";
                                 if(!$result = $db -> query($sql)){
                                     die($db -> error);
                                 }
@@ -108,7 +105,11 @@
                             </table>
                             </div>
                         </div>                             
-                    </div>                   
+                    </div>    
+                    <?php
+                            }
+                        }
+                    ?>               
                 </div>
                 <!-- /.container-fluid -->
             </div>

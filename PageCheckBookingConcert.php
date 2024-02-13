@@ -40,7 +40,7 @@
                 <div class="container-fluid">
                 <?php
                     include('connect.php');
-                    $sql = "select * from concert";
+                    $sql = "select * from booking group by name asc";
                     if(!$result = $db -> query($sql)){
                         die($db -> error);
                     }
@@ -97,18 +97,18 @@
                             <tbody class="text-color" align="center";>
                             <?php
                                 include('connect.php');
-                                $sql = "SELECT * FROM concert ORDER BY id ASC";
+                                $sql = "SELECT * FROM booking ORDER BY booking_id ASC";
                                 $query = mysqli_query($db,$sql);
                             ?>
                             <?php
                                 for($i=1; $i<=$countPageResult; $i++){
                                     $concert = $result -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
-                                <td><?php echo $concert['id']; ?></td>
+                                <td><?php echo $concert['booking_id']; ?></td>
                                 <td><?php echo $concert['name']; ?></td>
                                 <td><?php echo $concert['location']; ?></td>
                                 <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>
-                                <td><a href="PageCountBookingConcertSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เช็คจำนวนที่นั่ง</a></td> <!-- หน้าเช็คจำนวนที่นั่งของคอนเสิร์ต ให้ Admin สามารถดูจำนวนที่นั่งได้ -->
+                                <td><a href="PageCountBookingConcertSeatZone.php?booking=<?php echo $concert['booking_id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เช็คจำนวนที่นั่ง</a></td> <!-- หน้าเช็คจำนวนที่นั่งของคอนเสิร์ต ให้ Admin สามารถดูจำนวนที่นั่งได้ -->
                                 </tr>
                                 <?php } ?>
                             </tbody>
