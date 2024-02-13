@@ -45,21 +45,6 @@
                         die($db -> error);
                     }
                     $countResult = $result -> num_rows; //นับจำนวนแถวจากคำสั่ง $sql
-                    //////////////////////////////////////
-                    if( !isset( $_GET['page'] ) ){
-                        $page = 1;
-                    } else{
-                        $page = $_GET['page'];
-                    }
-                    $perPage = 5;
-                    $totalPage = ceil(10/2); // floor , round , ceil
-                    $startLimit = ($page-1) * $perPage; // 1 = (1-1)*4 , 2 = (2-1)*4 , หน้า3 = (3-1)*4 = 8
-                    $sql .= "  limit $startLimit,$perPage"; // $sql = $sql . "  limit 0,$perPage";
-                    if(!$result = $db -> query($sql)){
-                        die($db -> error);
-                    }
-                    $countPageResult = $result -> num_rows; // นับจำนวนที่มีในแต่ละหน้า
-                    //////////////////////////////////////
                 ?>
                     <!-- Page Heading -->
                     <div class="card-body">
@@ -68,9 +53,7 @@
                             <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                 <?php echo $countResult; ?> คอนเสิร์ต
                             </button> <!-- แสดงจำนวนคอนเสิร์ตที่ได้เพิ่มข้อมูลจากผู้ดูแล -->
-                            <button type="button" class="btn btn-sm btn-warning" style="width: auto; height: auto; color: black;">
-                                หน้าที่ <?php echo $page; ?>
-                            </button><!-- แสดงจำนวนหน้าที่ของลูกค้า --></h1>                        
+                            </h1>                        
                         </div>
                         <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->                    
                         <form action="PageSearchCheckBookingConcert.php" class="form-group my-3" method="POST">
@@ -99,12 +82,13 @@
                                 include('connect.php');
                                 $sql = "SELECT * FROM booking ORDER BY booking_id ASC";
                                 $query = mysqli_query($db,$sql);
+                                $order = 1;
                             ?>
                             <?php
-                                for($i=1; $i<=$countPageResult; $i++){
-                                    $concert = $result -> fetch_assoc();?>
-                                <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
-                                <td><?php echo $concert['booking_id']; ?></td>
+                                while($concert = $result -> fetch_assoc()){
+                                    ?>
+                                <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลจำนวนที่นั่งแต่ละโซนของคอนเสิร์ต -->
+                                <td><?php echo $order++; ?></td>
                                 <td><?php echo $concert['name']; ?></td>
                                 <td><?php echo $concert['location']; ?></td>
                                 <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>
@@ -115,19 +99,6 @@
                         </table>
                         </div>
                         </div>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                    <li class="page-item  <?php if( $page==1 ){ echo "disabled"; } ?>">
-                                    <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
-                                    </li>
-                                    <?php for($p=1; $p<=$totalPage; $p++){ ?>
-                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $p; ?>"><?php echo $p; ?></a></li>
-                                    <?php }?>
-                                    <li class="page-item  <?php if( $page==$totalPage ){ echo "disabled"; } ?>">
-                                    <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
-                                    </li>
-                            </ul>
-                        </nav>
                         </div>  
                     </div>                      
                 </div>
