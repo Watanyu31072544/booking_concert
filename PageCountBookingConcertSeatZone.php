@@ -105,9 +105,9 @@
                                 <td><?php echo 10-$booking['count(s_zone)'];?></td>
                                 <td><?php echo $booking['count(s_zone)'];?></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
                                 
-                                <td><?php if($booking['count(s_zone)'] == 10){
+                                <td><?php if($booking['count(s_zone)'] == 10){//พื้นที่โซนที่นั่งเต็มแล้ว
                                     echo 'เต็มแล้ว';
-                                } else {
+                                } else {//พื้นที่โซนที่นั่งว่างอยู่
                                     echo 'ว่างอยู่';
                                 } ?></td>
                                 </tr>
