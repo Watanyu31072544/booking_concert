@@ -32,6 +32,13 @@ require("dbconnect.php");
             <span>ประวัติจองตั๋วคอนเสิร์ต</span>
         </a>
     </li>
+    <li class="nav-item active">
+        <!-- หน้าประวัติจองตั๋วคอนเสิร์ต ลูกค้าสามารถเข้ามาดูประวัติจองตั๋วคอนเสิร์ตได้ -->
+        <a class="nav-link" href="PageCheckBookingConcertOfMember.php">
+            <i class="fa-solid fa-chair"></i>
+            <span>เช็คสถานะของที่นั่ง</span>
+        </a>
+    </li>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
         <!-- หน้าโปรไฟล์ของลูกค้า ลูกค้าสามารถเข้ามาดูโปรไฟล์ของลูกค้าเองได้ -->
