@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>เลือกโซนที่นั่งคอนเสิร์ต</title>
+    <title>เช็คจำนวนโซนที่นั่งคอนเสิร์ต</title>
 
     <!-- Custom fonts for this template-->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">

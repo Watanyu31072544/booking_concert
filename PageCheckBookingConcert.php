@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>จองตั๋วคอนเสิร์ต</title>
+    <title>เช็คจำนวนที่นั่งของคอนเสิร์ต </title>
 
     <!-- Custom fonts for this template-->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
