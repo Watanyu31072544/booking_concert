@@ -67,6 +67,9 @@
                                 <tr>
                                 <th scope="col">โซนที่นั่ง</th>
                                 <th scope="col">จำนวนที่นั่ง</th>
+                                <th scope="col">จำนวนเหลือของที่นั่ง</th>
+                                <th scope="col">จำนวนที่นั่งถูกจอง</th>
+                                <th scope="col">สถานะ</th>
                                 </tr>
                             </thead>
                             <tbody class="text-color" align="center";>                            
@@ -98,7 +101,15 @@
                                     $booking = $result -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
                                 <td><?php echo $booking['s_zone']; ?></td>
+                                <td><?php echo 10;?></td>
+                                <td><?php echo 10-$booking['count(s_zone)'];?></td>
                                 <td><?php echo $booking['count(s_zone)'];?></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
+                                
+                                <td><?php if($booking['count(s_zone)'] == 10){
+                                    echo 'เต็มแล้ว';
+                                } else {
+                                    echo 'ว่างอยู่';
+                                } ?></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>

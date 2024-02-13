@@ -47,17 +47,17 @@
                             <?php
                                 //ค้นหาข้อมูลสถานที่จัดคอนเสิร์ต
                                 include('dbconnect.php');
-                                $concert=$_POST["concert"];
-                                $sql = "SELECT * FROM concert WHERE location LIKE '%$concert%' ORDER BY location ASC";
+                                $booking=$_POST["booking"];
+                                $sql = "SELECT * FROM booking WHERE location LIKE '%$booking%' ORDER BY location ASC";
                                 $query = mysqli_query($db,$sql);
                                 $count = mysqli_num_rows($query);
                                 $order = 1;
                             ?>
                             <!-- ถ้าอยากจะกรอกข้อมูลอีกครั้ง สามารถกรอกสถานที่จัดคอนเสิร์ตอีกครั้งได้ -->
-                            <form action="PageSearchBookingConcert.php" class="form-group my-3" method="POST">
+                            <form action="PageSearchCheckBookingConcert.php" class="form-group my-3" method="POST">
                             <div class="input-group" align="right">
                                 <div class="form-outline col-12" data-mdb-input-init>
-                                    <input type="search" id="search" class="form-control" name="concert" required style="color: black;" placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตด้วยครับ"/>
+                                    <input type="search" id="search" class="form-control" name="booking" required style="color: black;" placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตด้วยครับ"/>
                                     <label class="form-label" for="form1"></label>
                                 </div>                            
                             </div>                    
@@ -84,7 +84,7 @@
                                     <td><?php echo $concert['name']; ?></td>
                                     <td><?php echo $concert['location']; ?></td>
                                     <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>                      
-                                    <td><a href="PageCountBookingConcertSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เช็คจำนวนที่นั่ง</a></td> <!-- หน้าเช็คจำนวนที่นั่งของคอนเสิร์ต ให้ Admin สามารถดูจำนวนที่นั่งได้ -->
+                                    <td><a href="PageCountBookingConcertSeatZone.php?booking=<?php echo $concert['booking_id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เช็คจำนวนที่นั่ง</a></td> <!-- หน้าเช็คจำนวนที่นั่งของคอนเสิร์ต ให้ Admin สามารถดูจำนวนที่นั่งได้ -->
                                     </tr>
                                     <?php } ?>
                                 </tbody>
