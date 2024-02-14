@@ -51,7 +51,7 @@
                     <div class="card-body">
                             <h1 class="h3 mb-0 text-color-800" id="website">เช็คสะสมคะแนนของลูกค้า
                                 <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;"><?php echo $countResult; ?> คน</button>
-                                <a href="PageCheckScoreBookingConcertOfMember.php" class="btn btn-sm btn-danger" style="width: auto; height: auto;"><i class="fa-solid fa-arrow-left"></i>&nbsp;เช็คสะสมคะแนนของลูกค้า</a>
+                                <a href="PageCheckScoreBookingConcertOfMember.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color:black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;เช็คสะสมคะแนนของลูกค้า</a><!-- เมื่อค้นหาเสร็จแล้ว สามารถกลับมาหน้าเช็คสะสมคะแนนของลูกค้า -->
                             </h1>
                             <!-- กรอกค้นหาสมาชิกทั้งหมดที่สะสมคะแนนไปก่อนหน้านี้ -->
                             <?php
@@ -86,7 +86,7 @@
                                     <?php
                                     while($booking = mysqli_fetch_assoc($query)){
                                     ?>
-                                    <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของสะสมคะนนของผู้จอง -->
+                                    <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของสะสมคะแนนของผู้จอง -->
                                     <td><?php echo $order++; ?></td>
                                     <td><?php echo $booking['m_fullname']; ?></td>
                                     <td><?php echo number_format($booking['sum_price']/20,0); ?></td>
