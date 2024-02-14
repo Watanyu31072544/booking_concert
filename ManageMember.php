@@ -88,7 +88,7 @@
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                 <table class="table table-striped mt-4">
                                     <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของลูกค้า -->
-                                    <thead class="table table-success text-color">
+                                    <thead class="table table-success text-color" align="center">
                                         <tr>
                                         <th scope="col" width="5%">ลำดับ</th>
                                         <th scope="col" width="15%">ชื่อลูกค้า</th>
@@ -98,7 +98,7 @@
                                         <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-color">
+                                    <tbody class="text-color" align="center">
                                         <?php for($i=1; $i<=$countPageResult; $i++){
                                             $member = $result -> fetch_assoc(); ?>
                                         <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของลูกค้า -->

@@ -90,16 +90,16 @@
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                 <table class="table table-striped mt-4">
                                     <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่ง -->
-                                    <thead class="table table-success text-color">
+                                    <thead class="table table-success text-color" align="center">
                                         <tr>
-                                        <th scope="col" width="5%">ลำดับ</th>
-                                        <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
-                                        <th scope="col" width="20%">แก้ไขข้อมูลของลูกค้า</th>
-                                        <th scope="col" width="20%">ดูข้อมูลของลูกค้า</th>
-                                        <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
+                                        <th scope="col">ลำดับ</th>
+                                        <th scope="col">ชื่อโซนที่นั่ง</th>
+                                        <th scope="col">แก้ไขข้อมูลของลูกค้า</th>
+                                        <th scope="col">ดูข้อมูลของลูกค้า</th>
+                                        <th scope="col">ลบข้อมูลของลูกค้า</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-color">
+                                    <tbody class="text-color" align="center">
                                         <?php for($i=1; $i<=$countPageResult; $i++){
                                             $seat_zone = $result -> fetch_assoc(); ?>
                                         <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->

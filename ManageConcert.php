@@ -91,7 +91,7 @@
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                 <table class="table table-striped mt-4">
                                     <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
-                                    <thead class="table table-success text-color">
+                                    <thead class="table table-success text-color" align="center">
                                         <tr>
                                         <th scope="col">ลำดับ</th>
                                         <th scope="col" width="20%">ชื่อคอนเสิร์ต</th>
@@ -104,7 +104,7 @@
                                         <th scope="col">ลบข้อมูลของคอนเสิร์ต</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-color">
+                                    <tbody class="text-color" align="center">
                                         <?php for($i=1; $i<=$countPageResult; $i++){
                                             $concert = $result -> fetch_assoc(); ?>
                                         <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->

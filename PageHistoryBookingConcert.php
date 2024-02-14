@@ -69,7 +69,7 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <table class="table table-striped mt-4">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของผู้จองคอนเสิร์ต -->
-                            <thead class="table-success text-color">
+                            <thead class="table-success text-color" align="center">
                                 <tr>
                                 <th scope="col">ลำดับ</th>
                                 <th scope="col">ชื่อผู้จอง</th>
@@ -81,7 +81,7 @@
                                 <th scope="col">ยกเลิกจองตั๋วคอนเสิร์ต</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-color">
+                            <tbody class="text-color" align="center">
                             <?php
                                 //แสดงรายการจองตั๋วคอนเสิร์ตของลูกค้า
                                 include('connect.php');
