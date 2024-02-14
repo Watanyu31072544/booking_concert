@@ -132,19 +132,26 @@
                                     }
                                 }
                             ?>
-                            <div class="my-3">
-                                <input type="submit" value="ยืนยันการจองตั๋วคอนเสิร์ต" class="btn btn-success"> <!-- ถ้าเลือกที่นั่งได้แล้ว กดยืนยันจองที่นั่งของคอนเสิร์ตได้ -->
-                                <?php
-                                    //แสดงรหัส ID ของคอนเสิร์ต
-                                    if(isset($_GET['concert'])){
-                                        require_once 'connect.php';
-                                        $sql = "SELECT * FROM concert where id=".$_GET['concert'];
-                                        $query = mysqli_query($db,$sql);
-                                        while($concert = mysqli_fetch_array($query)){
-                                ?>
-                                <a href="PageBookingConcertChoiceSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกการจองตั๋วคอนเสิร์ต</a> <!-- ถ้าไม่อยากเลือกที่นั่งของคอนเสิร์ตแล้ว สามารถกดยกเลิกจองที่นั่งของคอนเสิร์ตได้ -->
+                            
+                                <div class="row my-2 mx-0">
+                                    <div class="col-auto">
+                                    <input type="submit" value="ยืนยันการจองตั๋วคอนเสิร์ต" class="btn btn-success">
+                                    </div> <!-- ถ้าเลือกที่นั่งได้แล้ว กดยืนยันจองที่นั่งของคอนเสิร์ตได้ -->
+                                    </div>
+                                    <?php
+                                        //แสดงรหัส ID ของคอนเสิร์ต
+                                        if(isset($_GET['concert'])){
+                                            require_once 'connect.php';
+                                            $sql = "SELECT * FROM concert where id=".$_GET['concert'];
+                                            $query = mysqli_query($db,$sql);
+                                            while($concert = mysqli_fetch_array($query)){
+                                    ?>
+                                <div class="row my-2 mx-0">
+                                    <div class="col-auto">
+                                    <a href="PageBookingConcertChoiceSeatZone.php?concert=<?php echo $concert['id']; ?>" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;ยกเลิกการจองตั๋วคอนเสิร์ต</a>
+                                    </div> <!-- ถ้าไม่อยากเลือกที่นั่งของคอนเสิร์ตแล้ว สามารถกดยกเลิกจองที่นั่งของคอนเสิร์ตได้ -->
+                                    </div>
                                 <?php }} ?>
-                            </div>
                             </form>   
                         </div>                                         
                 </div>

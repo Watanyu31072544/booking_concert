@@ -92,7 +92,7 @@
                             $query2 = mysqli_query($db,$sql2);
                             $scoreofmember = mysqli_fetch_assoc($query2);
                         ?>
-                        <div class="col-12">
+                        <div class="col-12"><!-- ลูกค้าสามารถเช็คสะสมคะแนนที่ซื้อไปแล้ว -->
                             <label for="inputOccupation" class="form-label">สะสมคะแนน</label>
                             <input type="text" class="form-control" disabled style="color: black;" value="<?php echo number_format($scoreofmember['sum_price']/20,0); ?>">
                         </div>

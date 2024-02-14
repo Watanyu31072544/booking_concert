@@ -53,14 +53,14 @@ require("dbconnect.php");
         </a>
     </li>
     <li class="nav-item active">
-        <!-- หน้าประวัติจองตั๋วคอนเสิร์ต ลูกค้าสามารถเข้ามาดูประวัติจองตั๋วคอนเสิร์ตได้ -->
+        <!-- หน้าเช็คสถานะของที่นั่งที่ลูกค้าจอง ผู้ดูแลสามารถเข้ามาดูเช็คสถานะของที่นั่งที่ลูกค้าจองได้ -->
         <a class="nav-link" href="PageCheckBookingConcert.php">
             <i class="fa-solid fa-chair"></i>
             <span>เช็คสถานะของที่นั่งที่ลูกค้าจอง</span>
         </a>
     </li>
     <li class="nav-item active">
-        <!-- หน้าประวัติจองตั๋วคอนเสิร์ต ลูกค้าสามารถเข้ามาดูประวัติจองตั๋วคอนเสิร์ตได้ -->
+        <!-- หน้าเช็คสะสมคะแนนของลูกค้า ผู้ดูแลสามารถเข้ามาดูเช็คสะสมคะแนนของลูกค้าได้ -->
         <a class="nav-link" href="PageCheckScoreBookingConcertOfMember.php">
             <i class="fa-solid fa-star"></i>
             <span>เช็คสะสมคะแนนของลูกค้า</span>

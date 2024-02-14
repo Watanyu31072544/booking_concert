@@ -33,7 +33,7 @@ require("dbconnect.php");
         </a>
     </li>
     <li class="nav-item active">
-        <!-- หน้าประวัติจองตั๋วคอนเสิร์ต ลูกค้าสามารถเข้ามาดูประวัติจองตั๋วคอนเสิร์ตได้ -->
+        <!-- หน้าเช็คสถานะของที่นั่ง ลูกค้าสามารถเข้ามาดูเช็คสถานะของที่นั่งได้ -->
         <a class="nav-link" href="PageCheckBookingConcertOfMember.php">
             <i class="fa-solid fa-chair"></i>
             <span>เช็คสถานะของที่นั่ง</span>
