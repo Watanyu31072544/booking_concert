@@ -52,10 +52,10 @@
                                 <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;"><?php echo $countResult; ?> คน</button>
                             </h1>
                             <!-- กรอกค้นหาสมาชิกทั้งหมดที่สะสมคะแนนไปก่อนหน้านี้ -->
-                            <form action="PageSearchHistoryBookingConcertOfMember.php" class="form-group my-3" method="POST">
+                            <form action="PageSearchCheckScoreBookingConcertOfMember.php" class="form-group my-3" method="POST">
                             <div class="input-group" align="right">
                                 <div class="form-outline col-12" data-mdb-input-init>
-                                    <input type="search" id="search" class="form-control" name="scoreofmember" required style="color: black;" placeholder="กรุณากรอกชื่อผู้จองที่สะสมคะแนนไว้อยู่"/>
+                                    <input type="search" id="search" class="form-control" name="booking" required style="color: black;" placeholder="กรุณากรอกชื่อผู้จองที่สะสมคะแนนไว้อยู่"/>
                                     <label class="form-label" for="form1"></label>
                                 </div>
                             </div>
