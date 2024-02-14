@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>เช็คจำนวนที่นั่งของคอนเสิร์ต </title>
+    <title>เช็คจำนวนที่นั่งของคอนเสิร์ต</title>
 
     <!-- Custom fonts for this template-->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,14 +41,26 @@
                     <!-- Page Heading -->
                     <div class="card-body">
                             <div class="row">
+                            <?php
+                                include('connect.php');
+                                $booking=$_POST["booking"];
+                                $sql = "select * from booking WHERE location LIKE '%$booking%' group by name asc";
+                                if(!$result = $db -> query($sql)){
+                                    die($db -> error);
+                                }
+                                $countResult = $result -> num_rows; //นับจำนวนแถวจากคำสั่ง $sql
+                            ?>
                                 <h1 class="h3 mb-0 text-color-800" id="website">เช็คจำนวนที่นั่งของคอนเสิร์ต
+                                <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
+                                    <?php echo $countResult; ?> คอนเสิร์ต
+                                </button>
                                 <a href="PageCheckBookingConcert.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;เช็คจำนวนที่นั่งของคอนเสิร์ต</a><!-- เมื่อค้นหาเสร็จแล้ว สามารถกดย้อนกลับหน้าจองตั๋วคอนเสิร์ต --><h1>
                             </div>
                             <?php
                                 //ค้นหาข้อมูลสถานที่จัดคอนเสิร์ต
                                 include('dbconnect.php');
                                 $booking=$_POST["booking"];
-                                $sql = "SELECT * FROM booking WHERE location LIKE '%$booking%' ORDER BY location ASC";
+                                $sql = "SELECT * FROM booking WHERE location LIKE '%$booking%' group BY name ASC";
                                 $query = mysqli_query($db,$sql);
                                 $count = mysqli_num_rows($query);
                                 $order = 1;
@@ -57,9 +69,9 @@
                             <form action="PageSearchCheckBookingConcert.php" class="form-group my-3" method="POST">
                             <div class="input-group" align="right">
                                 <div class="form-outline col-12" data-mdb-input-init>
-                                    <input type="search" id="search" class="form-control" name="booking" required style="color: black;" placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตด้วยครับ"/>
+                                    <input type="search" id="search" class="form-control" name="booking" required style="color: black;" placeholder="กรุณากรอกชื่อคอนเสิร์ตด้วยครับ"/>
                                     <label class="form-label" for="form1"></label>
-                                </div>                            
+                                </div>
                             </div>                    
                             </form>
                             <!-- ถ้าเจอข้อมูลของสถานที่จัดคอนเสิร์ต -->
