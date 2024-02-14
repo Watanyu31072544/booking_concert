@@ -87,6 +87,15 @@
                             <label for="inputAddress" class="form-label">ที่อยู่</label>
                             <textarea type="text" class="form-control" name="address" style="color: black;"><?php echo $member['address']; ?></textarea>
                         </div>
+                        <?php
+                            $sql2 = "SELECT m_fullname,sum(s_price) AS sum_price FROM booking WHERE m_email = '".$_SESSION['m_email']."'";
+                            $query2 = mysqli_query($db,$sql2);
+                            $scoreofmember = mysqli_fetch_assoc($query2);
+                        ?>
+                        <div class="col-12">
+                            <label for="inputOccupation" class="form-label">สะสมคะแนน</label>
+                            <input type="text" class="form-control" disabled style="color: black;" value="<?php echo number_format($scoreofmember['sum_price']/20,0); ?>">
+                        </div>
                         <div class="row my-2 mx-0">
                             <div class="col-auto">
                             <input type="submit" value="ยืนยันแก้ไขข้อมูลของสมาชิก" class="btn btn-success" style="color: black;"> <!-- เมื่อลูกค้าทำการแก้ไขโปรไฟล์ของตัวเองแล้ว สามารถบันทึกแก้ไขข้อมูลได้ -->
