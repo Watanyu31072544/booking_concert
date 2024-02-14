@@ -59,7 +59,7 @@
                         <form action="PageSearchCheckBookingConcert.php" class="form-group my-3" method="POST">
                         <div class="input-group" align="right">
                                 <div class="form-outline col-12" data-mdb-input-init>
-                                    <input type="search" id="search" class="form-control" name="booking" required placeholder="กรุณากรอกชื่อคอนเสิร์ตด้วยครับ"/>
+                                    <input type="search" id="search" class="form-control" name="booking" required placeholder="กรุณากรอกชื่อสถานที่จัดคอนเสิร์ตด้วยครับ"/>
                                     <label class="form-label" for="form1"></label>
                                 </div>                            
                         </div>
