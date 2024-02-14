@@ -51,10 +51,20 @@
                             <label for="inputEmail" class="form-label">ราคาโซนที่นั่ง</label>
                             <input type="text" class="form-control" name="s_price" style="color: black;" required>
                         </div>
-                        <div class="my-3">
-                            <input type="submit" value="ยืนยันเพิ่มข้อมูลของโซนที่นั่ง" class="btn btn-success"> <!-- เมื่อกรอกข้อมูลของโซนที่นั่งแล้ว สามารถกดยืนยันเพิ่มข้อมูลของโซนที่นั่งได้ -->
-                            <input type="reset" value="ล้างข้อมูล" class="btn btn-warning"> <!-- เมื่อกรอกข้อมูลผิดแล้ว Admin สามารถทำการล้างข้อมูล เพราะกรอกข้อมูลผิดพลาด -->
-                            <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;กลับหน้าแรก</a> <!-- เมื่อไม่อยากกรอกเพิ่มข้อมูลของคอนเสิร์ตแล้ว สามารถกดกลับหน้าจัดการข้อมูลของคอนเสิร์ต -->
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
+                            <input type="submit" value="ยืนยันเพิ่มข้อมูลของโซนที่นั่ง" class="btn btn-success">
+                            </div>
+                        </div> <!-- เมื่อกรอกข้อมูลของโซนที่นั่งแล้ว สามารถกดยืนยันเพิ่มข้อมูลของโซนที่นั่งได้ -->
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
+                            <input type="reset" value="ล้างข้อมูล" class="btn btn-warning"> 
+                            </div>
+                        </div><!-- เมื่อกรอกข้อมูลผิดแล้ว Admin สามารถทำการล้างข้อมูล เพราะกรอกข้อมูลผิดพลาด -->
+                        <div class="row my-2 mx-0">
+                            <div class="col-auto">
+                            <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i>&nbsp;กลับหน้าแรก</a>
+                            </div> <!-- เมื่อไม่อยากกรอกเพิ่มข้อมูลของคอนเสิร์ตแล้ว สามารถกดกลับหน้าจัดการข้อมูลของคอนเสิร์ต -->
                         </div>                             
                         </form>
                     </div>

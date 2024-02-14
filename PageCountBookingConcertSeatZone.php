@@ -51,8 +51,8 @@
                             <div class="table-responsive">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4" style="color: black;">
                             <!-- แสดงชื่อคอนเสิร์ตตรงกับรหัส ID ของคอนเสิร์ต -->
-                            <h3>ชื่อคอนเสิร์ต : <?php echo $concert['name']; ?></h3>
-                            <a href="PageCheckBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูเช็คจำนวนที่นั่งของคอนเสิร์ต</a>
+                            <h3>ชื่อคอนเสิร์ต : <?php echo $concert['name']; ?>
+                            <a href="PageCheckBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูเช็คจำนวนที่นั่งของคอนเสิร์ต</a></h3>
                     </div>                    
                     <div class="col p-3 rounded-start" align="center">
                             <h3 style="color:black;">กรุณาเลือกโซนที่นั่งด้วยครับ</h3>
