@@ -38,6 +38,12 @@ require("dbconnect.php");
             <span>จัดการพื้นที่ของโซนที่นั่ง</span>
         </a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="PageReportBookingConcertOfMemberByAdmin.php">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>รายงานของลูกค้าที่จองไป</span>
+        </a>
+    </li>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
         <!-- หน้าประวัติจองตั๋วคอนเสิร์ตของลูกค้า สามารถเข้ามาหน้าจัดการเพิ่ม,แก้ไข,ดูข้อมูล และลบข้อมูลของคอนเสิร์ต -->
