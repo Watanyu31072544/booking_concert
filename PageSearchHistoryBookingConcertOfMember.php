@@ -57,10 +57,17 @@
                         $order = 1;
                     ?>
                     <div class="card-body">                        
-                            <h1 class="h3 mb-0 text-gray-800">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
+                            <h1 class="h3 mb-0 text-color-800" id="website">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
                                 <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                     <?php echo $countResult; ?> รายการ
-                                </button>                                
+                                </button>
+                                <?php
+                                    $booking=$_POST["booking"];
+                                    $sql1 = "select sum(s_price) AS sum_price from booking WHERE m_fullname LIKE '%$booking%' or name LIKE '%$booking%' or location LIKE '%$booking%'";
+                                    $query1 = mysqli_query($db,$sql1);
+                                    $total = mysqli_fetch_assoc($query1);
+                                ?>
+                                <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;"><?php echo number_format($total['sum_price'],0); ?> บาท</button>
                                 <a href="PageHistoryBookingConcertOfMember.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;ประวัติจองตั๋วคอนเสิร์ตของลูกค้า</a>
                             </h1>
                             <!-- กรอกค้นหาข้อมูลทั้งหมดที่จองไปก่อนหน้านี้ -->

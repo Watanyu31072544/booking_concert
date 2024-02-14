@@ -51,7 +51,6 @@
                             <h1 class="h3 mb-0 text-color-800" id="website">ประวัติจองตั๋วคอนเสิร์ตของลูกค้า
                                 <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;"><?php echo $countResult; ?> รายการ</button>
                                 <?php
-                                //include('connect.php');
                                 $sql1 = "select sum(s_price) AS sum_price from booking";
                                 $query = mysqli_query($db,$sql1);
                                 $total = mysqli_fetch_assoc($query);
