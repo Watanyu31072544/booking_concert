@@ -104,7 +104,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>            
+                            <?php
+                                include('barChart.php')?>
                         </div>    
                     </div>             
                 </div>
