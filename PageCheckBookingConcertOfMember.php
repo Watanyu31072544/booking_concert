@@ -52,8 +52,8 @@
                             <h1 class="h3 mb-0 text-color-800" id="website">เช็คจำนวนที่นั่งของคอนเสิร์ต
                             <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                 <?php echo $countResult; ?> คอนเสิร์ต
-                            </button> <!-- แสดงจำนวนคอนเสิร์ตที่ได้เพิ่มข้อมูลจากผู้ดูแล -->
-                            </h1>                        
+                            </button> <!-- แสดงจำนวนคอนเสิร์ตที่มีขึ้นโชว์ของผู้จอง -->
+                            </h1>
                         </div>
                         <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->                    
                         <form action="PageSearchCheckBookingConcertOfMember.php" class="form-group my-3" method="POST">
@@ -92,7 +92,7 @@
                                 <td><?php echo $concert['name']; ?></td>
                                 <td><?php echo $concert['location']; ?></td>
                                 <td><?php echo $concert['date']; ?> / <?php echo $concert['time']; ?></td>
-                                <td><a href="PageCountBookingConcertSeatZoneOfMember.php?booking=<?php echo $concert['booking_id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เช็คจำนวนที่นั่ง</a></td> <!-- หน้าเช็คจำนวนที่นั่งของคอนเสิร์ต ให้ Admin สามารถดูจำนวนที่นั่งได้ -->
+                                <td><a href="PageCountBookingConcertSeatZoneOfMember.php?booking=<?php echo $concert['booking_id']; ?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เช็คจำนวนที่นั่ง</a></td> <!-- หน้าเช็คจำนวนที่นั่งของคอนเสิร์ต ให้ลูกค้าสามารถดูจำนวนที่นั่งได้ -->
                                 </tr>
                                 <?php } ?>
                             </tbody>

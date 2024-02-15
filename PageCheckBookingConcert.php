@@ -52,7 +52,7 @@
                             <h1 class="h3 mb-0 text-color-800" id="website">เช็คจำนวนที่นั่งของคอนเสิร์ต
                             <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                 <?php echo $countResult; ?> คอนเสิร์ต
-                            </button> <!-- แสดงจำนวนคอนเสิร์ตที่ได้เพิ่มข้อมูลจากผู้ดูแล -->
+                            </button> <!-- แสดงจำนวนคอนเสิร์ตที่มีขึ้นโชว์ของผู้จอง -->
                             </h1>
                         </div>
                         <!-- กรอกค้นหาสถานที่จัดคอนเสิร์ต -->                    
