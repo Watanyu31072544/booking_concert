@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>จัดการข้อมูลของลูกค้า</title>
+    <title>จัดการพื้นที่ของโซนที่นั่ง</title>
 
     <!-- Custom fonts for this template-->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
