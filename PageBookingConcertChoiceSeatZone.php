@@ -54,10 +54,7 @@
                             <h3>ชื่อคอนเสิร์ต : <?php echo $concert['name']; ?></h3>
                             <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูจองตั๋วคอนเสิร์ต</a>
                     </div>
-                    <?php
-                            }
-                        }
-                    ?>
+                    
                     <div class="col p-3 rounded-start" align="center">
                             <h3 style="color:black;">กรุณาเลือกโซนที่นั่งด้วยครับ</h3>
                             <div align="center">
@@ -70,14 +67,20 @@
                                 <tr>
                                 <th scope="col">ลำดับ</th>
                                 <th scope="col">โซนที่นั่ง</th>
+                                <th scope="col">จำนวนที่นั่ง</th>
+                                <th scope="col">ที่นั่งที่ถูกจองแล้ว</th>
+                                <th scope="col">จำนวนที่นั่งที่เหลือ</th>
                                 <th scope="col">เลือกโซนที่นั่ง</th>
                                 </tr>
                             </thead>
                             <tbody class="text-color" align="center";>
                             <?php
                                 include('connect.php');
-                                $sql = "SELECT * FROM seat_zone ORDER BY s_id ASC";
-                                $query = mysqli_query($db,$sql);
+                                $sql1 = "SELECT name,count(s_zone) FROM booking where s_zone is not null and name = '".$concert['name']."'GROUP BY s_zone";
+                                if(!$result1 = $db -> query($sql1)){
+                                    die($db -> error);
+                                }
+                                $countResult1 = $result1 -> num_rows;
                             ?>
                             <?php
                             include('connect.php');
@@ -104,25 +107,43 @@
                             ?>
                             <?php
                                 for($i=1; $i<=$countPageResult; $i++){
-                                    $seat_zone = $result -> fetch_assoc();?>
+                                    $seat_zone = $result -> fetch_assoc();
+                                    $booking = $result1 -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
                                 <td><?php echo $seat_zone['s_id']; ?></td>
                                 <td><?php echo $seat_zone['s_zone']; ?></td>
-                                <td><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
+                                <td><?php echo $seat_zone['s_qty']; ?></td>
+                                <td><?php if(isset($booking['count(s_zone)']) != null){
+                                    echo $booking['count(s_zone)'];
+                                }else{
+                                    echo 0;
+                                } ?></td>
+                                <td><?php if(isset($booking['count(s_zone)']) != null){
+                                    echo $seat_zone['s_qty']-$booking['count(s_zone)'];
+                                }else{
+                                    echo $seat_zone['s_qty'];
+                                } ?></td>
+                                <td><?php if((isset($booking['count(s_zone)']) - $seat_zone['s_qty']) == 0){
+                                    echo '<a href="#" class="btn btn-secondary btn-sm disabled"><i class="fa-solid fa-chair"></i> เลือกโซนที่นั่ง</a>';
+                                } else{?><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
                                     //แสดงรหัส ID ของคอนเสิร์ต
                                     if(isset($_GET['concert'])){
                                         require_once 'connect.php';
                                         $sql = "SELECT * FROM concert where id=".$_GET['concert'];
                                         $query = mysqli_query($db,$sql);
                                         while($concert = mysqli_fetch_array($query)){
-                                ?>&concert=<?php echo $concert['id']; }}?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เลือกโซนที่นั่ง</a></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
+                                ?>&concert=<?php echo $concert['id']; }}?>" class="btn btn-success btn-sm"><i class="fa-solid fa-chair"></i> เลือกโซนที่นั่ง</a><?php }?></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
                                 </tr>
                                 <?php } ?>
                             </tbody>
                             </table>
                             </div>
                         </div>                             
-                    </div>                   
+                    </div>   
+                    <?php
+                            }
+                        }
+                    ?>                
                 </div>
                 <!-- /.container-fluid -->
             </div>
