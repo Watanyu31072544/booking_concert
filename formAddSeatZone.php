@@ -51,6 +51,10 @@
                             <label for="inputEmail" class="form-label">ราคาโซนที่นั่ง</label>
                             <input type="text" class="form-control" name="s_price" style="color: black;" required>
                         </div>
+                        <div class="col-12">
+                            <label for="inputEmail" class="form-label">จำนวนที่นั่ง</label>
+                            <input type="text" class="form-control" name="s_qty" style="color: black;" required>
+                        </div>
                         <div class="row my-2 mx-0">
                             <div class="col-auto">
                             <input type="submit" value="ยืนยันเพิ่มข้อมูลของโซนที่นั่ง" class="btn btn-success">
