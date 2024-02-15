@@ -60,6 +60,10 @@
                             <label for="inputEmail" class="form-label">ราคาโซนที่นั่ง (บาท)</label>
                             <input type="text" class="form-control" name="s_price" style="color: black;" value="<?php echo $seat_zone['s_price']; ?>">
                         </div>
+                        <div class="col-12">
+                            <label for="inputEmail" class="form-label">จำนวนที่นั่ง</label>
+                            <input type="text" class="form-control" name="s_qty" style="color: black;" value="<?php echo $seat_zone['s_qty']; ?>">
+                        </div>
                         <div class="row my-2 mx-0">
                             <div class="col-auto">
                                 <input type="submit" value="ยืนยันแก้ไขพื้นที่ของโซนที่นั่ง" class="btn btn-success"> <!-- เมื่อทำการแก้ไขข้อมูลของโซนที่นั่ง สามารถกดยืนยันแก้ไขข้อมูลของโซนที่นั่ง -->

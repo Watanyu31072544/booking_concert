@@ -6,9 +6,10 @@
     
     $s_zone = $_POST['s_zone'];
     $s_price = $_POST['s_price'];
+    $s_qty = $_POST['s_qty'];
 
     if(isset($_GET['seat_zone'])){
-    $sql = "UPDATE seat_zone SET s_zone='$s_zone', s_price='$s_price' WHERE s_id=".$_GET['seat_zone'];
+    $sql = "UPDATE seat_zone SET s_zone='$s_zone', s_price='$s_price', s_qty='$s_qty' WHERE s_id=".$_GET['seat_zone'];
     }//ทำการแก้ไขพื้นที่ของโซนที่นั่ง
     $result = mysqli_query($db,$sql);
     if($result){

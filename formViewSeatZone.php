@@ -59,6 +59,10 @@
                             <label for="inputEmail" class="form-label">ราคาโซนที่นั่ง (บาท)</label>
                             <input type="text" class="form-control" name="s_price" style="color: black;" disabled value="<?php echo $seat_zone['s_price']; ?>">
                         </div>
+                        <div class="col-12">
+                            <label for="inputEmail" class="form-label">จำนวนที่นั่ง</label>
+                            <input type="text" class="form-control" name="s_qty" style="color: black;" disabled value="<?php echo $seat_zone['s_qty']; ?>">
+                        </div>
                         </form>
                         <div class="my-3">
                             <a href="ManageSeatZone.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของโซนที่นั่ง</a>  <!-- เมื่อดูข้อมูลของโซนที่นั่ง ให้ทำการกลับมาหน้าจัดการข้อมูลของโซนที่นั่ง -->          

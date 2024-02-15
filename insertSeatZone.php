@@ -5,6 +5,7 @@
     //ประกาศตัวแปรรับค่าจากฟอร์ม
     $s_zone = $_POST['s_zone'];
     $s_price = $_POST['s_price'];
+    $s_qty = $_POST['s_qty'];
     //เช็คข้อมูลซ้ำที่อยู่ในฐานข้อมูลของโซนที่นั่ง
     $check = "SELECT * FROM seat_zone where s_zone = '$s_zone' and s_price = '$s_price'";
 
@@ -17,7 +18,7 @@
     echo "<script> window.location='formAddSeatZone.php'; </script>";
     }else{
     //ข้อมูลไม่มีซ้ำ สามารถเพิ่มโซนที่นั่งได้
-    $sql = "INSERT INTO seat_zone(s_zone, s_price) value('$s_zone','$s_price')";
+    $sql = "INSERT INTO seat_zone(s_zone, s_price,s_qty) value('$s_zone','$s_price','$s_qty')";
     $result = mysqli_query($db,$sql);
     if($result){
       echo "<script> alert ('เพิ่มพื้นที่ของโซนที่นั่งได้สำเร็จ'); </script> ";
