@@ -51,8 +51,8 @@
                             <div class="table-responsive">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4" style="color: black;">
                             <!-- แสดงชื่อคอนเสิร์ตตรงกับรหัส ID ของคอนเสิร์ต -->
-                            <h3>ชื่อคอนเสิร์ต : <?php echo $concert['name']; ?></h3>
-                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูจองตั๋วคอนเสิร์ต</a>
+                            <h3>ชื่อคอนเสิร์ต : <?php echo $concert['name']; ?>
+                            <a href="PageBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูจองตั๋วคอนเสิร์ต</a></h3>
                     </div>
                     
                     <div class="col p-3 rounded-start" align="center">
@@ -124,8 +124,9 @@
                                     echo $seat_zone['s_qty'];
                                 } ?></td>
                                 <td><?php if((isset($booking['count(s_zone)']) - $seat_zone['s_qty']) == 0){
-                                    echo '<a href="#" class="btn btn-secondary btn-sm disabled"><i class="fa-solid fa-chair"></i> เลือกโซนที่นั่ง</a>';
-                                } else{?><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
+                                    //โซนของที่นั่งเต็มแล้ว จะไม่สามารถกดปุ่มเลือกที่นั่งได้แล้ว
+                                    echo '<a href="#" class="btn btn-danger btn-sm disabled">เต็มแล้ว</a>';
+                                } else{//ถ้าที่นั่งยังว่างอยู่ สามารถเลือกที่นั่งตามใจชอบได้?><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
                                     //แสดงรหัส ID ของคอนเสิร์ต
                                     if(isset($_GET['concert'])){
                                         require_once 'connect.php';
