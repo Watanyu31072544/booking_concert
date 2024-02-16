@@ -125,7 +125,7 @@
                                 } ?></td>
                                 <td><?php if((isset($booking['count(s_zone)']) - $seat_zone['s_qty']) == 0){
                                     //โซนของที่นั่งเต็มแล้ว จะไม่สามารถกดปุ่มเลือกที่นั่งได้แล้ว
-                                    echo '<a href="#" class="btn btn-danger btn-sm disabled">เต็มแล้ว</a>';
+                                    echo '<a href="#" class="btn btn-danger btn-sm disabled"><i class="fa-solid fa-ban">เต็มแล้ว</i></a>';
                                 } else{//ถ้าที่นั่งยังว่างอยู่ สามารถเลือกที่นั่งตามใจชอบได้?><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
                                     //แสดงรหัส ID ของคอนเสิร์ต
                                     if(isset($_GET['concert'])){
