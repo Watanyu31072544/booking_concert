@@ -11,7 +11,7 @@ require("dbconnect.php");
             </a>
         </form>
         <?php
-        include("dateToday.php");
+        //include("dateToday.php");
         ?>
         <ul class="navbar-nav ml-auto">
         <?php
