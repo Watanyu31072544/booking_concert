@@ -59,6 +59,10 @@
                             <label for="inputEmail" class="form-label">หน้าที่</label>
                             <input type="text" class="form-control" style="color: black;" name="ad_role" disabled value="<?php echo $admin['ad_role']; ?>">
                         </div>
+                        <div class="col-12">
+                            <label for="inputEmail" class="form-label">อีเมล์</label>
+                            <input type="text" class="form-control" style="color: black;" name="ad_email" disabled value="<?php echo $admin['ad_email']; ?>">
+                        </div>
                         </form>
                         <div class="my-3">
                             <a href="ManageAdmin.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับจัดการข้อมูลของผู้ดูแล</a> <!-- เมื่อดูข้อมูลของผู้ดูแล ให้ทำการกลับมาหน้าจัดการข้อมูลของผู้ดูแล -->        

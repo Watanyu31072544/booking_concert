@@ -52,6 +52,10 @@
                             <input type="text" class="form-control" name="ad_username" style="color: black;" required>
                         </div>
                         <div class="col-12">
+                            <label for="inputEmail" class="form-label">อีเมล์</label>
+                            <input type="text" class="form-control" style="color: black;" name="ad_email" required>
+                        </div>
+                        <div class="col-12">
                             <label for="inputEmail" class="form-label">หน้าที่</label>
                             <input type="text" class="form-control" name="ad_role" style="color: black;" required>
                         </div>

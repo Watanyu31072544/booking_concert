@@ -106,7 +106,7 @@
                                     <td><a href="formEditAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> แก้ไขข้อมูลของผู้ดูแล</a></td> <!-- หน้าแก้ไขข้อมูลของผู้ดูแล -->
                                     <td><a href="formViewAdmin.php?admin=<?php echo $admin['ad_id']; ?>" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> ดูข้อมูลของผู้ดูแล</a></td> <!-- หน้าดูข้อมูลของผู้ดูแล -->
                                     <td><?php if($admin['ad_id'] == 1){
-                                        echo '<a class="btn btn-danger btn-sm disabled"><i class="fa-solid fa-ban"> ลบไม่ได้เป็นผู้ดูแล ไม่สามารถลบข้อมูลได้</i></a>';
+                                        echo '';
                                     } else {?><a href="deleteAdmin.php?admin=<?php echo $admin['ad_id']; ?>" onclick="return confirm('ลบข้อมูล <?php echo $admin['ad_username']; ?> ?');" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> ลบข้อมูลของผู้ดูแล</a><?php }?></td>	<!-- ลบข้อมูลของผู้ดูแล -->
                                     </tr>
                                     <?php } ?>

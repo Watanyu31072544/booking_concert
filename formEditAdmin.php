@@ -61,6 +61,10 @@
                             <input type="text" class="form-control" name="ad_username" required style="color: black;" value="<?php echo $admin['ad_username']; ?>">
                         </div>
                         <div class="col-12">
+                            <label for="inputEmail" class="form-label">อีเมล์</label>
+                            <input type="text" class="form-control" style="color: black;" name="ad_email" value="<?php echo $admin['ad_email']; ?>">
+                        </div>
+                        <div class="col-12">
                             <label for="inputEmail" class="form-label">หน้าที่</label>
                             <input type="text" class="form-control" name="ad_role" required style="color: black;" value="<?php echo $admin['ad_role']; ?>">
                         </div>

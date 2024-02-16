@@ -6,11 +6,12 @@
     
     $ad_fullname = $_POST['ad_fullname'];
     $ad_username = $_POST['ad_username'];
+    $ad_email = $_POST['ad_email'];
     $ad_role = $_POST['ad_role'];
     $ad_password = $_POST['ad_password'];
 
     if(isset($_GET['admin'])){
-    $sql = "UPDATE admin SET ad_fullname='$ad_fullname', ad_username='$ad_username', ad_role='$ad_role', ad_password='$ad_password' WHERE ad_id=".$_GET['admin'];
+    $sql = "UPDATE admin SET ad_fullname='$ad_fullname', ad_username='$ad_username', ad_email='$ad_email', ad_role='$ad_role', ad_password='$ad_password' WHERE ad_id=".$_GET['admin'];
     }//ทำการแก้ไขข้อมูลของผู้ดูแล
     $result = mysqli_query($db,$sql);
     if($result){
