@@ -81,10 +81,9 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <table class="table table-striped mt-4">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของจองตั๋วคอนเสิร์ตของลูกค้าเอง -->
-                            <thead class="table-success text-color">
+                            <thead class="table-success text-color" align="center">
                                 <tr>
                                 <th scope="col">ลำดับ</th>
-                                <th scope="col">ชื่อผู้จอง</th>
                                 <th scope="col">ชื่อคอนเสิร์ต</th>
                                 <th scope="col">สถานที่จัดคอนเสิร์ต</th>
                                 <th scope="col">โซนที่นั่ง</th>
@@ -93,7 +92,7 @@
                                 <th scope="col">ยกเลิกจองตั๋วคอนเสิร์ต</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-color">
+                            <tbody class="text-color" align="center">
                             <?php
                                 include('connect.php');
                                 $sql = "SELECT * FROM booking where m_email = '".$_SESSION['m_email']."'  and location like '%$booking%' or name like '%$booking%'";
@@ -104,7 +103,6 @@
                                 while($booking = mysqli_fetch_assoc($query)){?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของจองตั๋วคอนเสิร์ตของลูกค้าเอง -->
                                 <td><?php echo $order++; ?></td>
-                                <td><?php echo $booking['m_fullname']; ?></td>
                                 <td><?php echo $booking['name']; ?></td>
                                 <td><?php echo $booking['location']; ?></td>
                                 <td><?php echo $booking['s_zone']; ?></td>
