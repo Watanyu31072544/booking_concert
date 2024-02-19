@@ -65,7 +65,6 @@
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่งต้องเลือกโซนใดโซนหนึ่ง -->
                             <thead class="table-success text-color" align="center";>
                                 <tr>
-                                <th scope="col">ลำดับ</th>
                                 <th scope="col">โซนที่นั่ง</th>
                                 <th scope="col">จำนวนที่นั่ง</th>
                                 <th scope="col">ที่นั่งที่ถูกจองแล้ว</th>
@@ -110,7 +109,6 @@
                                     $seat_zone = $result -> fetch_assoc();
                                     $booking = $result1 -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
-                                <td><?php echo $seat_zone['s_id']; ?></td>
                                 <td><?php echo $seat_zone['s_zone']; ?></td>
                                 <td><?php echo $seat_zone['s_qty']; ?></td>
                                 <td><?php if(isset($booking['count(s_zone)']) != null){
