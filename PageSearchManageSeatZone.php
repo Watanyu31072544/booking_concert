@@ -65,7 +65,7 @@
                         <?php if($count > 0){?>
                         <table class="table table-striped mt-4">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่ง -->
-                            <thead class="table table-success text-color">
+                            <thead class="table table-success text-color" align="center">
                                 <tr>
                                 <th scope="col" width="5%">ลำดับ</th>
                                 <th scope="col" width="15%">ชื่อโซนที่นั่ง</th>
@@ -74,7 +74,7 @@
                                 <th scope="col" width="20%">ลบข้อมูลของลูกค้า</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-color">
+                            <tbody class="text-color" align="center">
                                 <?php while($seat_zone = mysqli_fetch_assoc($query)){?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
                                 <td><?php echo $seat_zone['s_id']; ?></td>

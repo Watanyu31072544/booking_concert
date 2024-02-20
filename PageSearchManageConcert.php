@@ -66,7 +66,7 @@
                         <?php if($count > 0){?>
                         <table class="table table-striped mt-4">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->
-                            <thead class="table table-success text-color">
+                            <thead class="table table-success text-color" align="center">
                                 <tr>
                                 <th scope="col">ลำดับ</th>
                                 <th scope="col">ชื่อคอนเสิร์ต</th>
@@ -79,7 +79,7 @@
                                 <th scope="col">ลบข้อมูลของคอนเสิร์ต</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-color">
+                            <tbody class="text-color" align="center">
                                 <?php while($concert = mysqli_fetch_assoc($query)){?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของคอนเสิร์ต -->
                                 <td><?php echo $order++; ?></td>
