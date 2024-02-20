@@ -40,14 +40,14 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                         <?php
-                            //แสดงรหัส ID ของโซนที่นั่ง
+                            //แสดงรหัส ID ของผู้จอง
                             if(isset($_GET['booking'])){
                                 require_once 'connect.php';
                                 $sql = "SELECT * FROM booking where booking_id=".$_GET['booking'];
                                 $query = mysqli_query($db,$sql);
                                 while($booking = mysqli_fetch_assoc($query)){
                         ?>
-                        <!-- แสดงชื่อโซนที่นั่ง -->
+                        <!-- แสดงชื่อของผู้จอง -->
                         <h1 align="center" style="color: black;">เปลี่ยนโซนที่นั่ง</h1>
                         <h1 align="center" style="color: black;"><?php echo $booking['m_fullname']; ?> - <?php echo $booking['name']; ?></h1>
                         <div class="container-md" id="website">
@@ -113,7 +113,7 @@
                                 <div class="row my-2 mx-0">
                                     <div class="col-auto">
                                     <input type="submit" value="ยืนยันเปลี่ยนโซนที่นั่ง" class="btn btn-success">
-                                    </div> <!-- ถ้าเลือกที่นั่งได้แล้ว กดยืนยันจองที่นั่งของคอนเสิร์ตได้ -->
+                                    </div> <!-- ถ้า Admin ทำการแก้ไขได้แล้ว สามารถยืนยันเปลี่ยนโซนที่นั่งได้ -->
                                 </div>
                                     
                             </form>   
