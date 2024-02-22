@@ -73,17 +73,16 @@
                             </thead>
                             <tbody class="text-color" align="center";>
                             <?php
-                            include('connect.php');
-                                $sql1 = "select * from seat_zone";
-                                if(!$result1 = $db -> query($sql1)){
-                                    die($db -> error);
+                                include('connect.php');
+                                $sql1 = "SELECT S.s_zone, S.s_qty, COUNT(B.s_zone) AS CountOfSeatZoneBooked FROM seat_zone S LEFT JOIN booking B ON S.s_zone = B.s_zone AND B.name = '".$concert['name']."' GROUP BY S.s_zone";
+                                if(!$result1 = $db->query($sql1)){
+                                    die($db->error);
                                 }
-                                $countResult1 = $result1 -> num_rows; //นับจำนวนแถวจากคำสั่ง $sql
-                                //////////////////////////////////////
+                                $countResult1 = $result1->num_rows;
                             ?>
                             <?php
-                                include('connect.php');
-                                $sql = "select s_zone,count(s_zone) from booking where s_zone is not null and name = '".$concert['name']."'GROUP BY s_zone";
+                            include('connect.php');
+                                $sql = "select * from seat_zone";
                                 if(!$result = $db -> query($sql)){
                                     die($db -> error);
                                 }
@@ -106,14 +105,15 @@
                             ?>
                             <?php
                                 for($i=1; $i<=$countPageResult; $i++){
-                                    $seat_zone = $result1 -> fetch_assoc();
-                                    $booking = $result -> fetch_assoc();?>
+                                    $seat_zone = $result -> fetch_assoc();
+                                    $booking = $result1 -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
                                 <td><?php echo $booking['s_zone']; ?></td>
-                                <td><?php echo 10;?></td>
-                                <td><?php echo 10-$booking['count(s_zone)']; ?></td>
-                                <td><?php echo $booking['count(s_zone)']; ?></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
-                                <td><?php if((10-$booking['count(s_zone)']) == 0){//พื้นที่โซนที่นั่งเต็มแล้ว
+                                <td><?php echo $seat_zone['s_qty']; ?></td>
+                                <td><?php echo $seat_zone['s_qty']-$booking['CountOfSeatZoneBooked'];?></td>
+                                <td><?php echo $booking['CountOfSeatZoneBooked'];
+                                ?></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
+                                <td><?php if(($seat_zone['s_qty']-$booking['CountOfSeatZoneBooked']) == 0){//พื้นที่โซนที่นั่งเต็มแล้ว
                                     echo 'เต็มแล้ว';
                                 } else {//พื้นที่โซนที่นั่งว่างอยู่
                                     echo 'ว่างอยู่';

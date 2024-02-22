@@ -66,17 +66,20 @@
                             <thead class="table-success text-color" align="center";>
                                 <tr>
                                 <th scope="col">โซนที่นั่ง</th>
+                                <th scope="col">จำนวนที่นั่ง</th>
+                                <th scope="col">จำนวนที่นั่งที่เหลือ</th>
+                                <th scope="col">จำนวนที่ถูกจอง</th>
                                 <th scope="col">เลือกโซนที่นั่ง</th>
                                 </tr>
                             </thead>
                             <tbody class="text-color" align="center";>
                             <?php
                                 include('connect.php');
-                                $sql1 = "SELECT name,count(s_zone) FROM booking where s_zone is not null and name = '".$concert['name']."'GROUP BY s_zone";
-                                if(!$result1 = $db -> query($sql1)){
-                                    die($db -> error);
+                                $sql1 = "SELECT S.s_zone, S.s_qty, COUNT(B.s_zone) AS CountOfSeatZoneBooked FROM seat_zone S LEFT JOIN booking B ON S.s_zone = B.s_zone AND B.name = '".$concert['name']."' GROUP BY S.s_zone";
+                                if(!$result1 = $db->query($sql1)){
+                                    die($db->error);
                                 }
-                                $countResult1 = $result1 -> num_rows;
+                                $countResult1 = $result1->num_rows;
                             ?>
                             <?php
                             include('connect.php');
@@ -107,7 +110,12 @@
                                     $booking = $result1 -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
                                 <td><?php echo $seat_zone['s_zone']; ?></td>
-                                <td><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
+                                <td><?php echo $seat_zone['s_qty']; ?></td>
+                                <td><?php echo $seat_zone['s_qty'] - $booking['CountOfSeatZoneBooked']; ?></td>
+                                <td><?php echo $booking['CountOfSeatZoneBooked']; ?></td>
+                                <td><?php if($seat_zone['s_qty'] - $booking['CountOfSeatZoneBooked'] == 0){
+                                    echo '<a class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"> เต็มแล้ว</i></a>';
+                                }else{ ?><a href="PageBookingConcertCheckSeatZone.php?&seat_zone=<?php echo $seat_zone['s_id']; ?><?php
                                     //แสดงรหัส ID ของคอนเสิร์ต
                                     if(isset($_GET['concert'])){
                                         require_once 'connect.php';
@@ -120,10 +128,11 @@
                             </tbody>
                             </table>
                             </div>
-                        </div>                             
+                        </div>
                     </div>   
                     <?php
-                            }                        
+                            }     
+                        }                   
                     ?>                
                 </div>
                 <!-- /.container-fluid -->
