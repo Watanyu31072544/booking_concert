@@ -55,10 +55,7 @@
                             <a href="PageCheckBookingConcert.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>&nbsp;กลับเมนูเช็คจำนวนที่นั่งของคอนเสิร์ต</a></h3>
                     </div>                    
                     <div class="col p-3 rounded-start" align="center">
-                            <h3 style="color:black;">กรุณาเลือกโซนที่นั่งด้วยครับ</h3>
-                            <div align="center">
-                                <center style="width: auto; height: 100px; background-color :LightGray; color :black">Stage</center>
-                            </div>
+                            <h3 style="color:black;">จำนวนเหลือของที่นั่ง</h3>
                             <br>                        
                             <table class="table table-striped">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่งต้องเลือกโซนใดโซนหนึ่ง -->
@@ -109,12 +106,12 @@
                                     $seat_zone = $result1 -> fetch_assoc();
                                     $booking = $result -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
-                                <td><?php echo $seat_zone['s_zone']; ?></td>
-                                <td><?php echo $seat_zone['s_qty']; ?></td>
-                                <td><?php echo $seat_zone['s_qty']-$booking['count(s_zone)'];?></td>
+                                <td><?php echo $booking['s_zone']; ?></td>
+                                <td><?php echo 10; ?></td>
+                                <td><?php echo 10-$booking['count(s_zone)'];?></td>
                                 <td><?php echo $booking['count(s_zone)'];
                                 ?></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
-                                <td><?php if(($seat_zone['s_qty']-$booking['count(s_zone)']) == 0){//พื้นที่โซนที่นั่งเต็มแล้ว
+                                <td><?php if((10-$booking['count(s_zone)']) == 0){//พื้นที่โซนที่นั่งเต็มแล้ว
                                     echo 'เต็มแล้ว';
                                 } else {//พื้นที่โซนที่นั่งว่างอยู่
                                     echo 'ว่างอยู่';

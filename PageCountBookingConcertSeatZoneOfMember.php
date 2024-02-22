@@ -109,11 +109,11 @@
                                     $seat_zone = $result1 -> fetch_assoc();
                                     $booking = $result -> fetch_assoc();?>
                                 <tr> <!-- แสดงตารางที่อยู่ในฐานข้อมูลของโซนที่นั่ง -->
-                                <td><?php echo $seat_zone['s_zone']; ?></td>
-                                <td><?php echo $seat_zone['s_qty'];?></td>
-                                <td><?php echo $seat_zone['s_qty']-$booking['count(s_zone)']; ?></td>
+                                <td><?php echo $booking['s_zone']; ?></td>
+                                <td><?php echo 10;?></td>
+                                <td><?php echo 10-$booking['count(s_zone)']; ?></td>
                                 <td><?php echo $booking['count(s_zone)']; ?></td> <!-- สามารถเลือกโซนที่นั่งได้ตามที่ต้องการ -->
-                                <td><?php if(($seat_zone['s_qty']-$booking['count(s_zone)']) == 0){//พื้นที่โซนที่นั่งเต็มแล้ว
+                                <td><?php if((10-$booking['count(s_zone)']) == 0){//พื้นที่โซนที่นั่งเต็มแล้ว
                                     echo 'เต็มแล้ว';
                                 } else {//พื้นที่โซนที่นั่งว่างอยู่
                                     echo 'ว่างอยู่';
