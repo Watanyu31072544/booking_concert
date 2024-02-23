@@ -48,7 +48,7 @@
                     $countResult = $result -> num_rows; //นับจำนวนแถวจากคำสั่ง $sql
                     ?>
                     <div class="card-body">
-                            <div class="row">
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                 <h1 class="h3 mb-0 text-color-800" id="website">รายงานของลูกค้าที่จองไป </h1>
                             </div>
                             <br>

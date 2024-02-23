@@ -61,7 +61,7 @@
                 ?>
                     <!-- Page Heading -->
                     <div class="card-body">
-                            <div class="row">
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4"">
                                 <h1 class="h3 mb-0 text-color-800" id="website">จัดการข้อมูลของผู้ดูแล <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color:black;"><?php echo $countResult; ?> คน</button> <!-- แสดงจำนวนสมาชิกผู้ดูแล -->
                                 <button type="button" class="btn btn-sm btn-warning" style="width: auto; height: auto; color:black;"> หน้าที่ <?php echo $page; ?></button> <!-- แสดงจำนวนหน้าที่ของผู้ดูแล -->
                                 <button type="button" class="btn btn-sm btn-success" onClick="window.location='formAddAdmin.php'" style="width: auto; height: auto; color:black;"><i class="fa-solid fa-plus">&nbsp;เพิ่มสมาชิกของผู้ดูแล</i></button> <!-- หน้าเพิ่มสมาชิกของผู้ดูแล -->

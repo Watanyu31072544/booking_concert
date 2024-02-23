@@ -63,7 +63,7 @@
                 ?>
                     <!-- Page Heading -->
                     <div class="card-body">
-                        <div class="row">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-color-800" id="website">จองตั๋วคอนเสิร์ต
                             <button type="button" class="btn btn-sm btn-success" style="width: auto; height: auto; color: black;">
                                 <?php echo $countResult; ?> คอนเสิร์ต

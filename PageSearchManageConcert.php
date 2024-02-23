@@ -39,8 +39,9 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
+                    <div class="card-body">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800" id="website">จัดการข้อมูลของคอนเสิร์ต
+                        <h1 class="h3 mb-0 text-color-800" id="website">จัดการข้อมูลของคอนเสิร์ต
                             <a href="ManageConcert.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการข้อมูลของคอนเสิร์ต</a> <!-- เมื่อทำการค้นหาของคอนเสิร์ตแล้ว ให้กลับมาหน้าจัดการข้อมูลของคอนเสิร์ต -->
                         </h1>
                     </div>
@@ -53,8 +54,6 @@
                         $order = 1;
                     ?>
                     <!-- กรอกค้นหาของคอนเสิร์ต -->
-                    <div class="card-body">
-                        <div class="table-responsive">
                         <form action="PageSearchManageConcert.php" class="form-group my-3" method="POST">
                         <div class="input-group" align="right">
                             <div class="form-outline col-12" data-mdb-input-init>
@@ -63,6 +62,8 @@
                             </div>
                         </div>                    
                         </form>
+                        <div class="table-responsive">
+                        
                         <?php if($count > 0){?>
                         <table class="table table-striped mt-4">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของคอนเสิร์ต -->

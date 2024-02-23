@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>จัดการข้อมูลของลูกค้า</title>
+    <title>จัดการข้อมูลของโซนที่นั่ง</title>
 
     <!-- Custom fonts for this template-->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,21 +47,23 @@
                         $count = mysqli_num_rows($query);
                         $order = 1;
                     ?>
+                    <div class="card-body">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">จัดการพื้นที่ของโซนที่นั่ง
+                        <h1 class="h3 mb-0 text-color-800" id="website">จัดการพื้นที่ของโซนที่นั่ง
                             <a href="ManageSeatZone.php" class="btn btn-sm btn-danger" style="width: auto; height: auto; color: black;"><i class="fa-solid fa-arrow-left"></i>&nbsp;จัดการพื้นที่ของโซนที่นั่ง</a> <!-- เมื่อทำการค้นหาพื้นที่ของโซนที่นั่งแล้ว ให้กลับมาหน้าจัดการพื้นที่ของโซนที่นั่ง -->
                         </h1>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                        <form action="PageSearchManageSeatZone.php" class="form-group my-3" method="POST">
+                    <form action="PageSearchManageSeatZone.php" class="form-group my-3" method="POST">
                         <div class="input-group" align="right">
                             <div class="form-outline col-12" data-mdb-input-init>
                                 <input type="search" id="search" class="form-control" name="seat_zone" required style="color: black;" placeholder="กรุณากรอกชื่อโซนของโซนที่นั่ง"/>
                                 <label class="form-label" for="form1"></label>
                             </div>
                         </div>
-                        </form>
+                    </form>
+                    
+                        <div class="table-responsive">
+
                         <?php if($count > 0){?>
                         <table class="table table-striped mt-4">
                             <!-- หัวข้อชื่อตารางที่กำหนดขึ้นมาเองของโซนที่นั่ง -->
