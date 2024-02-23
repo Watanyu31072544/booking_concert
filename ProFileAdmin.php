@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>โปรไฟล์ของลูกค้า</title>
+    <title>โปรไฟล์ของผู้ดูแล</title>
 
     <!-- Custom fonts for this template-->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
